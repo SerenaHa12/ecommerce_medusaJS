@@ -8,11 +8,14 @@
         - npx create-medusa-app@latest
 
         
-        - cd to project folder (ex: [project-name] not [project-name]storefornt) and run medusa migrate command 
+        - cd to project folder (ex: [project-name] not [project-name]storefornt) and run medusa migrate command
             - [npx medusa migrations run]
+            
         and seed command:
+        à cái seed này phải cd backend đúng k
             - nhớ cd backend
             - [npx @medusajs/medusa-cli@latest seed -f ./data/seed.json]
+
 
         - run medusa develop to enter the admin side
             - [npx medusa develop]
