@@ -21,6 +21,7 @@ const LoginTemplate = () => {
   return (
     <div className="w-full flex justify-center px-8 py-12">
       {currentView === "sign-in" ? <Login /> : <Register />}
+      <p>test</p>
     </div>
   )
 }
