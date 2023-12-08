@@ -46,11 +46,11 @@ const Login = () => {
         </div>
       )}
       <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
-      <p className="text-center text-base-regular text-gray-700 mb-8">
+      <p className="text-center text-h3  mb-8">
         Sign in to access an enhanced shopping experience.
       </p>
       <form className="w-full" onSubmit={onSubmit}>
-        <div className="flex flex-col w-full gap-y-2">
+        <div className="flex text-2xl font-bold flex-col w-full gap-y-2">
           <Input
             label="Email"
             {...register("email", { required: "Email is required" })}
