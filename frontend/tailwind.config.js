@@ -15727,6 +15727,7 @@ module.exports = {
           "Helvetica Neue",
           "Ubuntu",
           "sans-serif",
+          "Montserrat"
         ],
       },
       keyframes: {

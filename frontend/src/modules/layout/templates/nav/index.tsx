@@ -20,7 +20,10 @@ const Nav = () => {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 px-8 mx-auto border-b duration-200 bg-ui-bg-interactive border-ui-border-base">
+      <div className="bg-primary w-full p-2 text-center text-xs text-white items-center my-auto">
+        Enjoy Free Shipping On All Orders
+      </div>
+      <header className="relative h-16 px-8 mx-auto border-b duration-200 bg-white border-ui-border-base">
         <nav className="txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="block small:hidden">
