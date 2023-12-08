@@ -1,7 +1,7 @@
 const MEDUSA_API_KEY = process.env.NEXT_PUBLIC_MEDUSA_API_KEY || ""
 const REVALIDATE_WINDOW = process.env.REVALIDATE_WINDOW || 60 * 30 // 30 minutes
 const ENDPOINT =
-  process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://api-ecm.5labs.io"
+  process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "https://api-ecm.5labs.io"
 
 export default async function medusaRequest(
   method: string,
