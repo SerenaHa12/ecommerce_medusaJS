@@ -9,6 +9,8 @@ import SideMenu from "@modules/layout/components/side-menu"
 import MobileMenu from "@modules/mobile-menu/templates"
 import DesktopSearchModal from "@modules/search/templates/desktop-search-modal"
 import Link from "next/link"
+import Search from "@modules/common/icons/search"
+import User from "@modules/common/icons/user"
 
 const Nav = () => {
   const { toggle } = useMobileMenu()
@@ -20,13 +22,23 @@ const Nav = () => {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 px-8 mx-auto border-b duration-200 bg-ui-bg-interactive border-ui-border-base">
+      <div className="bg-primary w-full p-2 text-center text-xs text-white items-center my-auto">
+        Enjoy Free Shipping On All Orders
+      </div>
+      <header className="relative h-16 px-8 mx-auto border-b duration-200 bg-white border-ui-border-base">
         <nav className="txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
-          <div className="flex-1 basis-0 h-full flex items-center">
+          <div className="flex-1 basis-0 h-full flex items-center lg:hidden ">
+            {/* menu */}
             <div className="block small:hidden">
               <Hamburger setOpen={toggle} />
             </div>
-            <div className="hidden small:block h-full">
+
+            {/* search */}
+            <div className="block small:hidden">
+              <Search />
+            </div>
+
+            <div className="hidden small:hidden">
               <SideMenu searchModalOpen={searchModalOpen} />
             </div>
           </div>
@@ -50,7 +62,7 @@ const Nav = () => {
                 />
               )}
               <Link className="hover:text-ui-fg-base" href="/account">
-                Account
+                <User />
               </Link>
             </div>
             <CartDropdown />

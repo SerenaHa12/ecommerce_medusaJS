@@ -6,6 +6,7 @@ import { Button } from "@medusajs/ui"
 import LineItemOptions from "@modules/common/components/line-item-options"
 import LineItemPrice from "@modules/common/components/line-item-price"
 import Trash from "@modules/common/icons/trash"
+import Cart from "@modules/common/icons/cart"
 import Thumbnail from "@modules/products/components/thumbnail"
 import { formatAmount, useCart } from "medusa-react"
 import Link from "next/link"
@@ -22,9 +23,9 @@ const CartDropdown = () => {
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
           <Link
-            className="hover:text-ui-fg-base"
+            className="hover:text-ui-fg-base flex"
             href="/cart"
-          >{`Cart (${totalItems})`}</Link>
+          ><Cart size={24} />{` (${totalItems})`}</Link>
         </Popover.Button>
         <Transition
           show={state}
