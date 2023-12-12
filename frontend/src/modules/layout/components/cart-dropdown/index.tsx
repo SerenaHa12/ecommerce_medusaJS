@@ -25,7 +25,7 @@ const CartDropdown = () => {
           <Link
             className="hover:text-ui-fg-base flex"
             href="/cart"
-          ><Cart size={14} />{` (${totalItems})`}</Link>
+          ><Cart size={24} />{` (${totalItems})`}</Link>
         </Popover.Button>
         <Transition
           show={state}
