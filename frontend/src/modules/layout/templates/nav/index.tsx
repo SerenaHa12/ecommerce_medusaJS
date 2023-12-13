@@ -11,6 +11,8 @@ import DesktopSearchModal from "@modules/search/templates/desktop-search-modal"
 import Link from "next/link"
 import Search from "@modules/common/icons/search"
 import User from "@modules/common/icons/user"
+import Image from "next/image"
+import Gift from "@modules/common/icons/gift"
 
 const Nav = () => {
   const { toggle } = useMobileMenu()
@@ -34,7 +36,7 @@ const Nav = () => {
             </div>
 
             {/* search */}
-            <div className="block small:hidden">
+            <div className="block small:hidden cursor-pointer focus:outline-none ml-2">
               <Search />
             </div>
 
@@ -46,13 +48,33 @@ const Nav = () => {
           <div className="flex items-center h-full">
             <Link
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className="txt-compact-xlarge-plus hover:text-ui-fg-base"
             >
-              Medusa Store
+              <Image src="/Logo.svg" width={138} height={40} alt="logo" />
             </Link>
           </div>
 
-          <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
+          <div className="w-full mx-auto hidden lg:block">
+            <div className="mx-auto flex gap-x-7 items-center w-fit justify-around">
+              <Link href="/collection">
+                <h3 className="text-lg">Collection</h3>
+              </Link>
+              <Link href="/newin">
+                <h3 className="text-lg">New In</h3>
+              </Link>
+              <Link href="/modiweek">
+                <h3 className="text-lg">Modiweek</h3>
+              </Link>
+              <Link href="/plussize">
+                <h3 className="text-lg">Plus Size</h3>
+              </Link>
+              <Link href="/sustainability">
+                <h3 className="text-lg">Sustainability</h3>
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-x-2 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.FEATURE_SEARCH_ENABLED && (
                 <DesktopSearchModal
@@ -64,6 +86,9 @@ const Nav = () => {
               <Link className="hover:text-ui-fg-base" href="/account">
                 <User />
               </Link>
+            </div>
+            <div className="block small:hidden">
+              <Gift />
             </div>
             <CartDropdown />
           </div>
