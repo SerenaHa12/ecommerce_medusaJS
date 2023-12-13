@@ -16,24 +16,7 @@ const FooterNav = () => {
     <div className="border-t border-ui-border-base w-screen bg-[#404040] text-white">
       <div className="content-container flex flex-col">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
-          <div>
-            {/* <Link
-              href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
-            >
-              Medusa Store
-<<<<<<< Updated upstream
-            </Link>{" "}
-            <br />
-            <Link
-              href="/contactus"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
-            >
-              Contact US
-            </Link>
-=======
-            </Link> */}
-          </div>
+          <div></div>
 
           <div>Join Our Club, Get 15% Off For Your Birthday</div>
           <div className="w-full border-white bg-transparent flex flex-col gap-y-2">
@@ -46,10 +29,10 @@ const FooterNav = () => {
             <div className="flex gap-x-2">
               <CheckboxWithLabel checked />
               <p className="text-xs">
-              By Submittng Your Email, you agree to receive advertising emails from Modimal.
+                By Submittng Your Email, you agree to receive advertising emails
+                from Modimal.
               </p>
             </div>
->>>>>>> Stashed changes
           </div>
           <div className="text-small-regular grid grid-cols-3 gap-x-10 md:gap-x-16">
             {product_categories && (
