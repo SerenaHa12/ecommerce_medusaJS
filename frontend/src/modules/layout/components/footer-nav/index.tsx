@@ -27,7 +27,7 @@ const FooterNav = () => {
               className="pt-4 pb-1 block w-full h-11 px-4 mt-0 bg-transparent border rounded-md appearance-none focus:bg-transparent focus:outline-none focus:ring-0 focus:shadow-borders-interactive-with-active border-ui-border-base hover:bg-transparent"
             />
             <div className="flex gap-x-2">
-              <CheckboxWithLabel checked />
+              {/* <CheckboxWithLabel checked /> */}
               <p className="text-xs">
                 By Submittng Your Email, you agree to receive advertising emails
                 from Modimal.
