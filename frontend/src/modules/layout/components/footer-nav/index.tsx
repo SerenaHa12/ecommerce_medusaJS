@@ -6,7 +6,7 @@ import { Text } from "@medusajs/ui"
 import Link from "next/link"
 import MedusaCTA from "../medusa-cta"
 import Input from "@modules/common/components/input"
-import CheckboxWithLabel from "@modules/common/components/checkbox"
+import { Checkbox } from "@medusajs/ui"
 
 const FooterNav = () => {
   const { collections } = useCollections()
@@ -16,8 +16,6 @@ const FooterNav = () => {
     <div className="border-t border-ui-border-base w-screen bg-[#404040] text-white">
       <div className="content-container flex flex-col">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
-          <div></div>
-
           <div>Join Our Club, Get 15% Off For Your Birthday</div>
           <div className="w-full border-white bg-transparent flex flex-col gap-y-2">
             <Input
@@ -27,7 +25,12 @@ const FooterNav = () => {
               className="pt-4 pb-1 block w-full h-11 px-4 mt-0 bg-transparent border rounded-md appearance-none focus:bg-transparent focus:outline-none focus:ring-0 focus:shadow-borders-interactive-with-active border-ui-border-base hover:bg-transparent"
             />
             <div className="flex gap-x-2">
-              {/* <CheckboxWithLabel checked /> */}
+              <Checkbox
+                className="text-base-regular flex items-center gap-x-2"
+                id="checkbox"
+                role="checkbox"
+                type="button"
+              />
               <p className="text-xs">
                 By Submittng Your Email, you agree to receive advertising emails
                 from Modimal.
