@@ -1,10 +1,10 @@
 import React from 'react'
-import ProductItem from './ProductItem'
+import ProductItem from './ProductCard'
 
 const BestSellers = () => {
   return (
-    <div>
-        <h1 className='h1'>Best Sellers</h1>
+    <div className='mx-4'>
+        <h1 className='text-xl-semi'>Best Sellers</h1>
         <ProductItem />
     </div>
   )

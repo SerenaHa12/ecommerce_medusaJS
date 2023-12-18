@@ -109,4 +109,8 @@
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
   }
+
+  .landing-title {
+    @apply text-[#0C0C0C] text-xl font-bold leading-[140%] capitalize;
+  }
 }

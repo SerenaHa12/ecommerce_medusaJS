@@ -19,8 +19,10 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <BestSellers />
-      <Collection />
+      <div className="container mx-auto">
+        <BestSellers />
+        <Collection />
+      </div>
       {/* <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
         <FeaturedProducts collections={collections} />
       </Suspense> */}
