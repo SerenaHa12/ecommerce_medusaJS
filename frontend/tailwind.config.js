@@ -15658,6 +15658,7 @@ const designColors = {
     },
   },
 }
+
 const designTexts =
   //text style
   {
@@ -16079,6 +16080,9 @@ module.exports = {
         leave: "leave 150ms ease-in forwards",
       },
       ...designTexts,
+      backgroundImage: {
+        hero: 'url(/landing/landing01.png)'
+      }
     },
   },
   plugins: [require("tailwindcss-radix")()],
