@@ -18,19 +18,20 @@ const Modiweek = () => {
       {/* follow us */}
       <div className="container mx-auto my-8">
         <h1 className="text-xl-semi">Follow us @modimal</h1>
-        <div className="flex">
+        <div className="grid grid-cols-2">
           <Image
             src="/landing/follow1.png"
             alt="follow"
             width={320}
             height={388}
-            className="hidden lg:block 2xl:block xl:block"
+            className="hidden lg:block 2xl:block xl:block 2xl:w-[603px] lg:w-[603px] xl:w-[603px]"
           />
           <Image
             src="/landing/follow.png"
             alt="follow"
             width={320}
             height={388}
+            className=" xl:w-[603px] lg:w-[603px]"
           />
         </div>
       </div>
