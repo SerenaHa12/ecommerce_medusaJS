@@ -16083,7 +16083,14 @@ module.exports = {
       backgroundImage: {
         hero: 'url(/landing/landing01.png)',
         sustain: 'url(/landing/Sustainability.png)',
-      }
+        landing_follow: 'url(/landing/follow.png',
+        landing_follow01: 'url(/landing/follow1.png',
+      },
+      // backgroundPosition: {
+      //   bottom: 'bottom',
+      //   center: 'center',
+      //   'bottom-4': 'center bottom 1rem',
+      // }
     },
   },
   plugins: [require("tailwindcss-radix")()],
