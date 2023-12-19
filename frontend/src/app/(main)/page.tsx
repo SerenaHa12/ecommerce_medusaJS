@@ -20,7 +20,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <div className="container mx-auto my-16">
+      <div className="container mx-auto mb-16">
         <BestSellers />
         <Collection />
       </div>

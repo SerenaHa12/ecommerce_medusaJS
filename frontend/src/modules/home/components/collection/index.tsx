@@ -1,6 +1,7 @@
 import Image from "next/image"
 import PlaceholderImage from "@modules/common/icons/placeholder-image"
 import { Image as MedusaImage } from "@medusajs/medusa"
+import { Button } from "@medusajs/ui"
 
 type CollectionProps = {
   images?: MedusaImage[] | null
@@ -15,48 +16,62 @@ const Collection: React.FC<CollectionProps> = ({ images, size }) => {
       <h1 className="text-xl-semi">Collection</h1>
       <div className="grid grid-cols-2 mx-auto">
         <div className="flex flex-col gap-y-3">
-          <div>
-            <Image
-              src="/landing/follow.png"
-              alt="landing"
+          <div className="relative">
+            <PlaceholderImage
               width={152}
               height={165}
-              className="md:w-64 lg:w-80 xl:w-96"
+              className="md:w-64 lg:w-80 xl:w-96 h-auto"
             />
-            <button className="px-4 py-2">Boluses</button>
+            <Button
+              variant="transparent"
+              className="px-4 py-2 xl:absolute xl:bottom-4 xl:right-4"
+            >
+              Boluses
+            </Button>
           </div>
-          <div>
-            <Image
-              src="/landing/follow.png"
-              alt="landing"
+          <div className="relative">
+            <PlaceholderImage
               width={152}
               height={253}
-              className="md:w-64 lg:w-80 xl:w-96"
+              color="red"
+              className="md:w-64 lg:w-80 xl:w-96 h-auto"
             />
-            <button className="px-4 py-2">Pants</button>
+            <Button
+              variant="transparent"
+              className="px-4 py-2 xl:absolute xl:bottom-4 xl:right-4"
+            >
+              Pants
+            </Button>
           </div>
         </div>
 
         <div className="flex flex-col gap-y-3">
-          <div>
-            <Image
-              src="/landing/follow.png"
-              alt="landing"
+          <div className="relative">
+            <PlaceholderImage
               width={152}
               height={253}
-              className="md:w-64 lg:w-80 xl:w-96"
+              color="red"
+              className="md:w-64 lg:w-80 xl:w-96 h-auto"
             />
-            <button className="px-4 py-2">Dresses</button>
+            <Button
+              variant="transparent"
+              className="px-4 py-2 xl:absolute xl:bottom-4 xl:right-4"
+            >
+              Dresses
+            </Button>
           </div>
-          <div>
-            <Image
-              src="/landing/follow1.png"
-              alt="landing"
+          <div className="relative">
+            <PlaceholderImage
               width={152}
               height={165}
-              className="md:w-64 lg:w-80 xl:w-96"
+              className="md:w-64 lg:w-80 xl:w-96 h-auto"
             />
-            <button className="px-4 py-2">Outwears</button>
+            <Button
+              variant="transparent"
+              className="px-4 py-2 xl:absolute xl:bottom-4 xl:right-4"
+            >
+              Outwears
+            </Button>
           </div>
         </div>
       </div>

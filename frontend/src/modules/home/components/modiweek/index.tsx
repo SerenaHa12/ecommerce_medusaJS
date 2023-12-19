@@ -1,10 +1,29 @@
+import PlaceholderImage from "@modules/common/icons/placeholder-image"
 import Image from "next/image"
+import { FaRegHeart } from "react-icons/fa"
 const Modiweek = () => {
   return (
     <div>
       <div className="container mx-auto my-8">
         <h1 className="text-xl-semi">Modiweek</h1>
+        <div className="grid grid-cols-2 gap-x-4">
+          <div className="relative">
+            <PlaceholderImage width={152} height={243} />
+            <p className="text-base-semi">Sunday</p>
+            <div className="absolute top-2 right-2">
+              <FaRegHeart size={20} />
+            </div>
+          </div>
+          <div className="relative">
+            <PlaceholderImage width={152} height={243} />
+            <p className="text-base-semi">Sunday</p>
+            <div className="absolute top-2 right-2">
+              <FaRegHeart size={20} />
+            </div>
+          </div>
+        </div>
       </div>
+
       <div className="bg-sustain bg-cover bg-no-repeat w-full h-[526px] relative">
         <div className="absolute bottom-20 left-[15%] capitalize text-center text-sm text-[#272F25]">
           Stylish sustainability in clothing promotes <br /> eco-friendly
@@ -19,20 +38,8 @@ const Modiweek = () => {
       <div className="container mx-auto my-8">
         <h1 className="text-xl-semi">Follow us @modimal</h1>
         <div className="grid grid-cols-2">
-          <Image
-            src="/landing/follow1.png"
-            alt="follow"
-            width={320}
-            height={388}
-            className="hidden lg:block 2xl:block xl:block 2xl:w-[603px] lg:w-[603px] xl:w-[603px]"
-          />
-          <Image
-            src="/landing/follow.png"
-            alt="follow"
-            width={320}
-            height={388}
-            className=" xl:w-[603px] lg:w-[603px]"
-          />
+          <div className="bg-landing_follow w-full h-100 bg-cover hidden md:block"></div>
+          <div className="bg-landing_follow01 w-full h-100 bg-cover"></div>
         </div>
       </div>
     </div>

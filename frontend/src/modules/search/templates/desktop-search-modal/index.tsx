@@ -21,7 +21,7 @@ const DesktopSearchModal = ({
   return (
     <>
       <button onClick={open} className="flex items-center gap-x-2 h-full">
-        <Search />
+        <Search size={20}/>
       </button>
 
       <Modal isOpen={state} close={close} size="large" search>
