@@ -1,3 +1,5 @@
+// custom product card by Ha Chi
+
 import clsx from "clsx"
 import Link from "next/link"
 import { ProductPreviewType } from "types/global"
@@ -13,28 +15,28 @@ const ProductPreview = ({
 }: ProductPreviewType) => (
   <Link href={`/products/${handle}`} className="group">
     {" "}
-    <div className="relative z-10  left-8 top-20 w-20 px-6 py-1.5 bg-white">
+    {/* <div className="relative z-10  left-8 top-20 w-20 px-6 py-1.5 bg-white">
       New
-    </div>
-    <div className="relative z-50  left-96 top-14 ">
+    </div> */}
+    <div className="relative z-50 left-16 top-8 ">
       <FaRegHeart />
     </div>
     <div className="">
-      <Thumbnail thumbnail={thumbnail} size="large" isFeatured={isFeatured} />
+      <Thumbnail thumbnail={thumbnail} size="small" isFeatured={isFeatured} />
 
-      <div className="flex txt-compact-medium mt-4 justify-between">
-        <Text className="text-xl font-bold">{title}</Text>
+      <div className="txt-compact-medium mt-4 justify-between">
+        <Text className="text-base-semi">{title}</Text>
 
-        <div className="flex items-center gap-x-2">
+        <div className="flex items-center gap-x-2 text-base-semi float-right">
           {price ? (
             <>
               {price.price_type === "sale" && (
-                <Text className="line-through text-ui-fg-muted">
+                <Text className="line-through text-base-semi">
                   {price.original_price}
                 </Text>
               )}
               <Text
-                className={clsx("text-xl font-bold", {
+                className={clsx("text-base-semi", {
                   "text-ui-fg-interactive": price.price_type === "sale",
                 })}
               >

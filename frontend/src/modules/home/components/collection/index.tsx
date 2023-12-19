@@ -1,14 +1,23 @@
 import Image from "next/image"
+import PlaceholderImage from "@modules/common/icons/placeholder-image"
+import { Image as MedusaImage } from "@medusajs/medusa"
 
-const Collection = () => {
+type CollectionProps = {
+  images?: MedusaImage[] | null
+  size?: "small" | "medium" | "large" | "full" | "square"
+  isFeatured?: boolean
+  className?: string
+}
+
+const Collection: React.FC<CollectionProps> = ({ images, size }) => {
   return (
     <div>
       <h1 className="text-xl-semi">Collection</h1>
-      <div className="flex flex-2 gap-2">
-        <div className="flex flex-col">
+      <div className="grid grid-cols-2 mx-auto">
+        <div className="flex flex-col gap-y-3">
           <div>
             <Image
-              src="/landing/landing01.png"
+              src="/landing/follow.png"
               alt="landing"
               width={152}
               height={165}
@@ -18,7 +27,7 @@ const Collection = () => {
           </div>
           <div>
             <Image
-              src="/landing/landing01.png"
+              src="/landing/follow.png"
               alt="landing"
               width={152}
               height={253}
@@ -28,10 +37,10 @@ const Collection = () => {
           </div>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-y-3">
           <div>
             <Image
-              src="/landing/landing01.png"
+              src="/landing/follow.png"
               alt="landing"
               width={152}
               height={253}
@@ -41,7 +50,7 @@ const Collection = () => {
           </div>
           <div>
             <Image
-              src="/landing/landing01.png"
+              src="/landing/follow1.png"
               alt="landing"
               width={152}
               height={165}

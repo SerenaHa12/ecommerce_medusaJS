@@ -64,7 +64,7 @@ const InfiniteProducts = ({ params, sortBy }: InfiniteProductsType) => {
 
   return (
     <div className=" content-container">
-      <ul className="grid grid-cols-2 small:grid-cols-2 medium:grid-cols-2 gap-x-6 gap-y-8 flex-1">
+      <ul className="grid grid-cols-2 small:grid-cols-2 medium:grid-cols-2 large:grid-cols-3 gap-x-3 gap-y-8 flex-1">
         {previews.map((p) => (
           <li key={p.id}>
             <ProductPreview {...p} />
@@ -90,7 +90,7 @@ const InfiniteProducts = ({ params, sortBy }: InfiniteProductsType) => {
       >
         <span ref={ref}></span>
       </div>
-      <div className="w-40 mx-auto text-center py-2 border-2 border-[#5A6D57]">
+      <div className="w-40 mx-auto text-center py-2 border-2 border-[#5A6D57] hidden">
         <button className=""> Load more</button>
       </div>
     </div>
