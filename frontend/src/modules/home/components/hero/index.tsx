@@ -1,7 +1,6 @@
 import { Button, Heading } from "@medusajs/ui"
 import InteractiveLink from "@modules/common/components/interactive-link"
 import { Github } from "@medusajs/icons"
-import Image from "next/image"
 import { MEDUSA_BACKEND_URL } from "@lib/config"
 import BestSellers from "../bestseller"
 import Collection from "../collection"
