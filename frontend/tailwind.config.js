@@ -16081,7 +16081,8 @@ module.exports = {
       },
       ...designTexts,
       backgroundImage: {
-        hero: 'url(/landing/landing01.png)'
+        hero: 'url(/landing/landing01.png)',
+        sustain: 'url(/landing/Sustainability.png)',
       }
     },
   },

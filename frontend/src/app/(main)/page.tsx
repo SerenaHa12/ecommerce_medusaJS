@@ -3,6 +3,7 @@ import BestSellers from "@modules/home/components/bestseller"
 import Collection from "@modules/home/components/collection"
 import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero from "@modules/home/components/hero"
+import Modiweek from "@modules/home/components/modiweek"
 import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-homepage-products"
 import { Metadata } from "next"
 import { Suspense } from "react"
@@ -19,10 +20,11 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <div className="container mx-auto">
+      <div className="container mx-auto my-16">
         <BestSellers />
         <Collection />
       </div>
+      <Modiweek />
       {/* <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
         <FeaturedProducts collections={collections} />
       </Suspense> */}
