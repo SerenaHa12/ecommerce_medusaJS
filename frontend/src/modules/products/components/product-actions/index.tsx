@@ -20,11 +20,11 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
 
   const price = useProductPrice({ id: product.id!, variantId: variant?.id })
 
-  const selectedPrice = useMemo(() => {
-    const { variantPrice, cheapestPrice } = price
+  // const selectedPrice = useMemo(() => {
+  //   const { variantPrice, cheapestPrice } = price
 
-    return variantPrice || cheapestPrice || null
-  }, [price])
+  //   return variantPrice || cheapestPrice || null
+  // }, [price])
 
   return (
     <div className="flex flex-col gap-y-2">
@@ -48,7 +48,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
         )}
       </div>
 
-      {selectedPrice ? (
+      {/* {selectedPrice ? (
         <div className="flex flex-col text-ui-fg-base">
           <span
             className={clsx("text-xl-semi", {
@@ -73,7 +73,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
         </div>
       ) : (
         <div></div>
-      )}
+      )} */}
 
       <Button
         onClick={addToCart}

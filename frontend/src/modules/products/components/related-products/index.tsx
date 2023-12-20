@@ -51,8 +51,10 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
       }
     )
 
-  const previews = usePreviews({ pages: data?.pages, region: cart?.region })
-
+  const previews = usePreviews({
+    pages: data?.pages?.slice(0, 3), // Lấy 3 phần tử đầu tiên
+    region: cart?.region,
+  })
   return (
     <div className="product-page-constraint">
       <div className="flex flex-col items-center text-center mb-16">
@@ -64,12 +66,13 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
         </p>
       </div>
 
-      <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8">
-        {previews.map((p) => (
+      <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-3 gap-x-6 gap-y-8">
+        {previews.slice(0, 3).map((p) => (
           <li key={p.id}>
             <ProductPreview {...p} />
           </li>
         ))}
+
         {isLoading &&
           !previews.length &&
           repeat(8).map((index) => (
