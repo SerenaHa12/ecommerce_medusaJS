@@ -62,16 +62,52 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
   const handleChange = (e: ChangeEvent<HTMLButtonElement>) => {
     setSortBy(e.target.value)
   }
-  const [isDropdownOpen, setDropdownOpen] = useState(false)
-  const [selectedSort, setSelectedSort] = useState(null)
+  const [isDropdownOpen1, setDropdownOpen1] = useState(false)
+  const [isDropdownOpen2, setDropdownOpen2] = useState(false)
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen)
+  const [isDropdownOpen3, setDropdownOpen3] = useState(false)
+
+  const [isDropdownOpen4, setDropdownOpen4] = useState(false)
+
+  const [isDropdownOpen5, setDropdownOpen5] = useState(false)
+
+  const [selectedSort1, setSelectedSort1] = useState(null)
+  const [selectedSort2, setSelectedSort2] = useState(null)
+
+  const [selectedSort3, setSelectedSort3] = useState(null)
+
+  const [selectedSort4, setSelectedSort4] = useState(null)
+  const [selectedSort5, setSelectedSort5] = useState(null)
+
+  const toggleDropdown1 = () => {
+    setDropdownOpen1(!isDropdownOpen1)
+  }
+  const toggleDropdown2 = () => {
+    setDropdownOpen2(!isDropdownOpen2)
+  }
+  const toggleDropdown3 = () => {
+    setDropdownOpen3(!isDropdownOpen3)
+  }
+  const toggleDropdown4 = () => {
+    setDropdownOpen4(!isDropdownOpen4)
+  }
+  const toggleDropdown5 = () => {
+    setDropdownOpen5(!isDropdownOpen5)
   }
 
-  const handleSortSelect = (sortOption: any) => {
-    setSelectedSort(sortOption)
+  const handleSortSelect1 = (sortOption: any) => {
+    setSelectedSort1(sortOption)
   }
+  const handleSortSelect2 = (sortOption: any) => {
+    setSelectedSort2(sortOption)
+  }
+  const handleSortSelect3 = (sortOption: any) => {
+    setSelectedSort3(sortOption)
+  }
+  const handleSortSelect4 = (sortOption: any) => {
+    setSelectedSort4(sortOption)
+  }
+
   const [clearFiltersActive, setClearFiltersActive] = useState(false)
   const [appliedFiltersActive, setAppliedFiltersActive] = useState(false)
 
@@ -93,10 +129,10 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
         <div className="flex w-[392px] flex-col gap-4 ">
           {" "}
           <div className=" ">
-            {isDropdownOpen ? (
+            {isDropdownOpen1 ? (
               <div className=" top-full left-0 mt-2 bg-white border rounded p-4">
                 <div
-                  onClick={toggleDropdown}
+                  onClick={toggleDropdown1}
                   className="flex w-full justify-between cursor-pointer text-[#748C70]"
                 >
                   <div>Sort By </div>
@@ -105,16 +141,16 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
                 {sortOptions.map((option) => (
                   <div
                     key={option.value}
-                    onClick={() => handleSortSelect(option.value)}
+                    onClick={() => handleSortSelect1(option.value)}
                     className=""
                   >
                     <div
                       className="flex"
-                      onClick={() => handleSortSelect("sort_by_minus")}
+                      onClick={() => handleSortSelect1("sort_by_minus")}
                     >
                       {" "}
                       <div className="px-2 py-1 cursor-pointer flex ">
-                        {selectedSort === option.value ? (
+                        {selectedSort1 === option.value ? (
                           <FaSquareFull className="text-[#748C70] w-4 h-4" />
                         ) : (
                           <FaRegSquare className="w-4 h-4" />
@@ -127,7 +163,7 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
               </div>
             ) : (
               <div
-                onClick={toggleDropdown}
+                onClick={toggleDropdown1}
                 className="flex  justify-between p-3 bg-[#748C70] cursor-pointer"
               >
                 <div>Sort By </div>
@@ -136,10 +172,10 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
             )}
           </div>
           <div className=" ">
-            {isDropdownOpen ? (
+            {isDropdownOpen2 ? (
               <div className=" top-full left-0 mt-2 bg-white border rounded p-4">
                 <div
-                  onClick={toggleDropdown}
+                  onClick={toggleDropdown2}
                   className="flex w-full justify-between cursor-pointer text-[#748C70]"
                 >
                   <div>Size </div>
@@ -148,16 +184,16 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
                 {sortOptions1.map((option) => (
                   <div
                     key={option.value}
-                    onClick={() => handleSortSelect(option.value)}
+                    onClick={() => handleSortSelect2(option.value)}
                     className=""
                   >
                     <div
                       className="flex"
-                      onClick={() => handleSortSelect("sort_by_minus")}
+                      onClick={() => handleSortSelect2("sort_by_minus")}
                     >
                       {" "}
                       <div className="px-2 py-1 cursor-pointer flex ">
-                        {selectedSort === option.value ? (
+                        {selectedSort2 === option.value ? (
                           <FaSquareFull className="text-[#748C70] w-4 h-4" />
                         ) : (
                           <FaRegSquare className="w-4 h-4" />
@@ -170,7 +206,7 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
               </div>
             ) : (
               <div
-                onClick={toggleDropdown}
+                onClick={toggleDropdown2}
                 className="flex  justify-between p-3 bg-[#748C70] cursor-pointer"
               >
                 <div>Size </div>
@@ -179,10 +215,10 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
             )}
           </div>
           <div className="">
-            {isDropdownOpen ? (
+            {isDropdownOpen3 ? (
               <div className=" top-full left-0 mt-2 bg-white border rounded p-4">
                 <div
-                  onClick={toggleDropdown}
+                  onClick={toggleDropdown3}
                   className="flex w-full justify-between cursor-pointer text-[#748C70]"
                 >
                   <div>Color</div>
@@ -191,16 +227,16 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
                 {sortOptions2.map((option) => (
                   <div
                     key={option.value}
-                    onClick={() => handleSortSelect(option.value)}
+                    onClick={() => handleSortSelect3(option.value)}
                     className=""
                   >
                     <div
                       className="flex"
-                      onClick={() => handleSortSelect("sort_by_minus")}
+                      onClick={() => handleSortSelect3("sort_by_minus")}
                     >
                       {" "}
                       <div className="px-2 py-1 cursor-pointer flex ">
-                        {selectedSort === option.value ? (
+                        {selectedSort3 === option.value ? (
                           <FaSquareFull className="text-[#748C70] w-4 h-4" />
                         ) : (
                           <FaRegSquare className="w-4 h-4" />
@@ -217,7 +253,7 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
               </div>
             ) : (
               <div
-                onClick={toggleDropdown}
+                onClick={toggleDropdown3}
                 className="flex  justify-between p-3 bg-[#748C70] cursor-pointer"
               >
                 <div>Color </div>
@@ -226,10 +262,10 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
             )}
           </div>
           <div className="  ">
-            {isDropdownOpen ? (
+            {isDropdownOpen4 ? (
               <div className=" top-full  borfer-[#748C70] left-0 pt-2 bg-white border rounded p-4">
                 <div
-                  onClick={toggleDropdown}
+                  onClick={toggleDropdown4}
                   className="flex w-full justify-between cursor-pointer text-[#748C70]"
                 >
                   <div>Collection </div>
@@ -238,16 +274,16 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
                 {sortOptions3.map((option) => (
                   <div
                     key={option.value}
-                    onClick={() => handleSortSelect(option.value)}
+                    onClick={() => handleSortSelect3(option.value)}
                     className=""
                   >
                     <div
                       className="flex"
-                      onClick={() => handleSortSelect("sort_by_minus")}
+                      onClick={() => handleSortSelect3("sort_by_minus")}
                     >
                       {" "}
                       <div className="px-2 py-1 cursor-pointer flex ">
-                        {selectedSort === option.value ? (
+                        {selectedSort4 === option.value ? (
                           <FaSquareFull className="text-[#748C70] w-4 h-4" />
                         ) : (
                           <FaRegSquare className="w-4 h-4" />
@@ -260,7 +296,7 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
               </div>
             ) : (
               <div
-                onClick={toggleDropdown}
+                onClick={toggleDropdown4}
                 className="flex  justify-between p-3 bg-[#748C70] cursor-pointer"
               >
                 <div>Collection </div>
@@ -269,10 +305,10 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
             )}
           </div>
           <div className=" ">
-            {isDropdownOpen ? (
+            {isDropdownOpen5 ? (
               <div className=" top-full left-0 mt-2 bg-white border rounded p-4">
                 <div
-                  onClick={toggleDropdown}
+                  onClick={toggleDropdown5}
                   className="flex w-full justify-between cursor-pointer text-[#748C70]"
                 >
                   <div>Fabric </div>
@@ -281,16 +317,16 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
                 {sortOptions4.map((option) => (
                   <div
                     key={option.value}
-                    onClick={() => handleSortSelect(option.value)}
+                    onClick={() => handleSortSelect4(option.value)}
                     className=""
                   >
                     <div
                       className="flex"
-                      onClick={() => handleSortSelect("sort_by_minus")}
+                      onClick={() => handleSortSelect4("sort_by_minus")}
                     >
                       {" "}
                       <div className="px-2 py-1 cursor-pointer flex ">
-                        {selectedSort === option.value ? (
+                        {selectedSort5 === option.value ? (
                           <FaSquareFull className="text-[#748C70]" />
                         ) : (
                           <FaRegSquare />
@@ -303,7 +339,7 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
               </div>
             ) : (
               <div
-                onClick={toggleDropdown}
+                onClick={toggleDropdown5}
                 className="flex  justify-between p-3 bg-[#748C70] cursor-pointer"
               >
                 <div>Fabric </div>
