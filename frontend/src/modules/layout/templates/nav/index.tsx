@@ -23,6 +23,13 @@ const Nav = () => {
     open: searchModalOpen,
   } = useToggleState()
 
+  const {
+    close,
+    screen: [_, setScreen],
+  } = useMobileMenu()
+  const setScreenSearch = () => setScreen("search")
+
+
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
       <div className="bg-primary w-full p-2 text-center text-[10px] lg:text-sm 2xl:text-sm xl:text-sm text-white items-center my-auto">
@@ -30,7 +37,7 @@ const Nav = () => {
       </div>
       <header className="relative h-16 px-8 mx-auto border-b duration-200 bg-white border-ui-border-base">
         <nav className="txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
-          <div className="flex-1 basis-0 h-full flex items-center lg:hidden ">
+          <div className="flex-1 basis-0 h-full flex items-center lg:hidden gap-x-2">
             {/* menu */}
             <div className="block small:hidden">
               <Hamburger setOpen={toggle} />
@@ -57,19 +64,19 @@ const Nav = () => {
 
           <div className="w-full mx-auto hidden lg:block">
             <div className="mx-auto flex gap-x-8 items-center w-fit justify-around">
-              <Link href="/collection">
+              <Link href="/store">
                 <h3 className="text-large-regular">Collection</h3>
               </Link>
-              <Link href="/newin">
+              <Link href="/store">
                 <h3 className="text-large-regular">New In</h3>
               </Link>
-              <Link href="/modiweek">
+              <Link href="/store">
                 <h3 className="text-large-regular">Modiweek</h3>
               </Link>
-              <Link href="/plussize">
+              <Link href="/store">
                 <h3 className="text-large-regular">Plus Size</h3>
               </Link>
-              <Link href="/sustainability">
+              <Link href="/store">
                 <h3 className="text-large-regular">Sustainability</h3>
               </Link>
             </div>

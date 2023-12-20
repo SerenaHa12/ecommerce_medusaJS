@@ -6,11 +6,11 @@ import { Text, clx, useToggleState } from "@medusajs/ui"
 import CountrySelect from "../country-select"
 
 const SideMenuItems = {
-  Home: "/",
-  Store: "/store",
-  Search: "",
-  Account: "/account",
-  Cart: "/cart",
+  "Collection": "/collection",
+  "New In" : "/newin",
+  "Modiweek": "/modiweek",
+  "Plus Size": "/plussize",
+  "Sustainability" : "/sustainability",
 }
 
 const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
@@ -52,21 +52,21 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                     </div>
                     <ul className="flex flex-col gap-6 items-start justify-start">
                       {Object.entries(SideMenuItems).map(([name, href]) => {
-                        if (
-                          name === "Search" &&
-                          process.env.FEATURE_SEARCH_ENABLED
-                        ) {
-                          return (
-                            <li key={name}>
-                              <button
-                                className="text-3xl leading-10 hover:text-ui-fg-disabled"
-                                onClick={() => handleSearchClick(close)}
-                              >
-                                {name}
-                              </button>
-                            </li>
-                          )
-                        }
+                        // if (
+                        //   name === "Search" &&
+                        //   process.env.FEATURE_SEARCH_ENABLED
+                        // ) {
+                        //   return (
+                        //     <li key={name}>
+                        //       <button
+                        //         className="text-3xl leading-10 hover:text-ui-fg-disabled"
+                        //         onClick={() => handleSearchClick(close)}
+                        //       >
+                        //         {name}
+                        //       </button>
+                        //     </li>
+                        //   )
+                        // }
                         return (
                           <li key={name}>
                             <Link
