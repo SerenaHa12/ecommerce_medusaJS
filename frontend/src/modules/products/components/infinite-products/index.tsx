@@ -64,7 +64,7 @@ const InfiniteProducts = ({ params, sortBy }: InfiniteProductsType) => {
 
   return (
     <div className=" content-container">
-      <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-6 gap-x-3 gap-y-8 flex-1">
+      <ul className="grid grid-cols-2 small:grid-cols-2 medium:grid-cols-2 large:grid-cols-3 gap-x-3 gap-y-8 flex-1">
         {previews.map((p) => (
           <li key={p.id}>
             <ProductPreview {...p} />
