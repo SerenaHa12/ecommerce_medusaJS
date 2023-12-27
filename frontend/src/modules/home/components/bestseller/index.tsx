@@ -11,11 +11,11 @@ const BestSellers = () => {
   // const { collections, count } = await getCollectionsList(0, 3)
 
   return (
-    <div className="pt-8">
+    <div>
       <h1 className="text-xl-semi">Best Sellers</h1>
-      {/* <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
-        <FeaturedProducts collections={collections} />
-      </Suspense> */}
+      {/*  */}
+      {/* <InfiniteProducts params={params} /> */}
+      {/* <ProductItem /> */}
     </div>
   )
 }
