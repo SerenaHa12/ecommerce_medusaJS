@@ -18,7 +18,7 @@ export default async function Home() {
       <Hero />
       <div className="container mx-auto mb-16 my-8 px-8">
         {/* <BestSellers /> */}
-        <Collection />
+        {/* <Collection /> */}
       </div>
       <Modiweek />
     </div>
