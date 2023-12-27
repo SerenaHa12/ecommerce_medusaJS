@@ -1,9 +1,13 @@
 import PlaceholderImage from "@modules/common/icons/placeholder-image"
 import Image from "next/image"
 import { FaRegHeart } from "react-icons/fa"
+import Medusa from "@medusajs/medusa-js"
+
 const Modiweek = () => {
+ 
+
   return (
-    <div>
+    <div className="px-8">
       <div className="container mx-auto my-8">
         <h1 className="text-xl-semi">Modiweek</h1>
         <div className="grid grid-cols-2 gap-x-4">

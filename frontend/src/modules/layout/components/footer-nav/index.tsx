@@ -18,9 +18,9 @@ const FooterNav = () => {
   const { product_categories } = useProductCategories()
 
   return (
-    <div className="border-t border-ui-border-base w-screen bg-[#404040] text-white">
-      <div className="content-container flex flex-col">
-        <div className="flex flex-col xsmall:flex-row items-start justify-between py-10">
+    <div className="border-t border-ui-border-base  bg-[#404040] text-white px-8">
+      <div className="container flex flex-col mx-auto">
+        <div className="flex flex-col lg:flex-row gap-3 items-start justify-between py-10">
           <div className="flex flex-col gap-y-3">
             <div>Join Our Club, Get 15% Off For Your Birthday</div>
             <div className="w-full border-white bg-transparent flex flex-col gap-y-2">
