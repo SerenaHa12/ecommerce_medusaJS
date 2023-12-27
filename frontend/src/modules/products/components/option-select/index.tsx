@@ -30,7 +30,7 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
   }
 
   return (
-    <div className="flex flex-col gap-y-3">
+    <div className="flex flex-col gap-y-3 ">
       <div className="">
         <button
           onClick={toggleDropdown}
