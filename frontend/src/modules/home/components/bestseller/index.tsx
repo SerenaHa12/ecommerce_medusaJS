@@ -1,11 +1,11 @@
-import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-homepage-products"
-import { Suspense } from "react"
-import FeaturedProducts from "@modules/home/components/featured-products"
+"use client"
+
+import React from "react"
+import { useState } from "react"
 import { StoreGetProductsParams } from "@medusajs/medusa"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
-// import ProductItem from './ProductCard'
-// import InfiniteProducts from '@modules/products/components/infinite-products'
-import { getCollectionsList } from "@lib/data"
+import ProductItem from "./ProductCard"
+import InfiniteProducts from "@modules/products/components/infinite-products"
 
 const BestSellers = () => {
   // const { collections, count } = await getCollectionsList(0, 3)
