@@ -6,15 +6,13 @@ import { ProductCollection } from "@medusajs/product"
 import medusaRequest from "@lib/medusa-fetch"
 import { getCollectionsList } from "@lib/data"
 
-const Collection = async () => {
-  const res = await getCollectionsList(4, 96)
-  console.log(res)
-
+const CollectionSection = () => {
   return (
-    <div>
+    <div className="py-8">
       <h1 className="text-xl-semi">Collection</h1>
       <div className="grid grid-cols-2 mx-auto gap-3">
         <div className="flex flex-col">
+          {/* image 1 */}
           <div className="relative">
             <Image
               src="/collection/collection01.png"
@@ -31,6 +29,7 @@ const Collection = async () => {
             </Button>
           </div>
 
+          {/* image 2 */}
           <div className="relative">
             <Image
               alt="landing"
@@ -48,13 +47,15 @@ const Collection = async () => {
           </div>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-3">
+          {/* image 3 */}
           <div className="relative">
             <Image
-              fill
               alt="landing"
               src="/collection/collection03.png"
-              // className="md:w-96 h-auto lg:w-96 xl:w-96 "
+              width={152}
+              height={253}
+              className="md:w-96 h-auto lg:w-96 xl:w-96 "
             />
             <Button
               variant="transparent"
@@ -63,6 +64,8 @@ const Collection = async () => {
               Dresses
             </Button>
           </div>
+
+          {/* image 4 */}
           <div className="relative">
             <Image
               src="/collection/collection04.jpg"
@@ -84,4 +87,4 @@ const Collection = async () => {
   )
 }
 
-export default Collection
+export default CollectionSection
