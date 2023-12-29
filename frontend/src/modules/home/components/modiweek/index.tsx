@@ -4,27 +4,54 @@ import { FaRegHeart } from "react-icons/fa"
 import Medusa from "@medusajs/medusa-js"
 
 const Modiweek = () => {
- 
-
+  const data = [
+    {
+      title: "Monday",
+      image: "/modiweek/modi01.jpg",
+    },
+    {
+      title: "Tuesday",
+      image: "/modiweek/modi03.jpg",
+    },
+    {
+      title: "Wednesday",
+      image: "/modiweek/modi06.png",
+    },
+    {
+      title: "Thursday",
+      image: "/modiweek/modi04.png",
+    },
+    {
+      title: "Friday",
+      image: "/modiweek/modi03.jpg",
+    },
+    {
+      title: "Saturday",
+      image: "/modiweek/modi06.png",
+    },
+    {
+      title: "Sunday",
+      image: "/modiweek/modi01.jpg",
+    },
+  ]
   return (
-    <div className="px-8">
-      <div className="container mx-auto my-8">
+    <div>
+      <div className="container mx-auto pb-8">
         <h1 className="text-xl-semi">Modiweek</h1>
-        <div className="grid grid-cols-2 gap-x-4">
-          <div className="relative">
-            <PlaceholderImage width={152} height={243} />
-            <p className="text-base-semi">Sunday</p>
-            <div className="absolute top-2 right-2">
+        <div className="flex flex-cols-7 flex-wrap gap-4">
+          {data &&
+            data.length > 0 &&
+            data.map((item, index) => {
+              return (
+                <div className="relative overflow-hidden" key={index}>
+                  <Image src={item.image} width={288} height={426} alt="modi" />
+                  <p className="text-base-semi">{item.title}</p>
+                  {/* <div className="absolute top-2 right-2">
               <FaRegHeart size={20} />
-            </div>
-          </div>
-          <div className="relative">
-            <PlaceholderImage width={152} height={243} />
-            <p className="text-base-semi">Sunday</p>
-            <div className="absolute top-2 right-2">
-              <FaRegHeart size={20} />
-            </div>
-          </div>
+            </div> */}
+                </div>
+              )
+            })}
         </div>
       </div>
 

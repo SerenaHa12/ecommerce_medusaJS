@@ -5,7 +5,12 @@ import Modiweek from "@modules/home/components/modiweek"
 import { Metadata } from "next"
 import BestSellers from "@modules/home/components/bestseller"
 import medusaRequest from "@lib/medusa-fetch"
-
+import { getCollectionsList } from "@lib/data"
+import { Suspense } from "react"
+import FeaturedProducts from "@modules/home/components/featured-products"
+import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-homepage-products"
+import Link from "next/link"
+import CollectionSection from "@modules/home/components/collection"
 export const metadata: Metadata = {
   title: "Medusa Next.js Starter Template",
   description:
@@ -13,12 +18,21 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
+  const { collections, count } = await getCollectionsList(0, 1)
   return (
     <div className="flex flex-col gap-y-8">
       <Hero />
       <div className="container mx-auto mb-16 my-8 px-8">
-        <BestSellers />
-        {/* <Collection /> */}
+        <div className="flex justify-between">
+          <h1 className="text-xl-semi pt-8">Best Sellers</h1>
+          <Link href="/store" className="text-base-regular cursor-pointer pt-8">
+            View All
+          </Link>
+        </div>
+        <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
+          <FeaturedProducts collections={collections} />
+        </Suspense>
+        <CollectionSection />
       </div>
       <Modiweek />
     </div>
