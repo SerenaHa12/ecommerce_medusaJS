@@ -12,7 +12,7 @@ import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-hom
 import Link from "next/link"
 import CollectionSection from "@modules/home/components/collection"
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "Modimal",
   description:
     "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
 }

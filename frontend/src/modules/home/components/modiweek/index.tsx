@@ -36,7 +36,7 @@ const Modiweek = () => {
   ]
   return (
     <div>
-      <div className="container mx-auto pb-8">
+      <div className="container mx-auto pb-8 px-8">
         <h1 className="text-xl-semi">Modiweek</h1>
         <div className="flex flex-cols-7 flex-wrap gap-4">
           {data &&

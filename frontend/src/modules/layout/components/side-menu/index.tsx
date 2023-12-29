@@ -6,11 +6,11 @@ import { Text, clx, useToggleState } from "@medusajs/ui"
 import CountrySelect from "../country-select"
 
 const SideMenuItems = {
-  "Collection": "/collection",
-  "New In" : "/newin",
-  "Modiweek": "/modiweek",
+  Collection: "/collection",
+  "New In": "/newin",
+  Modiweek: "/modiweek",
   "Plus Size": "/plussize",
-  "Sustainability" : "/sustainability",
+  Sustainability: "/sustainability",
 }
 
 const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
@@ -95,7 +95,7 @@ const SideMenu = ({ searchModalOpen }: { searchModalOpen: () => void }) => {
                         />
                       </div>
                       <Text className="flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} Medusa Store. All rights
+                        © {new Date().getFullYear()} Modimal Store. All rights
                         reserved.
                       </Text>
                     </div>
