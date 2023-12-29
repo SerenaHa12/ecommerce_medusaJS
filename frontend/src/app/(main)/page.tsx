@@ -17,7 +17,7 @@ export default async function Home() {
     <div className="flex flex-col gap-y-8">
       <Hero />
       <div className="container mx-auto mb-16 my-8 px-8">
-        {/* <BestSellers /> */}
+        <BestSellers />
         {/* <Collection /> */}
       </div>
       <Modiweek />

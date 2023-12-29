@@ -4,6 +4,7 @@ import { Github } from "@medusajs/icons"
 import { MEDUSA_BACKEND_URL } from "@lib/config"
 import BestSellers from "../bestseller"
 import Collection from "../collection"
+import Link from "next/link"
 const Hero = () => {
   return (
     <div className="h-[75vh] w-full relative">
@@ -12,13 +13,15 @@ const Hero = () => {
           Elegance In Simplicity,
           <br /> Earth’s Harmony
         </div>
-        <Button
-          variant="secondary"
-          size="large"
-          className="absolute rounded-none bottom-4 left-6 bg-white text-center text-sm lg:px-10 xl:bottom-20"
-        >
-          New In
-        </Button>
+        <Link href="/store">
+          <Button
+            variant="secondary"
+            size="large"
+            className="absolute rounded-none bottom-4 left-6 bg-white text-center text-sm lg:px-10 xl:bottom-20"
+          >
+            New In
+          </Button>
+        </Link>
       </div>
     </div>
   )
