@@ -1,5 +1,6 @@
 import Providers from "@modules/providers"
 import "styles/globals.css"
+import "slick-carousel/slick/slick.css"
 
 export default function RootLayout({
   children,

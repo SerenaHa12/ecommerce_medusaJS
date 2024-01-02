@@ -1,28 +1,80 @@
-import { Button, Heading } from "@medusajs/ui"
-import InteractiveLink from "@modules/common/components/interactive-link"
-import { Github } from "@medusajs/icons"
-import { MEDUSA_BACKEND_URL } from "@lib/config"
-import BestSellers from "../bestseller"
-import Collection from "../collection"
-import Link from "next/link"
+"use client"
+
+import Slider from "react-slick"
+import BannerText from "./BannerText"
+import Image from "next/image"
+import { PiCaretLeftLight, PiCaretRightLight } from "react-icons/pi"
 const Hero = () => {
-  return (
-    <div className="h-[75vh] w-full relative">
-      <div className="bg-hero w-full h-[600px] xl:h-[700px] bg-no-repeat bg-cover absolute top-0 left-0 bg-center">
-        <div className="absolute bottom-20 xl:bottom-40 left-6 text-black text-xl italic font-normal capitalize">
-          Elegance In Simplicity,
-          <br /> Earth’s Harmony
-        </div>
-        <Link href="/store">
-          <Button
-            variant="secondary"
-            size="large"
-            className="absolute rounded-none bottom-4 left-6 bg-white text-center text-sm lg:px-10 xl:bottom-20"
-          >
-            New In
-          </Button>
-        </Link>
+  const NextArrow = (props: any) => {
+    const { onClick } = props
+    return (
+      <div
+        className="p-3 bg-slate-100 hover:text-orange-600 hover:bg-white cursor-pointer duration-200 rounded-full text-2xl flex items-center justify-center z-20 absolute left-2 top-1/2"
+        onClick={onClick}
+      >
+        <PiCaretLeftLight />
       </div>
+    )
+  }
+
+  const PrevArrow = (props: any) => {
+    const { onClick } = props
+    return (
+      <div
+        className="p-3 bg-slate-100 hover:text-orange-600 hover:bg-white cursor-pointer duration-200 rounded-full text-2xl flex items-center justify-center z-20 absolute right-2 top-1/2"
+        onClick={onClick}
+      >
+        <PiCaretRightLight />
+      </div>
+    )
+  }
+
+  var settings = {
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  }
+  return (
+    <div className="relative">
+      <Slider {...settings}>
+        <div className="w-full h-full relative">
+          <Image
+            src="/bannerone.jpg"
+            alt="bannerone"
+            width={2000}
+            height={2000}
+            className="w-full h-full relative"
+            priority
+          />
+          <BannerText title="Outware Picks" />
+        </div>
+        <div className="w-full h-full relative">
+          <Image
+            src="/bannertwo.jpg"
+            alt="bannertwo"
+            className="w-full h-full relative"
+            width={2000}
+            height={2000}
+          />
+          <BannerText title="Seasonal Offers" />
+        </div>
+        <div className="w-full h-full relative">
+          <Image
+            src="/bannerthree.jpg"
+            alt="bannerthree"
+            className="w-full h-full relative"
+            width={2000}
+            height={2000}
+          />
+          <BannerText title="Best for men" />
+        </div>
+      </Slider>
+      <div className="absolute w-full h-44 bg-gradient-to-t from-gray-100 to-transparent bottom-0 left-0 z-10" />
     </div>
   )
 }
