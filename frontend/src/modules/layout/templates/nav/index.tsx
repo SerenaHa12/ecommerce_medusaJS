@@ -12,8 +12,7 @@ import Link from "next/link"
 import Search from "@modules/common/icons/search"
 import User from "@modules/common/icons/user"
 import Image from "next/image"
-import Gift from "@modules/common/icons/gift"
-import { FaRegHeart } from "react-icons/fa"
+import Input from "@modules/common/components/input"
 
 const Nav = () => {
   const { toggle } = useMobileMenu()
@@ -29,61 +28,30 @@ const Nav = () => {
   } = useMobileMenu()
   const setScreenSearch = () => setScreen("search")
 
-
   return (
-    <div className="sticky top-0 inset-x-0 z-50 group">
-      <div className="bg-primary w-full p-2 text-center text-[10px] lg:text-sm 2xl:text-sm xl:text-sm text-white items-center my-auto">
-        Enjoy Free Shipping On All Orders
-      </div>
-      <header className="relative h-16 px-8 mx-auto border-b duration-200 bg-white border-ui-border-base">
-        <nav className="txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
-          <div className="flex-1 basis-0 h-full flex items-center lg:hidden gap-x-2">
-            {/* menu */}
-            <div className="block small:hidden">
-              <Hamburger setOpen={toggle} />
-            </div>
-
-            {/* search */}
-            <div className="block small:hidden cursor-pointer focus:outline-none ml-2">
-              <Search size={20} />
-            </div>
-
-            <div className="hidden small:hidden">
-              <SideMenu searchModalOpen={searchModalOpen} />
-            </div>
-          </div>
-
-          <div className="flex items-center h-full">
+    <div className="sticky top-0 inset-x-0 z-50 group h-20">
+      <header className="relative h-full px-8 mx-auto duration-200 bg-white">
+        <nav className="flex gap-x-5 items-center justify-between w-full h-full text-small-regular bg-white">
+          <div className="flex items-center h-full ">
             <Link
               href="/"
               className="txt-compact-xlarge-plus hover:text-ui-fg-base"
             >
-              <Image src="/Logo.svg" width={138} height={40} alt="logo" className="md:w-[184px] md:h-[46px] w-[138px] h-[40px]"/>
+              {/* <Image
+                src="/Logo.svg"
+                width={138}
+                height={40}
+                alt="logo"
+                className="md:w-[184px] md:h-[46px] w-[138px] h-[40px]"
+              /> */}
+              <h3 className="text-xl-semi text-zinc-950 hover:text-orange-500">
+                smart.
+              </h3>
             </Link>
           </div>
 
-          <div className="w-full mx-auto hidden lg:block">
-            <div className="mx-auto flex gap-x-8 items-center w-fit justify-around">
-              <Link href="/store">
-                <h3 className="text-large-regular">Collection</h3>
-              </Link>
-              <Link href="/store">
-                <h3 className="text-large-regular">New In</h3>
-              </Link>
-              <Link href="/store">
-                <h3 className="text-large-regular">Modiweek</h3>
-              </Link>
-              <Link href="/store">
-                <h3 className="text-large-regular">Plus Size</h3>
-              </Link>
-              <Link href="/store">
-                <h3 className="text-large-regular">Sustainability</h3>
-              </Link>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
-            <div className="hidden small:flex items-center gap-x-6 h-full">
+          <div className="flex w-full">
+            <div className="w-full bg-white hidden md:flex items-center gap-x-1 border-[1px] border-lightText/50 rounded-full px-4 py-1.5 focus-within:border-orange-600 group">
               {process.env.FEATURE_SEARCH_ENABLED && (
                 <DesktopSearchModal
                   state={searchModalState}
@@ -91,13 +59,23 @@ const Nav = () => {
                   open={searchModalOpen}
                 />
               )}
-              <Link className="hover:text-ui-fg-base" href="/account">
-                <User size={20}/>
-              </Link>
+              <Input
+                type="text"
+                label=""
+                name="search"
+                className="placeholder:text-sm flex-1 outline-none"
+              />
             </div>
-            <div className="block">
-              <FaRegHeart size={20}/>
-            </div>
+          </div>
+
+          <div className="flex items-center gap-x-6 h-full justify-end">
+            <Link className="hover:text-ui-fg-base" href="/account">
+              <div className="flex gap-x-2 items-center border-[1px] border-lightText/50 rounded-full py-2 px-4 bg-[#efeeeb] text-gray-500 hover:bg-white hover:border-orange-600">
+                <User size={20} />
+                <p className="text-base-semi">Login/Register</p>
+              </div>
+            </Link>
+
             <CartDropdown />
           </div>
         </nav>
