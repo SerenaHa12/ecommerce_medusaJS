@@ -11,9 +11,9 @@ const BestSellers = () => {
   return (
     <div>
       <h1 className="text-xl-semi">Best Sellers</h1>
-      {/* <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
-        <FeaturedProducts collections={collections} />
-      </Suspense> */}
+      {/*  */}
+      {/* <InfiniteProducts params={params} /> */}
+      {/* <ProductItem /> */}
     </div>
   )
 }

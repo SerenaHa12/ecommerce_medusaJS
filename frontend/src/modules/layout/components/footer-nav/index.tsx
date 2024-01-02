@@ -19,7 +19,7 @@ const FooterNav = () => {
             smart.
           </h3>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa in
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa i
             sint incidunt, minima quos voluptates, nobis autem laborum earum est
             pariatur aperiam. Delectus consectetur maxime quidem veniam,
             corporis.
