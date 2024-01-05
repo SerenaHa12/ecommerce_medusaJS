@@ -43,7 +43,7 @@ const Register = () => {
   })
 
   return (
-    <div className="bg-gray-100 p-10 rounded-lg">
+    <div className="bg-slate-100 p-10 rounded-lg">
       <div className="max-w-sm flex flex-col items-center">
         {isSubmitting && (
           <div className="z-10 fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
@@ -57,12 +57,12 @@ const Register = () => {
           </div>
           <div className="mb-3">
             <button
-              className="font-bold text-emerald-500"
+              className="font-bold text-slate-400 hover:text-green-600"
               onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
             >
               LOG IN
             </button>
-            <span className="p-2">|</span>
+            <span className="p-2 text-light text-slate-300">|</span>
             <span className="font-bold underline">REGISTER</span>
           </div>
           <form className="w-full flex flex-col" onSubmit={onSubmit}>

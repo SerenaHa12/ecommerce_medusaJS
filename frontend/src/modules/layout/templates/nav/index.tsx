@@ -30,7 +30,7 @@ const Nav = () => {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group h-20">
-      <header className="relative h-full px-8 mx-auto duration-200 bg-white">
+      <header className="relative z-50 h-full px-8 mx-auto duration-200 bg-white">
         <nav className="flex gap-x-5 items-center justify-between w-full h-full text-small-regular bg-white">
           <div className="flex items-center h-full ">
             <Link

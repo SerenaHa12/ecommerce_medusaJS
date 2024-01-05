@@ -102,9 +102,12 @@ const FooterNav = () => {
             <li className="hover:text-orange-500 cursor-pointer duration-200">
               Newsletter
             </li>
-            <li className="hover:text-orange-500 cursor-pointer duration-200">
-              Contact
-            </li>
+            <Link href={"/contact-us"}>
+              {" "}
+              <li className="hover:text-orange-500 cursor-pointer duration-200">
+                Contact-us
+              </li>
+            </Link>
           </ul>
         </div>
         <div>

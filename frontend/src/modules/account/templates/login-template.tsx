@@ -5,6 +5,7 @@ import Register from "@modules/account/components/register"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import Login from "../components/login"
+import Image from "next/image"
 
 const LoginTemplate = () => {
   const { loginView, customer, retrievingCustomer } = useAccount()
@@ -19,9 +20,27 @@ const LoginTemplate = () => {
   }, [customer, retrievingCustomer, router])
 
   return (
-    <div className="w-full flex justify-center px-8 py-12">
-      {currentView === "sign-in" ? <Login /> : <Register />}
-    </div>
+    <>
+      <div>
+        {" "}
+        <div className="relative ">
+          {" "}
+          <div className=" ">
+            {" "}
+            <Image
+              src="/login.jpg"
+              alt="login"
+              className="w-full h-full relative"
+              width={2000}
+              height={2000}
+            />
+          </div>
+          <div className="w-full flex justify-center px-8 py-12 absolute z-10 top-0">
+            {currentView === "sign-in" ? <Login /> : <Register />}
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 

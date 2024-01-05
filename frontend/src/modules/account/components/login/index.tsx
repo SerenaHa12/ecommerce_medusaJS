@@ -52,9 +52,9 @@ const Login = () => {
           </div>
           <div className="mb-3">
             <span className="font-bold underline">LOG IN</span>
-            <span className="p-2">|</span>
+            <span className="p-2 text-light text-slate-300">|</span>
             <button
-              className="font-bold text-emerald-500"
+              className="font-bold text-slate-400 hover:text-green-600"
               onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
             >
               REGISTER
