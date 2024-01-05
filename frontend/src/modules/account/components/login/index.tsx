@@ -6,7 +6,6 @@ import { Spinner } from "@medusajs/icons"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { FieldValues, useForm } from "react-hook-form"
-
 interface SignInCredentials extends FieldValues {
   email: string
   password: string
@@ -39,53 +38,57 @@ const Login = () => {
   })
 
   return (
-    <div className="max-w-sm w-full flex flex-col items-center">
-      {isSubmitting && (
-        <div className="z-10 fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
-          <Spinner />
-        </div>
-      )}
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
-      <p className="text-center text-h3  mb-8">
-        Sign in to access an enhanced shopping experience.
-      </p>
-      <form className="w-full" onSubmit={onSubmit}>
-        <div className="flex text-2xl font-bold flex-col w-full gap-y-2">
-          <Input
-            label="Email"
-            {...register("email", { required: "Email is required" })}
-            autoComplete="email"
-            errors={errors}
-          />
-          <Input
-            label="Password"
-            {...register("password", { required: "Password is required" })}
-            type="password"
-            autoComplete="current-password"
-            errors={errors}
-          />
-        </div>
-        {authError && (
-          <div>
-            <span className="text-rose-500 w-full text-small-regular">
-              These credentials do not match our records
-            </span>
+    <div className="bg-gray-100 p-10 rounded-lg">
+      <div className="max-w-sm flex flex-col items-center">
+        {isSubmitting && (
+          <div className="z-10 fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
+            <Spinner />
           </div>
         )}
-        <Button className="mt-6 w-full" size="large">
-          Enter
-        </Button>
-      </form>
-      <span className="text-center text-gray-700 text-small-regular mt-6">
-        Not a member?{" "}
-        <button
-          onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
-          className="underline"
-        >
-          Join us
-        </button>
-        .
-      </span>
+        <div>
+          <div className="text-3xl uppercase my-2 font-bold">
+            <h1>MY</h1>
+            <h1>ACCOUNT</h1>
+          </div>
+          <div className="mb-3">
+            <span className="font-bold underline">LOG IN</span>
+            <span className="p-2">|</span>
+            <button
+              className="font-bold text-emerald-500"
+              onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
+            >
+              REGISTER
+            </button>
+          </div>
+          <form className="w-96 flex flex-col" onSubmit={onSubmit}>
+            <div className="flex text-2xl font-bold flex-col w-full gap-y-2">
+              <Input
+                label="Email"
+                {...register("email", { required: "Email is required" })}
+                autoComplete="email"
+                errors={errors}
+              />
+              <Input
+                label="Password"
+                {...register("password", { required: "Password is required" })}
+                type="password"
+                autoComplete="current-password"
+                errors={errors}
+              />
+            </div>
+            {authError && (
+              <div>
+                <span className="text-rose-500 w-full text-small-regular">
+                  Bạn đã nhập sai Email hoặc Mật khẩu
+                </span>
+              </div>
+            )}
+            <Button className="mt-6 w-full" size="large">
+              Enter
+            </Button>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
