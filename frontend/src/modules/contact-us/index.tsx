@@ -4,32 +4,30 @@ import { MdOutlineEmail } from "react-icons/md"
 const ContactUS = () => {
   return (
     <>
-      <div className="content-container mb-20 flex flex-col gap-10">
-        <div className="flex gap-5 mt-10 leading-8 text-lg">
+      <div className="content-container mb-20">
+        <div className="flex gap-5 text-typograpy">
           <div className="text-[#748C70]">Home</div>
-          <div className="text-[#748C70]">/</div>
-          <div className="text-[#0C0C0C]">Contact Us</div>
+          <div>/</div>
+          <div>Contact Us</div>
         </div>
-        <div className="text-[32px] font-semibold leading-[45px] ">
-          Contact Us
-        </div>
-        <div className="bg-[#F0F2EF] flex flex-col gap-y-4 p-3 text-base font-normal">
+        <div className="text-h3">Contact Us</div>
+        <div className="bg-[#F0F2EF] flex flex-col gap-y-4 p-3">
           <p>
-            We Always Love Hearing From Our Customers! Please Do Not Hesitate To
-            Contact Us Should You Have Any Questions Regarding Our Products And
-            Sizing Recommendations Or Inquiries About Your Current Order.
+            We always love hearing from our customers! Please do not hesitate to
+            contact us should you have any questions regarding our products and
+            sizing recommendations or inquiries about your current order.
           </p>
           <p>
-            Contact Our Customer Care Team Through The Contact Form Below, Email
-            Us At Hello@Modimal.Com Or Live Chat With Us Via Our Chat Widget On
-            The Bottom Right Hand Corner Of This Page.
+            Contact our Customer Care team through the contact form below, email
+            us at hello@modimal.com or live chat with us via our chat widget on
+            the bottom right hand corner of this page.
           </p>
-          <p>We Will Aim To Respond To You Within 1-2 Business Days.</p>
+          <p>We will aim to respond to you within 1-2 business days.</p>
         </div>
         <div>
           <div className="flex flex-col gap-y-10 mt-10 max-w-[1020px] mx-auto relative">
-            <div className="text-2xl font-bold">Write Us</div>
-            <div className="text-xl font-bold">Your information</div>
+            <div className="text-h4">Write Us</div>
+            <div className="text-h5">Your information</div>
             <div className=" ">
               <input
                 type="text"
@@ -96,44 +94,48 @@ const ContactUS = () => {
                 I HAVE READ AND UNDERSTOOD THE CONTACT US PRIVACY AND POLICY.
               </label>
             </div>
-            <div className="flex justify-end">
-              <button className="w-[288px]  h-10 bg-[#5A6D57]">Send</button>
+            <div className="absolute bottom-0 right-0">
+              <button className="h-10 my-auto max bg-[#5A6D57]">Send</button>
             </div>
           </div>
-        </div>
-        <div className="flex gap-8">
-          {" "}
-          <div className="text-center items-center mx-auto w-full bg-[#F0F2EF] px-4 py-8 flex flex-col gap-6 ">
-            <div className="flex justify-center">
-              <MdOutlineChat style={{ width: "24px", height: "24px" }} />
+          <div className="flex gap-8 max-md:flex-col mx-auto">
+            {" "}
+            <div className="text-center items-center mx-auto w-full bg-[#F0F2EF] px-4 py-8 flex flex-col gap-6 ">
+              <div className="flex justify-center">
+                <MdOutlineChat style={{ width: "24px", height: "24px" }} />
+              </div>
+              <div className="text-[#0C0C0C] text-lg font-bold">
+                Chat with us
+              </div>
+              <div className="text-[#0C0C0C]">
+                We are here and ready to chat
+              </div>
+              <button className="w-full border border-[#5A6D57] h-10">
+                Start chat
+              </button>
             </div>
-            <div className="text-[#0C0C0C] text-lg font-bold">Chat with us</div>
-            <div className="text-[#0C0C0C]">We are here and ready to chat</div>
-            <button className="w-full border border-[#5A6D57] h-10">
-              Start chat
-            </button>
-          </div>
-          <div className="text-center items-center mx-auto w-full bg-[#F0F2EF] px-4 py-8 flex flex-col gap-6 ">
-            <div className="flex justify-center">
-              <IoCallSharp style={{ width: "24px", height: "24px" }} />
+            <div className="text-center items-center mx-auto w-full bg-[#F0F2EF] px-4 py-8 flex flex-col gap-6 ">
+              <div className="flex justify-center">
+                <IoCallSharp style={{ width: "24px", height: "24px" }} />
+              </div>
+              <div className="text-[#0C0C0C] text-lg font-bold">Call us</div>
+              <div className="text-[#0C0C0C]">Were here to Talk to You</div>
+              <button className="w-full border border-[#5A6D57] h-10">
+                +1(929)460-3208
+              </button>
             </div>
-            <div className="text-[#0C0C0C] text-lg font-bold">Call us</div>
-            <div className="text-[#0C0C0C]">We are here to Talk to You</div>
-            <button className="w-full border border-[#5A6D57] h-10">
-              +1(929)460-3208
-            </button>
-          </div>
-          <div className="text-center items-center mx-auto w-full bg-[#F0F2EF] px-4 py-8 flex flex-col gap-6 ">
-            <div className="flex justify-center">
-              <MdOutlineEmail style={{ width: "24px", height: "24px" }} />
+            <div className="text-center items-center mx-auto w-full bg-[#F0F2EF] px-4 py-8 flex flex-col gap-6 ">
+              <div className="flex justify-center">
+                <MdOutlineEmail style={{ width: "24px", height: "24px" }} />
+              </div>
+              <div className="text-[#0C0C0C] text-lg font-bold">Email Us</div>
+              <div className="text-[#0C0C0C]">
+                You are welcome to send us an email
+              </div>
+              <button className="w-full border border-[#5A6D57] h-10">
+                Send Email
+              </button>
             </div>
-            <div className="text-[#0C0C0C] text-lg font-bold">Email Us</div>
-            <div className="text-[#0C0C0C]">
-              You are welcome to send us an email
-            </div>
-            <button className="w-full border border-[#5A6D57] h-10">
-              Send Email
-            </button>
           </div>
         </div>
       </div>
