@@ -39,7 +39,7 @@ const Login = () => {
   })
 
   return (
-    <div className="max-w-sm w-full flex flex-col items-center">
+    <div className="max-w-sm w-full flex flex-col items-center mt-[100px]">
       {isSubmitting && (
         <div className="z-10 fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
           <Spinner />
