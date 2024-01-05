@@ -1,0 +1,1 @@
+export { designFontSize } from "./designFontSize"
