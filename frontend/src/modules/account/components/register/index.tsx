@@ -43,85 +43,92 @@ const Register = () => {
   })
 
   return (
-    <div className="max-w-sm flex flex-col items-center mt-12">
-      {isSubmitting && (
-        <div className="z-10 fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
-          <Spinner />
-        </div>
-      )}
-      <h1 className="text-large-semi uppercase mb-6">Become a Store Member</h1>
-      <p className="text-center text-base-regular text-gray-700 mb-4">
-        Create your Store Member profile, and get access to an enhanced shopping
-        experience.
-      </p>
-      <form className="w-full flex flex-col" onSubmit={onSubmit}>
-        <div className="flex flex-col w-full gap-y-2">
-          <Input
-            label="First name"
-            {...register("first_name", { required: "First name is required" })}
-            autoComplete="given-name"
-            errors={errors}
-          />
-          <Input
-            label="Last name"
-            {...register("last_name", { required: "Last name is required" })}
-            autoComplete="family-name"
-            errors={errors}
-          />
-          <Input
-            label="Email"
-            {...register("email", { required: "Email is required" })}
-            autoComplete="email"
-            errors={errors}
-          />
-          <Input
-            label="Phone"
-            {...register("phone")}
-            autoComplete="tel"
-            errors={errors}
-          />
-          <Input
-            label="Password"
-            {...register("password", {
-              required: "Password is required",
-            })}
-            type="password"
-            autoComplete="new-password"
-            errors={errors}
-          />
-        </div>
-        {authError && (
-          <div>
-            <span className="text-rose-500 w-full text-small-regular">
-              These credentials do not match our records
-            </span>
+    <div className="bg-slate-100 p-10 rounded-lg">
+      <div className="max-w-sm flex flex-col items-center">
+        {isSubmitting && (
+          <div className="z-10 fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
+            <Spinner />
           </div>
         )}
-        <span className="text-center text-gray-700 text-small-regular mt-6">
-          By creating an account, you agree to Store&apos;s{" "}
-          <Link href="/content/privacy-policy" className="underline">
-            Privacy Policy
-          </Link>{" "}
-          and{" "}
-          <Link href="/content/terms-of-use" className="underline">
-            Terms of Use
-          </Link>
-          .
-        </span>
-        <Button className="mt-6 w-full" size="xlarge">
-          Join
-        </Button>
-      </form>
-      <span className="text-center text-gray-700 text-small-regular mt-6">
-        Already a member?{" "}
-        <button
-          onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
-          className="underline"
-        >
-          Sign in
-        </button>
-        .
-      </span>
+        <div>
+          <div className="text-3xl uppercase my-2 font-bold">
+            <h1>WELCOME</h1>
+            <h1>SIGN UP</h1>
+          </div>
+          <div className="mb-3">
+            <button
+              className="font-bold text-slate-400 hover:text-green-600"
+              onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
+            >
+              LOG IN
+            </button>
+            <span className="p-2 text-light text-slate-300">|</span>
+            <span className="font-bold underline">REGISTER</span>
+          </div>
+          <form className="w-full flex flex-col" onSubmit={onSubmit}>
+            <div className="flex flex-col w-full gap-y-2">
+              <Input
+                label="First name"
+                {...register("first_name", {
+                  required: "First name is required",
+                })}
+                autoComplete="given-name"
+                errors={errors}
+              />
+              <Input
+                label="Last name"
+                {...register("last_name", {
+                  required: "Last name is required",
+                })}
+                autoComplete="family-name"
+                errors={errors}
+              />
+              <Input
+                label="Email"
+                {...register("email", { required: "Email is required" })}
+                autoComplete="email"
+                errors={errors}
+              />
+              <Input
+                label="Phone"
+                {...register("phone")}
+                autoComplete="tel"
+                errors={errors}
+              />
+              <Input
+                label="Password"
+                {...register("password", {
+                  required: "Password is required",
+                })}
+                type="password"
+                autoComplete="new-password"
+                errors={errors}
+              />
+            </div>
+            {authError && (
+              <div>
+                <span className="text-rose-500 w-full text-small-regular">
+                  These credentials do not match our records
+                </span>
+              </div>
+            )}
+            <span className="text-center text-gray-700 text-small-regular mt-6">
+              By creating an account, you agree to Medusa Store&apos;s{" "}
+              <Link href="/content/privacy-policy" className="underline">
+                Privacy Policy
+              </Link>{" "}
+              and{" "}
+              <Link href="/content/terms-of-use" className="underline">
+                Terms of Use
+              </Link>
+              .
+            </span>
+            <Button className="mt-6 w-full" size="xlarge">
+              Join
+            </Button>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
