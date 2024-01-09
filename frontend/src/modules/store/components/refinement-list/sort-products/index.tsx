@@ -64,18 +64,13 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
   }
   const [isDropdownOpen1, setDropdownOpen1] = useState(false)
   const [isDropdownOpen2, setDropdownOpen2] = useState(false)
-
   const [isDropdownOpen3, setDropdownOpen3] = useState(false)
-
   const [isDropdownOpen4, setDropdownOpen4] = useState(false)
-
   const [isDropdownOpen5, setDropdownOpen5] = useState(false)
 
   const [selectedSort1, setSelectedSort1] = useState(null)
   const [selectedSort2, setSelectedSort2] = useState(null)
-
   const [selectedSort3, setSelectedSort3] = useState(null)
-
   const [selectedSort4, setSelectedSort4] = useState(null)
   const [selectedSort5, setSelectedSort5] = useState(null)
 
@@ -107,7 +102,9 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
   const handleSortSelect4 = (sortOption: any) => {
     setSelectedSort4(sortOption)
   }
-
+  const handleSortSelect5 = (sortOption: any) => {
+    setSelectedSort5(sortOption)
+  }
   const [clearFiltersActive, setClearFiltersActive] = useState(false)
   const [appliedFiltersActive, setAppliedFiltersActive] = useState(false)
 
@@ -274,12 +271,12 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
                 {sortOptions3.map((option) => (
                   <div
                     key={option.value}
-                    onClick={() => handleSortSelect3(option.value)}
+                    onClick={() => handleSortSelect4(option.value)}
                     className=""
                   >
                     <div
                       className="flex"
-                      onClick={() => handleSortSelect3("sort_by_minus")}
+                      onClick={() => handleSortSelect4("sort_by_minus")}
                     >
                       {" "}
                       <div className="px-2 py-1 cursor-pointer flex ">
@@ -317,12 +314,12 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
                 {sortOptions4.map((option) => (
                   <div
                     key={option.value}
-                    onClick={() => handleSortSelect4(option.value)}
+                    onClick={() => handleSortSelect5(option.value)}
                     className=""
                   >
                     <div
                       className="flex"
-                      onClick={() => handleSortSelect4("sort_by_minus")}
+                      onClick={() => handleSortSelect5("sort_by_minus")}
                     >
                       {" "}
                       <div className="px-2 py-1 cursor-pointer flex ">
