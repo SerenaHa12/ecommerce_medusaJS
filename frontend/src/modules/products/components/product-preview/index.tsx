@@ -7,6 +7,7 @@ import Thumbnail from "../thumbnail"
 import { Text } from "@medusajs/ui"
 import { FaRegHeart } from "react-icons/fa"
 import { IoStar, IoStarSharp } from "react-icons/io5"
+import { AiOutlineShoppingCart } from "react-icons/ai"
 const ProductPreview = ({
   title,
   handle,
@@ -71,10 +72,11 @@ const ProductPreview = ({
             </div>
             <div className="flex justify-between mt-5 w-full">
               {" "}
-              <div className="flex gap-2">
-                <div className="w-6 h-6 rounded-full bg-black"></div>
-                <div className="w-6 h-6 rounded-full bg-[#909225]"></div>
-                <div className="w-6 h-6 rounded-full bg-[#CA6D29]"></div>
+              <div className="flex gap-2 group-hover:text-orange-600">
+                <div className="my-auto">
+                  <AiOutlineShoppingCart />
+                </div>
+                <button>Add to cart</button>
               </div>
               <div className="flex gap-2 text-yellow-400 my-auto">
                 <IoStar />

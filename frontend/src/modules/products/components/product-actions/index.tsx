@@ -28,18 +28,11 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
   // }, [pri
   return (
     <div className="flex flex-col gap-y-2 w-full">
-      <div className="flex flex-col gap-8  max-md:text-center max-md:items-center">
+      <div className="flex flex-col gap-8 mb-32  max-md:text-center max-md:items-center">
         <div className="text-[32px] font-semibold">Wrap Top</div>
         <div>
           Versatile And Universally Flattering, Our Wrap Blouse Can Be Tied,
           Draped, Snapped And Wrapped Multiple Ways.
-        </div>
-        <div className="flex flex-col gap-3 mb-20">
-          <div>Colors</div>
-          <div className="flex gap-3">
-            <div className="w-4 h-4 rounded-full bg-red-500" />
-            <div className="w-4 h-4 rounded-full bg-white border border-black" />
-          </div>
         </div>
       </div>
       <div>
