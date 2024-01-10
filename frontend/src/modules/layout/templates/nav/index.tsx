@@ -50,7 +50,7 @@ const Nav = () => {
             </Link>
           </div>
 
-          <div className="flex w-full">
+          <div className="flex w-80">
             <div className="w-full bg-white hidden md:flex items-center gap-x-1 border-[1px] border-lightText/50 rounded-full px-4 py-1.5 focus-within:border-orange-600 group">
               {process.env.FEATURE_SEARCH_ENABLED && (
                 <DesktopSearchModal
