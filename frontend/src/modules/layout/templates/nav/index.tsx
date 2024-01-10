@@ -13,6 +13,7 @@ import Search from "@modules/common/icons/search"
 import User from "@modules/common/icons/user"
 import Image from "next/image"
 import Input from "@modules/common/components/input"
+import { useAccount } from "@lib/context/account-context"
 
 const Nav = () => {
   const { toggle } = useMobileMenu()
