@@ -8,7 +8,7 @@ interface Props {
 const BannerText = ({ title }: Props) => {
   return (
     <div className="hidden lg:inline-block absolute top-0 left-0 w-full h-full">
-      <Container className="flex h-full flex-col gap-y-6 justify-center">
+      <Container className="flex h-full flex-col gap-y-6 justify-center px-[100px]">
         <motion.h2
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
