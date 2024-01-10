@@ -4,6 +4,7 @@ import Slider from "react-slick"
 import BannerText from "./BannerText"
 import Image from "next/image"
 import { PiCaretLeftLight, PiCaretRightLight } from "react-icons/pi"
+
 const Hero = () => {
   const NextArrow = (props: any) => {
     const { onClick } = props

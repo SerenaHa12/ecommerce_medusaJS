@@ -14,6 +14,8 @@ import User from "@modules/common/icons/user"
 import Image from "next/image"
 import Input from "@modules/common/components/input"
 import { useAccount } from "@lib/context/account-context"
+import HeaderTop from "./HeaderTop"
+import { usePathname } from "next/navigation"
 
 const Nav = () => {
   const { toggle } = useMobileMenu()
@@ -29,60 +31,72 @@ const Nav = () => {
   } = useMobileMenu()
   const setScreenSearch = () => setScreen("search")
 
+  // path name store -> show search
+  const pathname = usePathname()
+  const isStorePage = pathname === "/store"
+  console.log(isStorePage)
+
   return (
-    <div className="sticky top-0 inset-x-0 z-50 group h-20">
-      <header className="relative z-50 h-full px-8 mx-auto duration-200 bg-white">
-        <nav className="flex gap-x-5 items-center justify-between w-full h-full text-small-regular bg-white">
-          <div className="flex items-center h-full ">
-            <Link
-              href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base"
-            >
-              {/* <Image
+    <>
+      <HeaderTop />
+      <div className="sticky top-0 inset-x-0 z-50 group h-20">
+        <header className="relative z-50 h-full px-8 mx-auto duration-200 bg-white">
+          <nav className="flex gap-x-5 items-center justify-between w-full h-full text-small-regular bg-white">
+            <div className="flex items-center h-full ">
+              <Link
+                href="/"
+                className="txt-compact-xlarge-plus hover:text-ui-fg-base"
+              >
+                {/* <Image
                 src="/Logo.svg"
                 width={138}
                 height={40}
                 alt="logo"
                 className="md:w-[184px] md:h-[46px] w-[138px] h-[40px]"
               /> */}
-              <h3 className="text-xl-semi text-zinc-950 hover:text-orange-500">
-                smart.
-              </h3>
-            </Link>
-          </div>
-
-          <div className="flex w-80">
-            <div className="w-full bg-white hidden md:flex items-center gap-x-1 border-[1px] border-lightText/50 rounded-full px-4 py-1.5 focus-within:border-orange-600 group">
-              {process.env.FEATURE_SEARCH_ENABLED && (
-                <DesktopSearchModal
-                  state={searchModalState}
-                  close={searchModalClose}
-                  open={searchModalOpen}
-                />
-              )}
-              <Input
-                type="text"
-                label=""
-                name="search"
-                className="placeholder:text-sm flex-1 outline-none"
-              />
+                <h3 className="text-xl-semi text-zinc-950 hover:text-orange-500">
+                  smart.
+                </h3>
+              </Link>
             </div>
-          </div>
 
-          <div className="flex items-center gap-x-6 h-full justify-end">
-            <Link className="hover:text-ui-fg-base" href="/account">
-              <div className="flex gap-x-2 items-center border-[1px] border-lightText/50 rounded-full py-2 px-4 bg-[#efeeeb] text-gray-500 hover:bg-white hover:border-orange-600">
-                <User size={20} />
-                <p className="text-base-semi">Login/Register</p>
-              </div>
-            </Link>
+            <div className="flex w-80">
+              {/* <div
+                className={`w-full ${
+                  isStorePage ? "bg-white" : "hidden md:flex"
+                } items-center gap-x-1 border-[1px] border-lightText/50 rounded-full px-4 py-1.5 focus-within:border-orange-600 group`}
+              >
+                {process.env.FEATURE_SEARCH_ENABLED && (
+                  <DesktopSearchModal
+                    state={searchModalState}
+                    close={searchModalClose}
+                    open={searchModalOpen}
+                  />
+                )}
+                <Input
+                  type="text"
+                  label=""
+                  name="search"
+                  className="placeholder:text-sm flex-1 outline-none"
+                />
+              </div> */}
+            </div>
 
-            <CartDropdown />
-          </div>
-        </nav>
-        <MobileMenu />
-      </header>
-    </div>
+            <div className="flex items-center gap-x-6 h-full justify-end">
+              <Link className="hover:text-ui-fg-base" href="/account">
+                <div className="flex gap-x-2 items-center border-[1px] border-lightText/50 rounded-full py-2 px-4 bg-[#efeeeb] text-gray-500 hover:bg-white hover:border-orange-600">
+                  <User size={20} />
+                  <p className="text-base-semi">Login/Register</p>
+                </div>
+              </Link>
+
+              <CartDropdown />
+            </div>
+          </nav>
+          <MobileMenu />
+        </header>
+      </div>
+    </>
   )
 }
 
