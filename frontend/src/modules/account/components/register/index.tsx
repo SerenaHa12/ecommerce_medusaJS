@@ -108,7 +108,7 @@ const Register = () => {
             {authError && (
               <div>
                 <span className="text-rose-500 w-full text-small-regular">
-                  These credentials do not match our records
+                  Email bạn sử dụng đã tồn tại
                 </span>
               </div>
             )}

@@ -16,6 +16,7 @@ import Input from "@modules/common/components/input"
 import { useAccount } from "@lib/context/account-context"
 import HeaderTop from "./HeaderTop"
 import { usePathname } from "next/navigation"
+import DropdownAccount from "@modules/layout/components/account-dropdown"
 
 const Nav = () => {
   const { toggle } = useMobileMenu()
@@ -83,12 +84,7 @@ const Nav = () => {
             </div>
 
             <div className="flex items-center gap-x-6 h-full justify-end">
-              <Link className="hover:text-ui-fg-base" href="/account">
-                <div className="flex gap-x-2 items-center border-[1px] border-lightText/50 rounded-full py-2 px-4 bg-[#efeeeb] text-gray-500 hover:bg-white hover:border-orange-600">
-                  <User size={20} />
-                  <p className="text-base-semi">Login/Register</p>
-                </div>
-              </Link>
+              <DropdownAccount />
 
               <CartDropdown />
             </div>
