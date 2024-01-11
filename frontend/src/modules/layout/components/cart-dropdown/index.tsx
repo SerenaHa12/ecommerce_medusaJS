@@ -22,10 +22,10 @@ const CartDropdown = () => {
     <div className="h-full z-50" onMouseEnter={open} onMouseLeave={close}>
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
-          <Link
-            className="hover:text-ui-fg-base flex"
-            href="/cart"
-          ><Cart size={24} />{` (${totalItems})`}</Link>
+          <Link className="hover:text-ui-fg-base flex" href="/cart">
+            <Cart size={20} />
+            {` (${totalItems})`}
+          </Link>
         </Popover.Button>
         <Transition
           show={state}
