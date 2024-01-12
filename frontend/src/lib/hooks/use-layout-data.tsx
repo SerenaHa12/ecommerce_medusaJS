@@ -55,7 +55,7 @@ const fetchFeaturedProducts = async (
   const products: PricedProduct[] = await getProductsList({
     pageParam: 0,
     queryParams: {
-      limit: 3,
+      limit: 4,
       cart_id: cartId,
       region_id: region.id,
       currency_code: region.currency_code,
