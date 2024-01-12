@@ -1,11 +1,7 @@
 "use client"
-
 import { useFeaturedProductsQuery } from "@lib/hooks/use-layout-data"
 import { ProductCollection } from "@medusajs/medusa"
 import ProductPreview from "@modules/products/components/product-preview"
-import { Text } from "@medusajs/ui"
-import InteractiveLink from "@modules/common/components/interactive-link"
-import Link from "next/link"
 const ProductRail = ({ collection }: { collection: ProductCollection }) => {
   const { data } = useFeaturedProductsQuery(collection.id)
 
