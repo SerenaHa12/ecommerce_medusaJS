@@ -46,9 +46,8 @@ const Login = () => {
           </div>
         )}
         <div>
-          <div className="text-3xl uppercase my-2 font-bold">
-            <h1>MY</h1>
-            <h1>ACCOUNT</h1>
+          <div className="text-3xl uppercase my-2 font-bold text-center">
+            <h1>MY ACCOUNT</h1>
           </div>
           <div className="mb-3">
             <span className="font-bold underline">LOG IN</span>

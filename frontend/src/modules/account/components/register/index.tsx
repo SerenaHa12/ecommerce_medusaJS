@@ -51,8 +51,7 @@ const Register = () => {
           </div>
         )}
         <div>
-          <div className="text-3xl uppercase my-2 font-bold">
-            <h1>WELCOME</h1>
+          <div className="text-3xl uppercase my-2 font-bold text-center">
             <h1>SIGN UP</h1>
           </div>
           <div className="mb-3">
