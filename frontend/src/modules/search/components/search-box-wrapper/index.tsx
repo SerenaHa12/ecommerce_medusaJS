@@ -53,7 +53,7 @@ const SearchBoxWrapper = ({
 
   const onSubmit = () => {
     if (value) {
-      router.replace(`/products/${value}`)
+      router.replace(`/search/${value}`)
     }
   }
 

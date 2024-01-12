@@ -61,8 +61,8 @@ const Nav = () => {
               </Link>
             </div>
 
-            <div className="flex w-80">
-              {/* <div
+            {/* <div className="flex w-80">
+              <div
                 className={`w-full ${
                   isStorePage ? "bg-white" : "hidden md:flex"
                 } items-center gap-x-1 border-[1px] border-lightText/50 rounded-full px-4 py-1.5 focus-within:border-orange-600 group`}
@@ -80,8 +80,8 @@ const Nav = () => {
                   name="search"
                   className="placeholder:text-sm flex-1 outline-none"
                 />
-              </div> */}
-            </div>
+              </div>
+            </div> */}
 
             <div className="flex items-center gap-x-6 h-full justify-end">
               <DropdownAccount />

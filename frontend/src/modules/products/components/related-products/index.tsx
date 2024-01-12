@@ -69,7 +69,7 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
       <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-3 gap-x-6 gap-y-8">
         {previews.slice(0, 3).map((p) => (
           <li key={p.id}>
-            <ProductPreview {...p} />
+            <ProductPreview searchValue={""} {...p} />
           </li>
         ))}
 

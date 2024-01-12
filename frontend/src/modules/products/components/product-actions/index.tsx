@@ -101,12 +101,12 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
           </div>
           <div>Easy Return</div>
         </div>
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <div>
             <CiHeart className="w-5 h-5" />
           </div>
           <div>Add To Wish List</div>
-        </div>
+        </div> */}
       </div>
       <div className="border-2 border-[#ADADAD] px-4 py-8 bg-[#F0F2EF] flex flex-col gap-8">
         <div className="pb-4 text-xl font-normal leading-9 border-b border-[#ADADAD]">
