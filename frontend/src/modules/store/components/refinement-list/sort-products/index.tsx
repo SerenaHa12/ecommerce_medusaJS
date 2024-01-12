@@ -123,7 +123,7 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
     <>
       {" "}
       <div className="md:ml-10 mx-auto mt-16">
-        <div className="flex w-[392px] flex-col gap-4 mx-auto ">
+        <div className="flex max-w-[350px] w-full flex-col gap-4 mx-auto ">
           {" "}
           <div className=" ">
             {isDropdownOpen1 ? (

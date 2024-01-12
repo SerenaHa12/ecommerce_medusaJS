@@ -67,7 +67,7 @@ const InfiniteProducts = ({ params, sortBy }: InfiniteProductsType) => {
   return (
     <>
       <div className="flex-1 max-w-[1440px] px-10">
-        <div className="mb-10  w-80 max-md:relative -top-[500px] max-md:mx-auto">
+        <div className="mb-10 md:ml-32  max-w-[320px] w-full max-md:relative -top-[500px] max-md:mx-auto">
           <Input
             type="text"
             name="search"
@@ -78,7 +78,7 @@ const InfiniteProducts = ({ params, sortBy }: InfiniteProductsType) => {
             // onClick={handleSearch}
           />
         </div>
-        <ul className="grid grid-cols-2 max-md:grid-cols-1 max-md:w-full small:grid-cols-2 medium:grid-cols-2 gap-x-6 gap-y-8 flex-1">
+        <ul className="grid grid-cols-2 max-md:grid-cols-1 max-md:w-full small:grid-cols-3 medium:grid-cols-3 gap-x-6 gap-y-8 flex-1">
           {filteredPreviews.length > 0 ? (
             filteredPreviews.map((p) => (
               <li key={p.id}>

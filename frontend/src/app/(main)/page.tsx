@@ -25,7 +25,9 @@ export default async function Home() {
       <main>
         <Hero />
         <div className="container mx-auto px-8 mb-8 pt-16">
-          <h2 className="font-medium text-2xl pb-4">New Products</h2>
+          <h2 className="font-medium text-2xl pb-4 text-center">
+            New Products
+          </h2>
           <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
             <FeaturedProducts collections={collections} />
           </Suspense>
