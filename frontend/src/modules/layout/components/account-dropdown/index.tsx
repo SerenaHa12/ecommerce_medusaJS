@@ -1,7 +1,12 @@
 import User from "@modules/common/icons/user"
 import Link from "next/link"
 import { useCallback, useEffect, useState } from "react"
-import { CheckMini, ArrowRightOnRectangle, PencilSquare } from "@medusajs/icons"
+import {
+  CheckMini,
+  ArrowRightOnRectangle,
+  PencilSquare,
+  InformationCircle,
+} from "@medusajs/icons"
 import { DropdownMenu, IconButton } from "@medusajs/ui"
 import { useAccount } from "@lib/context/account-context"
 import Medusa from "@medusajs/medusa-js"
@@ -34,39 +39,44 @@ const DropdownAccount = () => {
     <div className="z-50 flex items-center border-[1px] border-lightText/50 rounded-full bg-slate-100">
       <DropdownMenu>
         <div>
-          {" "}
-          <DropdownMenu.Trigger asChild>
-            <IconButton>
-              <User size={20} />
-            </IconButton>
-          </DropdownMenu.Trigger>
-        </div>
-        <div>
-          {" "}
           {isDropdown === 0 && (
-            <DropdownMenu.Content className="mt-5">
-              <Link href="/account/login">
-                <DropdownMenu.Item className="gap-x-2">
-                  <CheckMini className="text-ui-fg-subtle" />
-                  Log In
-                </DropdownMenu.Item>
-              </Link>
-            </DropdownMenu.Content>
+            <>
+              <DropdownMenu.Trigger asChild>
+                <IconButton>
+                  <User size={20} />
+                </IconButton>
+              </DropdownMenu.Trigger>
+              <DropdownMenu.Content className="mt-5">
+                <Link href="/account/login">
+                  <DropdownMenu.Item className="gap-x-2">
+                    <CheckMini className="text-ui-fg-subtle" />
+                    Log In
+                  </DropdownMenu.Item>
+                </Link>
+              </DropdownMenu.Content>
+            </>
           )}
           {isDropdown === 1 && (
-            <DropdownMenu.Content className="mt-5">
-              <Link href="/account">
-                <DropdownMenu.Item className="gap-x-2">
-                  <PencilSquare className="text-ui-fg-subtle" />
-                  Information
+            <>
+              <DropdownMenu.Trigger asChild>
+                <IconButton>
+                  <InformationCircle />
+                </IconButton>
+              </DropdownMenu.Trigger>
+              <DropdownMenu.Content className="mt-5">
+                <Link href="/account">
+                  <DropdownMenu.Item className="gap-x-2">
+                    <PencilSquare className="text-ui-fg-subtle" />
+                    Information
+                  </DropdownMenu.Item>
+                </Link>
+                <DropdownMenu.Separator />
+                <DropdownMenu.Item className="gap-x-2" onClick={handleLogout}>
+                  <ArrowRightOnRectangle className="text-ui-fg-subtle" />
+                  Log out
                 </DropdownMenu.Item>
-              </Link>
-              <DropdownMenu.Separator />
-              <DropdownMenu.Item className="gap-x-2" onClick={handleLogout}>
-                <ArrowRightOnRectangle className="text-ui-fg-subtle" />
-                Log out
-              </DropdownMenu.Item>
-            </DropdownMenu.Content>
+              </DropdownMenu.Content>
+            </>
           )}
         </div>
       </DropdownMenu>
