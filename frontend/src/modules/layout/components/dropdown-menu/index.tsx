@@ -98,7 +98,11 @@ const DropdownMenu = () => {
                     <div className="flex-1">
                       <div className="grid grid-cols-3 gap-4">
                         {products?.slice(0, 3).map((product) => (
-                          <ProductPreview {...product} key={product.id} />
+                          <ProductPreview
+                            {...product}
+                            searchValue={""}
+                            key={product.id}
+                          />
                         ))}
                         {loadingProducts &&
                           repeat(3).map((index) => (

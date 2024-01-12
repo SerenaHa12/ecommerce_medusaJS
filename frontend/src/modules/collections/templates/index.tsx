@@ -64,7 +64,7 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
       <ul className="grid small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8">
         {previews.map((p) => (
           <li key={p.id}>
-            <ProductPreview {...p} />
+            <ProductPreview {...p} searchValue={""} />
           </li>
         ))}
         {isFetchingNextPage &&

@@ -14,9 +14,16 @@ const ProductPreview = ({
   thumbnail,
   price,
   isFeatured,
-}: ProductPreviewType) => {
-  console.log(thumbnail)
+  searchValue, // Nhận giá trị tìm kiếm từ InfiniteProducts
+}: ProductPreviewType & { searchValue: string }) => {
+  const isMatch = searchValue
+    ? title.toLowerCase().includes(searchValue.toLowerCase())
+    : true
 
+  // Nếu không trùng khớp, ẩn sản phẩm
+  if (!isMatch) {
+    return null
+  }
   return (
     <Link href={`/products/${handle}`} className="group  ">
       {" "}

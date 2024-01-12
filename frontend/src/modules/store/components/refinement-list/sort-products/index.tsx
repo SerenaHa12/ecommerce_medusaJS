@@ -122,7 +122,7 @@ const SortProducts = ({ sortBy, setSortBy }: SortProductsProps) => {
   return (
     <>
       {" "}
-      <div className="md:ml-10 mx-auto">
+      <div className="md:ml-10 mx-auto mt-16">
         <div className="flex w-[392px] flex-col gap-4 mx-auto ">
           {" "}
           <div className=" ">
