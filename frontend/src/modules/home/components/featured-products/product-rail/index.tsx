@@ -16,7 +16,7 @@ const ProductRail = ({ collection }: { collection: ProductCollection }) => {
           {data &&
             data.map((product) => (
               <li key={product.id}>
-                <ProductPreview isFeatured {...product} />
+                <ProductPreview searchValue={""} isFeatured {...product} />
               </li>
             ))}
         </ul>
