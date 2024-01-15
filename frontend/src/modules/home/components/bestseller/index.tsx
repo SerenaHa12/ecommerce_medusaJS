@@ -9,11 +9,9 @@ import InfiniteProducts from "@modules/products/components/infinite-products"
 
 const BestSellers = () => {
   return (
-    <div>
+    <div className="mx-4">
       <h1 className="text-xl-semi">Best Sellers</h1>
-      {/*  */}
-      {/* <InfiniteProducts params={params} /> */}
-      {/* <ProductItem /> */}
+      <ProductItem />
     </div>
   )
 }

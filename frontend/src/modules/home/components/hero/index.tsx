@@ -39,43 +39,43 @@ const Hero = () => {
     arrows: true,
     prevArrow: <NextArrow />,
     nextArrow: <PrevArrow />,
+    adaptiveHeight: true,
   }
   return (
     <div className="relative overflow-hidden">
       <Slider {...settings}>
-        <div className="w-full h-full relative">
+        <div className="w-full relative">
           <Image
             src="/bannerone.jpg"
             alt="bannerone"
             width={2000}
             height={2000}
-            className="w-full h-full relative"
+            className="w-full relative"
             priority
           />
           <BannerText title="Outware Picks" />
         </div>
-        <div className="w-full h-full relative">
+        <div className="w-full relative">
           <Image
             src="/bannertwo.jpg"
             alt="bannertwo"
-            className="w-full h-full relative"
+            className="w-full relative"
             width={2000}
             height={2000}
           />
           <BannerText title="Seasonal Offers" />
         </div>
-        <div className="w-full h-full relative">
+        <div className="w-full relative">
           <Image
             src="/bannerthree.jpg"
             alt="bannerthree"
-            className="w-full h-full relative"
+            className="w-full relative"
             width={2000}
             height={2000}
           />
           <BannerText title="Best for men" />
         </div>
       </Slider>
-      <div className="absolute w-full h-44 bg-gradient-to-t from-gray-100 to-transparent bottom-0 left-0 z-10" />
     </div>
   )
 }
