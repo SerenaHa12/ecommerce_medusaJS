@@ -42,7 +42,7 @@ const Nav = () => {
       <HeaderTop />
       <div className="sticky top-0 inset-x-0 z-50 group h-20 mx-auto">
         <header className="relative z-50 h-full duration-200 bg-white mx-auto px-16">
-          <nav className="flex gap-x-5 items-center justify-between w-full h-full text-small-regular bg-white">
+          <nav className="flex gap-x-5 items-center justify-between w-full h-full text-small-regular bg-white max-w-screen-xl mx-auto">
             <div className="flex items-center h-full ">
               <Link
                 href="/"

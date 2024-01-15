@@ -9,23 +9,27 @@ const HeaderTop = () => {
         <div></div>
         <div className="flex justify-start overflow-hidden">
           <div className="flex justify-between items-center">
-            <div className="text-zinc-50 text-subheading text-[12px]">
-              <b>FREE SHIPPING</b> THIS WEEK ORDER OVER - $55
+            <div className="text-zinc-50 text-subheading text-[12px] flex gap-x-2">
+              <b className="text-orange-500">FREE SHIPPING</b>{" "}
+              <p>THIS WEEK ORDER OVER - $55</p>
               <b>BEST PLATFORM FOR ECOMMERCE</b>
             </div>
 
-            <div className="text-zinc-50 text-subheading text-[12px]">
-              <b>FREE SHIPPING</b> THIS WEEK ORDER OVER - $55{" "}
+            <div className="text-zinc-50 text-subheading text-[12px] flex gap-x-2">
+              <b className="text-orange-500">FREE SHIPPING</b>{" "}
+              <p>THIS WEEK ORDER OVER - $55</p>
               <b>BEST PLATFORM FOR ECOMMERCE</b>
             </div>
 
-            <div className="text-zinc-50 text-subheading text-[12px]">
-              <b>FREE SHIPPING</b> THIS WEEK ORDER OVER - $55{" "}
+            <div className="text-zinc-50 text-subheading text-[12px] flex gap-x-2">
+              <b className="text-orange-500">FREE SHIPPING</b>{" "}
+              <p>THIS WEEK ORDER OVER - $55</p>
               <b>BEST PLATFORM FOR ECOMMERCE</b>
             </div>
 
-            <div className="text-zinc-50 text-subheading text-[12px]">
-              <b>FREE SHIPPING</b> THIS WEEK ORDER OVER - $55{" "}
+            <div className="text-zinc-50 text-subheading text-[12px] flex gap-x-2">
+              <b className="text-orange-500">FREE SHIPPING</b>{" "}
+              <p>THIS WEEK ORDER OVER - $55</p>
               <b>BEST PLATFORM FOR ECOMMERCE</b>
             </div>
             {/* <div className="hidden lg:flex gap-1">

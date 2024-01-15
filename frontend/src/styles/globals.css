@@ -118,7 +118,7 @@
     white-space: nowrap;
     padding: 0 10rem;
     letter-spacing: 1px;
-    animation: move-rtl 6000ms linear infinite;
+    animation: move-rtl 10000ms linear infinite;
   }
   @keyframes move-rtl {
     0% {
