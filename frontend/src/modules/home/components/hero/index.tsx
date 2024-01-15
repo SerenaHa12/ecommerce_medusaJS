@@ -37,8 +37,8 @@ const Hero = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    prevArrow: <NextArrow />,
+    nextArrow: <PrevArrow />,
   }
   return (
     <div className="relative">

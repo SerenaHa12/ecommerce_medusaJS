@@ -1,5 +1,5 @@
 import { getProductsList } from "@lib/data"
-import Collection from "@modules/home/components/collection"
+import Collection from "@modules/home/components/yearproduct/YearProduct"
 import Hero from "@modules/home/components/hero"
 import Modiweek from "@modules/home/components/modiweek"
 import { Metadata } from "next"
@@ -10,8 +10,9 @@ import { Suspense } from "react"
 import FeaturedProducts from "@modules/home/components/featured-products"
 import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-homepage-products"
 import Link from "next/link"
-import CollectionSection from "@modules/home/components/collection"
+import CollectionSection from "@modules/home/components/yearproduct/YearProduct"
 import Testimonial from "@modules/home/components/testimonial/Testimonial"
+import YearProduct from "@modules/home/components/yearproduct/YearProduct"
 export const metadata: Metadata = {
   title: "Shopping",
   description:
@@ -26,13 +27,21 @@ export default async function Home() {
         <Hero />
         <div className="container mx-auto px-8 mb-8 pt-16">
           <h2 className="font-medium text-2xl pb-4 text-center">
-            New Products
+            New Arrivals
           </h2>
           <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
             <FeaturedProducts collections={collections} />
           </Suspense>
+
+          <h2 className="font-medium text-2xl pb-4 text-center pt-16">
+            Our Bestsellers
+          </h2>
+          <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
+            <FeaturedProducts collections={collections} />
+          </Suspense>
+          <YearProduct />
+          <Testimonial />
         </div>
-        <Testimonial />
       </main>
     </div>
   )
