@@ -9,8 +9,8 @@ const YearProduct = () => {
             Product of The year
           </h1>
           <p className="text-base font-normal text-primeColor max-w-[600px] mr-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
-            cupiditate modi amet! Facilis, aperiam quaerat.
+            Product of the Year has a globally expanding footprint that stands
+            in more than 45 countries.
           </p>
           <button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white duration-200 text-sm uppercase font-semibold">
             Shop Now

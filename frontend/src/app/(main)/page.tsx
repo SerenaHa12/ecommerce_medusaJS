@@ -25,7 +25,7 @@ export default async function Home() {
     <div className="flex flex-col gap-y-8">
       <main>
         <Hero />
-        <div className="container mx-auto px-8 mb-8 pt-16">
+        <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
           <h2 className="font-medium text-2xl pb-4 text-center">
             New Arrivals
           </h2>

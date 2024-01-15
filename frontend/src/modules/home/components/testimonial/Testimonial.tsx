@@ -27,8 +27,8 @@ const Testimonial = () => {
                 alt="quotes"
               />
               <p className="max-w-[200px] text-gray-500">
-                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor
-                sit amet.
+                I recently had the pleasure of purchasing from Smart and wanted
+                to share my positive experience.
               </p>
             </div>
           </div>

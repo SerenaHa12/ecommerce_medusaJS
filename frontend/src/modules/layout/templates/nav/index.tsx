@@ -40,8 +40,8 @@ const Nav = () => {
   return (
     <>
       <HeaderTop />
-      <div className="sticky top-0 inset-x-0 z-50 group h-20">
-        <header className="relative z-50 h-full px-8 mx-auto duration-200 bg-white">
+      <div className="sticky top-0 inset-x-0 z-50 group h-20 mx-auto">
+        <header className="relative z-50 h-full duration-200 bg-white mx-auto px-16">
           <nav className="flex gap-x-5 items-center justify-between w-full h-full text-small-regular bg-white">
             <div className="flex items-center h-full ">
               <Link
