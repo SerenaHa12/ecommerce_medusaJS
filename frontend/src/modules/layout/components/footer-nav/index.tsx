@@ -15,9 +15,11 @@ const FooterNav = () => {
     <div className="w-full bg-[#404040]  text-slate-100 px-8">
       <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="flex flex-col gap-y-4">
-          <h3 className="text-xl-semi text-zinc-950 hover:text-orange-500">
-            smart.
-          </h3>
+          <Link href="/">
+            <h3 className="text-xl-semi text-zinc-50 hover:text-orange-500 cursor-pointer">
+              smart.
+            </h3>
+          </Link>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa in
             sint incidunt, minima quos voluptates, nobis autem laborum earum est

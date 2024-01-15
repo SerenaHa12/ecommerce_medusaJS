@@ -162,7 +162,8 @@ module.exports = {
         hero: "url(/landing/landing01.png)",
         sustain: "url(/landing/Sustainability.png)",
         landing_follow: "url(/landing/follow.png",
-        landing_follow01: "url(/landing/follow1.png",
+        landing_follow01: "url(/landing/follow1.png)",
+        year_product: "url(/productOfTheYear.webp)",
       },
       // backgroundPosition: {
       //   bottom: 'bottom',

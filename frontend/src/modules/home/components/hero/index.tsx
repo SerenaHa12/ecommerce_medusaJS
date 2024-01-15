@@ -41,7 +41,7 @@ const Hero = () => {
     nextArrow: <PrevArrow />,
   }
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <Slider {...settings}>
         <div className="w-full h-full relative">
           <Image
