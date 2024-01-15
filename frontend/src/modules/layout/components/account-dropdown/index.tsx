@@ -15,7 +15,6 @@ import { useMeCustomer } from "medusa-react"
 import { usePathname } from "next/navigation"
 import { any } from "cypress/types/bluebird"
 import { error } from "console"
-
 const DropdownAccount = () => {
   const route = usePathname()
   const { handleLogout } = useAccount()
@@ -42,25 +41,20 @@ const DropdownAccount = () => {
           {isDropdown === 0 && (
             <>
               <DropdownMenu.Trigger asChild>
-                <IconButton>
-                  <User size={20} />
-                </IconButton>
-              </DropdownMenu.Trigger>
-              <DropdownMenu.Content className="mt-5">
                 <Link href="/account/login">
-                  <DropdownMenu.Item className="gap-x-2">
-                    <CheckMini className="text-ui-fg-subtle" />
-                    Log In
-                  </DropdownMenu.Item>
+                  <button className="px-6 py-2 cursor-pointer bg-white text-gray-500 flex items-center justify-center p-1.5 rounded-full hover:bg-white border-2 border-gray-200 hover:border-orange-500 duration-200">
+                    {/* <User size={20} /> */}
+                    LOGIN
+                  </button>
                 </Link>
-              </DropdownMenu.Content>
+              </DropdownMenu.Trigger>
             </>
           )}
           {isDropdown === 1 && (
             <>
               <DropdownMenu.Trigger asChild>
                 <IconButton>
-                  <InformationCircle />
+                  <User size={20} />
                 </IconButton>
               </DropdownMenu.Trigger>
               <DropdownMenu.Content className="mt-5">
