@@ -4,9 +4,9 @@ import Link from "next/link"
 
 const Testimonial = () => {
   return (
-    <div className="container mx-8">
+    <div className="container mx-auto">
       <div className="container pt-16 pb-16 grid-cols-2">
-        <h2 className="font-medium text-2xl pb-4">Testimonials</h2>
+        <h2 className="font-medium text-2xl pb-4 text-center">Testimonials</h2>
         <div className="grid lg:grid-cols-[300px,1fr] gap-4">
           <div className="border border-gray-300 rounded-2xl grid place-items-center p-6 lg:p-0">
             <div className="text-center flex flex-col items-center gap-1">
