@@ -45,9 +45,11 @@ const Testimonial = () => {
               </h2>
               <p className="text-gray-500 text-[20px]">
                 Starting @ $20{" "}
-                <button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white duration-200 text-sm uppercase font-semibold cu">
-                  Shop Now
-                </button>
+                <Link href="/store">
+                  <button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white duration-200 text-sm uppercase font-semibold cu">
+                    Shop Now
+                  </button>
+                </Link>
               </p>
             </div>
           </div>

@@ -22,9 +22,9 @@ const CartDropdown = () => {
     <div className="h-full z-50" onMouseEnter={open} onMouseLeave={close}>
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
-          <Link className="hover:text-ui-fg-base flex" href="/cart">
+          <Link className=" hover:text-white flex" href="/cart">
             <Cart size={20} />
-            <p className="border-2 border-white px-2 bg-[#404040] text-zinc-50 rounded-full">{` ${totalItems}`}</p>
+            <p className="border-2 border-gray px-[6px] bg-[#AA1020] text-zinc-50 rounded-full absolute top-8 left-5">{` ${totalItems}`}</p>
           </Link>
         </Popover.Button>
         <Transition
