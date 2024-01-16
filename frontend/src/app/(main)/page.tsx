@@ -64,9 +64,9 @@ export default async function Home() {
         <div className="relative bg-[url(/banner/banner6.png)] bg-cover w-full h-64 object-cover"></div>
 
         <YearProduct />
-        <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
+        {/* <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
           <Testimonial />
-        </div>
+        </div> */}
       </main>
     </div>
   )
