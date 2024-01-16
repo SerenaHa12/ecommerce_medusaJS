@@ -22,17 +22,38 @@ export const metadata: Metadata = {
 export default async function Home() {
   const { collections, count } = await getCollectionsList(0, 1)
   return (
-    <div className="flex flex-col gap-y-8">
+    <div className="flex flex-col gap-y-12">
       <main>
         <Hero />
         <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
-          <h2 className="font-medium text-2xl pb-4 text-center">
+          <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-6">
             New Arrivals
           </h2>
           <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
             <FeaturedProducts collections={collections} />
           </Suspense>
+        </div>
 
+        <div className="relative bg-[url(/banner/banner5.png)] bg-cover w-full h-96 object-cover">
+          <div className="w-full md:w-2/3 xl:w-1/2 h-80 absolute px-4 md:px-0 top-0 right-0 flex flex-col items-start gap-6 justify-center">
+            <h1 className="text-3xl font-semibold text-primeColor">
+              Check out our new arrivals
+            </h1>
+            <p className="text-base font-normal text-[#AA2010] max-w-[600px] mr-4">
+              Online shoppers love the latest trends, products, and new
+              launches. As an ecommerce store owner, you can benefit from this
+              love for ‘all things new’ by sending a new arrivals email every
+              time you launch a new product or collection.
+            </p>
+            <Link href="/store">
+              <button className="py-3 px-6 rounded-full bg-white border-2 border-[#AA2010] hover:bg-transparent duration-200 text-sm uppercase font-semibold">
+                FIND OUT NOW
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
           <h2 className="font-medium text-2xl pb-4 text-center pt-16">
             Our Bestsellers
           </h2>
