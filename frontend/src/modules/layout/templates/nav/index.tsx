@@ -56,7 +56,7 @@ const Nav = () => {
                 alt="logo"
                 className="md:w-[184px] md:h-[46px] w-[138px] h-[40px]"
               /> */}
-                <h3 className="text-xl-semi hover:text-[#B02E20]">smart.</h3>
+                <h3 className="text-xl-semi hover:text-[#AA2010]">ECM</h3>
               </Link>
             </div>
 

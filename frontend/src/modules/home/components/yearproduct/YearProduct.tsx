@@ -69,7 +69,7 @@ const YearProduct = () => {
   return (
     <div className="pt-16">
       <div>
-        <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-6">
+        <h2 className="mx-auto text-2xl bg-tranparent border-2 border-[#AA2010] text-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-6">
           Modiweek
         </h2>
         <Slider {...settings}>
@@ -146,6 +146,46 @@ const YearProduct = () => {
           <div>
             <Image
               src="/list/frame8.png"
+              alt="bannerone"
+              width={2000}
+              height={2000}
+              className="w-full relative"
+              priority
+            />
+          </div>
+          <div>
+            <Image
+              src="/list/frame9.png"
+              alt="bannerone"
+              width={2000}
+              height={2000}
+              className="w-full relative"
+              priority
+            />
+          </div>
+          <div>
+            <Image
+              src="/list/frame10.png"
+              alt="bannerone"
+              width={2000}
+              height={2000}
+              className="w-full relative"
+              priority
+            />
+          </div>
+          <div>
+            <Image
+              src="/list/frame11.png"
+              alt="bannerone"
+              width={2000}
+              height={2000}
+              className="w-full relative"
+              priority
+            />
+          </div>
+          <div>
+            <Image
+              src="/list/frame12.png"
               alt="bannerone"
               width={2000}
               height={2000}

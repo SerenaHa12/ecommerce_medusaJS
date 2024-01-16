@@ -12,19 +12,17 @@ import Link from "next/link"
 import Image from "next/image"
 const FooterNav = () => {
   return (
-    <div className="w-full bg-[#404040]  text-slate-100 px-8">
+    <div className="w-full bg-[#212121]  text-slate-100 px-8 py-16">
       <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="flex flex-col gap-y-4">
           <Link href="/">
-            <h3 className="text-xl-semi text-zinc-50 hover:text-orange-500 cursor-pointer">
-              smart.
+            <h3 className="text-xl-semi text-zinc-50 hover:text-[#AA2010] cursor-pointer">
+              ECM
             </h3>
           </Link>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa in
-            sint incidunt, minima quos voluptates, nobis autem laborum earum est
-            pariatur aperiam. Delectus consectetur maxime quidem veniam,
-            corporis.
+          <p className="text-gray-500 text-sm">
+            We have customer to find the best product near them, not time spent
+            searching for best one.
           </p>
           <div className="flex items-center gap-x-4">
             <a href="https://www.youtube.com/@reactjsBD" target="_blank">
@@ -47,72 +45,74 @@ const FooterNav = () => {
                 <BsFacebook />
               </span>
             </a>
-            <a href="https://www.youtube.com/@reactjsBD" target="_blank">
-              <span className="socialLink">
-                <BsReddit />
-              </span>
-            </a>
           </div>
         </div>
-        <div>
-          <p className="text-lg">Laset posts</p>
-          <ul className="text-sm font-light mt-2 flex flex-col gap-y-2">
+        <div className="pl-16">
+          <p className="text-lg font-semibold text-gray-500">Product</p>
+          <ul className="text-sm font-light mt-2 flex flex-col gap-y-3">
             <li className="flex flex-col">
-              <span className="text-slate hover:text-orange-600 cursor-pointer duration-200">
-                Where Music Is Headed Next
+              <span className="text-slate font-bold cursor-pointer duration-200">
+                New
               </span>
-              <span className="text-orange-600">January 31, 2022</span>
             </li>
             <li className="flex flex-col">
-              <span className="text-slate hover:text-orange-600 cursor-pointer duration-200">
-                Where Music Is Headed Next
+              <span className="text-slate font-bold cursor-pointer duration-200">
+                Upcoming
               </span>
-              <span className="text-orange-600">January 31, 2022</span>
             </li>
             <li className="flex flex-col">
-              <span className="text-slate hover:text-orange-600 cursor-pointer duration-200">
-                Where Music Is Headed Next
+              <span className="text-slate font-bold cursor-pointer duration-200">
+                Spring Collection
               </span>
-              <span className="text-orange-600">January 31, 2022</span>
             </li>
             <li className="flex flex-col">
-              <span className="text-slate hover:text-orange-600 cursor-pointer duration-200">
-                Where Music Is Headed Next
+              <span className="text-slate font-bold cursor-pointer duration-200">
+                On Sale
               </span>
-              <span className="text-orange-600">January 31, 2022</span>
+            </li>
+            <li className="flex flex-col">
+              <span className="text-slate font-bold cursor-pointer duration-200">
+                Live Demo
+              </span>
             </li>
           </ul>
         </div>
-        <div>
-          <p className="text-lg">Links</p>
-          <ul className="text-base font-medium mt-2 flex flex-col gap-y-2">
-            <Link href={"/"}>
-              <li className="hover:text-orange-500 cursor-pointer duration-200">
-                Home
-              </li>
-            </Link>
-            <Link href={"/cart"}>
-              <li className="hover:text-orange-500 cursor-pointer duration-200">
-                Cart
-              </li>
-            </Link>
-            <Link href={"/about"}>
-              <li className="hover:text-orange-500 cursor-pointer duration-200">
-                About
-              </li>
-            </Link>
-            <li className="hover:text-orange-500 cursor-pointer duration-200">
-              Newsletter
+        <div className="pl-16">
+          <p className="text-lg font-semibold text-gray-500">Resources</p>
+          <ul className="text-sm font-light mt-2 flex flex-col gap-y-3">
+            <li className="flex flex-col">
+              <span className="text-slate font-bold cursor-pointer duration-200">
+                Instagram Post
+              </span>
             </li>
-            <Link href={"/contact-us"}>
-              {" "}
-              <li className="hover:text-orange-500 cursor-pointer duration-200">
-                Contact-us
-              </li>
-            </Link>
+            <li className="flex flex-col">
+              <span className="text-slate font-bold cursor-pointer duration-200">
+                Blog
+              </span>
+            </li>
+            <li className="flex flex-col">
+              <span className="text-slate font-bold cursor-pointer duration-200">
+                Live Demo
+              </span>
+            </li>
           </ul>
         </div>
-        <div>
+        <div className="pl-16">
+          <p className="text-lg font-semibold text-gray-500">Contact Us</p>
+          <ul className="text-sm font-light mt-2 flex flex-col gap-y-3">
+            <li className="flex flex-col">
+              <span className="text-slate font-bold cursor-pointer duration-200">
+                Live Chat
+              </span>
+            </li>
+            <li className="flex flex-col">
+              <span className="text-slate font-bold cursor-pointer duration-200">
+                Main Us
+              </span>
+            </li>
+          </ul>
+        </div>
+        {/* <div>
           <p className="text-lg mb-2">Pay us with your trusted services</p>
           <Image
             src="/payment.png"
@@ -121,8 +121,13 @@ const FooterNav = () => {
             width={2000}
             height={200}
           />
-        </div>
+        </div> */}
       </Container>
+      <div className="border-[1px] border-gray-500 max-w-screen-xl mx-auto"></div>
+      <div className="max-w-screen-xl mx-auto flex justify-between py-4 text-gray-500 text-sm">
+        <p>Copyright © 2024 NCSC ECM</p>
+        <p>Created by NCSC</p>
+      </div>
     </div>
   )
 }
