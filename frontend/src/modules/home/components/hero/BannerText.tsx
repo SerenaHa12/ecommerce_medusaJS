@@ -33,12 +33,12 @@ const BannerText = ({ title }: Props) => {
           className="flex gap-x-4 mt-2"
         >
           <Link href="/store">
-            <button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white duration-200 text-sm uppercase font-semibold cu">
+            <button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white duration-200 text-sm uppercase font-semibold cusor-pointer">
               Find out more
             </button>
           </Link>
           <Link href="/store">
-            <button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white duration-200 text-sm uppercase font-semibold">
+            <button className="py-3 px-6 rounded-full text-slate-200 bg-transparent border-2 border-slate-200 hover:text-white duration-200 text-sm uppercase font-semibold">
               Shop Now
             </button>
           </Link>
