@@ -17,7 +17,7 @@ import { useAccount } from "@lib/context/account-context"
 import HeaderTop from "./HeaderTop"
 import { usePathname } from "next/navigation"
 import DropdownAccount from "@modules/layout/components/account-dropdown"
-
+import SubHeader from "./SubHeader"
 const Nav = () => {
   const { toggle } = useMobileMenu()
   const {
@@ -39,10 +39,11 @@ const Nav = () => {
 
   return (
     <>
+      {/* <SubHeader /> */}
       <HeaderTop />
       <div className="sticky top-0 inset-x-0 z-50 group h-20 mx-auto">
-        <header className="relative z-50 h-full duration-200 bg-white mx-auto px-16">
-          <nav className="flex gap-x-5 items-center justify-between w-full h-full text-small-regular bg-white max-w-screen-xl mx-auto">
+        <header className="relative z-50 h-full duration-200 bg-[#212121] mx-auto px-16 text-white">
+          <nav className="flex gap-x-5 items-center justify-between w-full h-full text-small-regular bg-[#212121] max-w-screen-xl mx-auto">
             <div className="flex items-center h-full ">
               <Link
                 href="/"
@@ -55,9 +56,7 @@ const Nav = () => {
                 alt="logo"
                 className="md:w-[184px] md:h-[46px] w-[138px] h-[40px]"
               /> */}
-                <h3 className="text-xl-semi text-zinc-950 hover:text-orange-500">
-                  smart.
-                </h3>
+                <h3 className="text-xl-semi hover:text-[#B02E20]">smart.</h3>
               </Link>
             </div>
 

@@ -35,14 +35,14 @@ const DropdownAccount = () => {
   }, [handleLogout])
 
   return (
-    <div className="z-50 flex items-center border-[1px] border-lightText/50 rounded-full bg-slate-100">
+    <div className="z-50 flex items-center ">
       <DropdownMenu>
         <div>
           {isDropdown === 0 && (
             <>
               <DropdownMenu.Trigger asChild>
                 <Link href="/account/login">
-                  <button className="px-6 py-2 cursor-pointer bg-white text-orange-500 font-semibold flex items-center justify-center p-1.5 rounded-full hover:bg-white border-2 border-gray-200 hover:border-orange-500 duration-200">
+                  <button className="px-6 py-2 cursor-pointer bg-white text-[#B02E20] font-semibold flex items-center justify-center p-1.5 rounded-full hover:bg-white border-2 border-gray-200 hover:border-[#B02E20] duration-200">
                     {/* <User size={20} /> */}
                     LOGIN
                   </button>
@@ -53,9 +53,12 @@ const DropdownAccount = () => {
           {isDropdown === 1 && (
             <>
               <DropdownMenu.Trigger asChild>
-                <IconButton>
-                  <User size={20} />
-                </IconButton>
+                <button className="bg-transparent text-white border-none">
+                  <User
+                    size={20}
+                    className="text-white bg-transparent border-none"
+                  />
+                </button>
               </DropdownMenu.Trigger>
               <DropdownMenu.Content className="mt-5">
                 <Link href="/account">

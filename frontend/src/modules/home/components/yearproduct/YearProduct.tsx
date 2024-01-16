@@ -1,4 +1,5 @@
 import Button from "@modules/common/components/button"
+import Link from "next/link"
 
 const YearProduct = () => {
   return (
@@ -12,9 +13,11 @@ const YearProduct = () => {
             Product of the Year has a globally expanding footprint that stands
             in more than 45 countries.
           </p>
-          <button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white duration-200 text-sm uppercase font-semibold">
-            Shop Now
-          </button>
+          <Link href="/store">
+            <button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white duration-200 text-sm uppercase font-semibold">
+              Shop Now
+            </button>
+          </Link>
         </div>
       </div>
     </div>
