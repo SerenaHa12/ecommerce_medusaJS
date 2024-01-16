@@ -46,18 +46,18 @@ const Hero = () => {
       <Slider {...settings}>
         <div className="w-full relative">
           <Image
-            src="/bannerone.jpg"
+            src="/banner/banner1.png"
             alt="bannerone"
             width={2000}
             height={2000}
             className="w-full relative"
             priority
           />
-          <BannerText title="Outware Picks" />
+          <BannerText title="Lunar NewYear" />
         </div>
         <div className="w-full relative">
           <Image
-            src="/bannertwo.jpg"
+            src="/banner/banner2.png"
             alt="bannertwo"
             className="w-full relative"
             width={2000}
@@ -67,13 +67,23 @@ const Hero = () => {
         </div>
         <div className="w-full relative">
           <Image
-            src="/bannerthree.jpg"
+            src="/banner/banner3.png"
             alt="bannerthree"
             className="w-full relative"
             width={2000}
             height={2000}
           />
-          <BannerText title="Best for men" />
+          <BannerText title="Best for woman" />
+        </div>
+        <div className="w-full relative">
+          <Image
+            src="/banner/banner4.png"
+            alt="bannerfour"
+            className="w-full relative"
+            width={2000}
+            height={2000}
+          />
+          <BannerText title="Spring Collections" />
         </div>
       </Slider>
     </div>
