@@ -25,15 +25,18 @@ export default async function Home() {
     <div className="flex flex-col gap-y-12">
       <main>
         <Hero />
+
+        {/* NEW ARRIVALS */}
         <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
           <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-6">
             New Arrivals
           </h2>
-          <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
-            <FeaturedProducts collections={collections} />
-          </Suspense>
+          <div className="mx-auto">
+            <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
+              <FeaturedProducts collections={collections} />
+            </Suspense>
+          </div>
         </div>
-
         <div className="relative bg-[url(/banner/banner5.png)] bg-cover w-full h-96 object-cover">
           <div className="w-full md:w-2/3 xl:w-1/2 h-80 absolute px-4 md:px-0 top-0 right-0 flex flex-col items-start gap-6 justify-center">
             <h1 className="text-3xl font-semibold text-primeColor">
@@ -52,21 +55,29 @@ export default async function Home() {
             </Link>
           </div>
         </div>
+        {/* END NEW ARRIVAL */}
 
+        {/* BEST SELLER */}
         <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
           <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-6">
             Our Bestsellers
           </h2>
-          <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
-            <FeaturedProducts collections={collections} />
-          </Suspense>
+          <div className="mx-auto px-8">
+            <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
+              <FeaturedProducts collections={collections} />
+            </Suspense>
+          </div>
         </div>
         <div className="relative bg-[url(/banner/banner6.png)] bg-cover w-full h-64 object-cover"></div>
+        {/* END BEST SELLER */}
 
+        {/* YEAR PRODUCT */}
         <YearProduct />
-        {/* <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
+        {/* END YAER PRODUCT */}
+
+        <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
           <Testimonial />
-        </div> */}
+        </div>
       </main>
     </div>
   )
