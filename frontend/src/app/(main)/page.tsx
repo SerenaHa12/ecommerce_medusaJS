@@ -54,13 +54,17 @@ export default async function Home() {
         </div>
 
         <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
-          <h2 className="font-medium text-2xl pb-4 text-center pt-16">
+          <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-6">
             Our Bestsellers
           </h2>
           <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
             <FeaturedProducts collections={collections} />
           </Suspense>
-          <YearProduct />
+        </div>
+        <div className="relative bg-[url(/banner/banner6.png)] bg-cover w-full h-64 object-cover"></div>
+
+        <YearProduct />
+        <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
           <Testimonial />
         </div>
       </main>
