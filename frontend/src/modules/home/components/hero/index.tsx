@@ -48,8 +48,8 @@ const Hero = () => {
           <Image
             src="/banner/banner1.png"
             alt="bannerone"
-            width={2000}
-            height={2000}
+            width={1600}
+            height={1600}
             className="w-full relative"
             priority
           />
@@ -60,8 +60,8 @@ const Hero = () => {
             src="/banner/banner2.png"
             alt="bannertwo"
             className="w-full relative"
-            width={2000}
-            height={2000}
+            width={1600}
+            height={1600}
           />
           <BannerText title="Seasonal Offers" />
         </div>
@@ -70,8 +70,8 @@ const Hero = () => {
             src="/banner/banner3.png"
             alt="bannerthree"
             className="w-full relative"
-            width={2000}
-            height={2000}
+            width={1600}
+            height={1600}
           />
           <BannerText title="Best for woman" />
         </div>
@@ -80,8 +80,8 @@ const Hero = () => {
             src="/banner/banner4.png"
             alt="bannerfour"
             className="w-full relative"
-            width={2000}
-            height={2000}
+            width={1600}
+            height={1600}
           />
           <BannerText title="Spring Collections" />
         </div>

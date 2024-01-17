@@ -7,12 +7,14 @@ const ProductRail = ({ collection }: { collection: ProductCollection }) => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container mx-auto">
         <ul className="grid grid-cols-2 max-md:grid-cols-1 small:grid-cols-4 gap-x-6 gap-y-8">
           {data &&
             data.map((product) => (
               <li key={product.id}>
-                <ProductPreview searchValue={""} isFeatured {...product} />
+                <div className="mx-auto">
+                  <ProductPreview searchValue={""} isFeatured {...product} />
+                </div>
               </li>
             ))}
         </ul>

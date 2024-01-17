@@ -31,7 +31,7 @@ const ProductPreview = ({
         <div className=" absolute z-10 top-3  right-3 w-24 py-1.5   text-center   bg-white font-medium  text-xs  rounded-full group-hover:bg-orange-600 group-hover:text-white duration-200">
           New Arrival
         </div>
-        <div className="  ">
+        <div className="">
           <div className="overflow-hidden">
             {" "}
             <Thumbnail
