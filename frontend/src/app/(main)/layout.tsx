@@ -1,4 +1,5 @@
 "use client"
+import BackBtn from "@modules/layout/templates/backtotop/BackBtn"
 import Footer from "@modules/layout/templates/footer"
 import Nav from "@modules/layout/templates/nav"
 import { Pathname } from "enum"
@@ -14,6 +15,7 @@ export default function PageLayout({
       <Nav />
       {children}
       {pathname !== Pathname.accountLogin && <Footer />}
+      <BackBtn />
     </>
   )
 }

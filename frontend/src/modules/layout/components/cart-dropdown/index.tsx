@@ -20,7 +20,7 @@ const CartDropdown = () => {
 
   return (
     <div className="h-full z-50" onMouseEnter={open} onMouseLeave={close}>
-      <Popover className="relative h-full">
+      <Popover className="relative h-full ">
         <Popover.Button className="h-full">
           <Link className=" hover:text-white flex" href="/cart">
             <Cart size={20} />
@@ -39,10 +39,10 @@ const CartDropdown = () => {
         >
           <Popover.Panel
             static
-            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[382px] text-gray-900"
+            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-2 rounded-lg border-tranparent w-[382px] text-gray-900"
           >
             <div className="p-4 flex items-center justify-center">
-              <h3 className="text-large-semi">Cart</h3>
+              {/* <h3 className="text-large-semi">Cart</h3> */}
             </div>
             {cart && items?.length ? (
               <>
@@ -133,7 +133,12 @@ const CartDropdown = () => {
                     <Link href="/store">
                       <>
                         <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
+                        <Button
+                          onClick={close}
+                          className="px-6 py-2 cursor-pointer bg-white text-[#B02E20] font-semibold flex items-center justify-center p-1.5 rounded-full hover:bg-white border-2 border-gray-200 hover:border-[#B02E20] duration-200"
+                        >
+                          Explore
+                        </Button>
                       </>
                     </Link>
                   </div>

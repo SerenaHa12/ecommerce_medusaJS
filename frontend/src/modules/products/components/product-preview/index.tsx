@@ -28,7 +28,7 @@ const ProductPreview = ({
     <Link href={`/products/${handle}`} className="group  ">
       {" "}
       <div className="relative overflow-hidden border border-slate-300 rounded-lg">
-        <div className=" absolute z-10 top-3  right-3 w-24 py-1.5   text-center   bg-white font-medium  text-xs  rounded-full group-hover:bg-orange-600 group-hover:text-white duration-200">
+        <div className=" absolute z-10 top-3  right-3 w-24 py-1.5   text-center   bg-white font-medium  text-xs  rounded-full group-hover:bg-[#AA2010] group-hover:text-white duration-200">
           New Arrival
         </div>
         <div className="">
@@ -48,7 +48,7 @@ const ProductPreview = ({
               <Text className="text-base-semi">{title}</Text>
             </div>
             <div className="flex justify-between">
-              <div className="border border-orange-600 py-1 px-4 rounded-full text-xs">
+              <div className="border border-[#AA2010] py-1 px-4 rounded-full text-xs">
                 <p>20% off</p>
               </div>
               <div className="flex gap-2">
@@ -79,7 +79,7 @@ const ProductPreview = ({
             </div>
             <div className="flex justify-between mt-5 w-full">
               {" "}
-              <div className="flex gap-2 group-hover:text-orange-600">
+              <div className="flex gap-2 group-hover:text-[#AA2010]">
                 <div className="my-auto">
                   <AiOutlineShoppingCart />
                 </div>
