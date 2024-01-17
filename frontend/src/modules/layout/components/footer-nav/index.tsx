@@ -123,11 +123,11 @@ const FooterNav = () => {
           />
         </div> */}
       </Container>
-      <div className="border-[1px] border-gray-500 max-w-screen-xl mx-auto"></div>
-      <div className="max-w-screen-xl mx-auto flex justify-between py-4 text-gray-500 text-sm">
-        <p>Copyright © 2024 NCSC ECM</p>
-        <p>Created by NCSC</p>
-      </div>
+      {/* <div className="border-[1px] border-gray-500 max-w-screen-xl mx-auto"></div> */}
+      {/* <div className="max-w-screen-xl mx-auto flex justify-between py-4 text-gray-500 text-sm">
+        <p>Copyright © 2024 ECM</p>
+        <p>Created by ECM</p>
+      </div> */}
     </div>
   )
 }

@@ -33,7 +33,9 @@ export default async function Home() {
           </h2>
           <div className="mx-auto">
             <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
-              <FeaturedProducts collections={collections} />
+              <div className="mx-auto">
+                <FeaturedProducts collections={collections} />
+              </div>
             </Suspense>
           </div>
         </div>
@@ -62,7 +64,7 @@ export default async function Home() {
           <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-6">
             Our Bestsellers
           </h2>
-          <div className="mx-auto px-8">
+          <div className="mx-auto">
             <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
               <FeaturedProducts collections={collections} />
             </Suspense>
@@ -75,7 +77,7 @@ export default async function Home() {
         <YearProduct />
         {/* END YAER PRODUCT */}
 
-        <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
+        <div className="container mx-auto mb-8 max-w-screen-xl">
           <Testimonial />
         </div>
       </main>

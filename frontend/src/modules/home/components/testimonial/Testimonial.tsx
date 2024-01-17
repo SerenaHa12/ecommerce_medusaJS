@@ -10,7 +10,7 @@ const Testimonial = () => {
           Testimonials
         </h2>
         <div className="grid lg:grid-cols-[300px,1fr] gap-4">
-          <div className="border bg-[#AA2010] border-gray-300 rounded-lg grid place-items-center p-6 lg:p-0">
+          <div className="border-2 bg-tranparent border-gray-300 rounded-lg grid place-items-center p-6 lg:p-0">
             <div className="text-center flex flex-col items-center gap-1">
               <Image
                 className="rounded-full inline-block"
@@ -19,10 +19,12 @@ const Testimonial = () => {
                 height={80}
                 alt="dp"
               />
-              <h2 className="text-white font-black text-[20px]">Mary Jane</h2>
+              <h2 className="text-gray-500 font-black text-[20px]">
+                Mary Jane
+              </h2>
               <p>CEO & Founder Invision</p>
 
-              <p className="max-w-[200px] text-white">
+              <p className="max-w-[200px] text-gray-500 text-sm">
                 I recently had the pleasure of purchasing from Smart and wanted
                 to share my positive experience.
               </p>
