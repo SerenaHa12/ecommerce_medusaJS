@@ -1,16 +1,10 @@
-import { getProductsList } from "@lib/data"
-import Collection from "@modules/home/components/yearproduct/YearProduct"
 import Hero from "@modules/home/components/hero"
-import Modiweek from "@modules/home/components/modiweek"
 import { Metadata } from "next"
-import BestSellers from "@modules/home/components/bestseller"
-import medusaRequest from "@lib/medusa-fetch"
 import { getCollectionsList } from "@lib/data"
 import { Suspense } from "react"
 import FeaturedProducts from "@modules/home/components/featured-products"
 import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-homepage-products"
 import Link from "next/link"
-import CollectionSection from "@modules/home/components/yearproduct/YearProduct"
 import Testimonial from "@modules/home/components/testimonial/Testimonial"
 import YearProduct from "@modules/home/components/yearproduct/YearProduct"
 export const metadata: Metadata = {
@@ -27,10 +21,15 @@ export default async function Home() {
         <Hero />
 
         {/* NEW ARRIVALS */}
-        <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
-          <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-6">
+        <div className="container mx-auto mb-8 pt-16 max-w-screen-xl flex flex-col items-center">
+          <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-3">
             New Arrivals
           </h2>
+          <p className="text-center text-sm text-gray-500 mb-6">
+            Find a bright ideal to suit your taste with our great selection of
+            suspension floar and tables lights.
+          </p>
+
           <div className="mx-auto">
             <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
               <div className="mx-auto">
@@ -61,9 +60,13 @@ export default async function Home() {
 
         {/* BEST SELLER */}
         <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
-          <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-6">
+          <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-3">
             Our Bestsellers
           </h2>
+          <p className="text-center text-sm text-gray-500 mb-6">
+            Find a bright ideal to suit your taste with our great selection of
+            suspension floar and tables lights.
+          </p>
           <div className="mx-auto">
             <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
               <FeaturedProducts collections={collections} />

@@ -120,6 +120,7 @@
     letter-spacing: 1px;
     animation: move-rtl 10000ms linear infinite;
   }
+
   @keyframes move-rtl {
     0% {
       transform: translateX(0);
@@ -127,5 +128,19 @@
     100% {
       transform: translateX(-100%);
     }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(50px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .scroll-to-top-btn {
+    animation: slideIn 200s ease-in;
+    animation-delay: 5s;
   }
 }
