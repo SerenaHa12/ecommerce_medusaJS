@@ -23,16 +23,16 @@ const LoginTemplate = () => {
     <>
       <div>
         {" "}
-        <div className="relative ">
+        <div className="relative">
           {" "}
-          <div className=" h-screen overflow-hidden">
+          <div className="h-screen overflow-hidden">
             {" "}
             <Image
-              src="/login.jpg"
+              src="/loginnewyear.jpg"
               alt="login"
               className="w-full h-full relative"
               width={2000}
-              height={1}
+              height={2000}
             />
           </div>
           <div className="w-full flex justify-center px-8 py-12 absolute z-10 top-0">

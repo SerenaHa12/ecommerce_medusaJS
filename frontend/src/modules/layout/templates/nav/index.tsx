@@ -18,6 +18,7 @@ import HeaderTop from "./HeaderTop"
 import { usePathname } from "next/navigation"
 import DropdownAccount from "@modules/layout/components/account-dropdown"
 import SubHeader from "./SubHeader"
+import { Pathname } from "enum"
 const Nav = () => {
   const { toggle } = useMobileMenu()
   const {
@@ -35,12 +36,11 @@ const Nav = () => {
   // path name store -> show search
   const pathname = usePathname()
   const isStorePage = pathname === "/store"
-  console.log(isStorePage)
 
   return (
     <>
       {/* <SubHeader /> */}
-      <HeaderTop />
+      {pathname !== Pathname.accountLogin && <HeaderTop />}
       <div className="sticky top-0 inset-x-0 z-50 group h-20 mx-auto">
         <header className="relative z-50 h-full duration-200 bg-[#212121] mx-auto px-16 text-white">
           <nav className="flex gap-x-5 items-center justify-between w-full h-full text-small-regular bg-[#212121] max-w-screen-xl mx-auto">
@@ -85,7 +85,7 @@ const Nav = () => {
             <div className="flex items-center gap-x-6 h-full justify-end">
               <DropdownAccount />
 
-              <CartDropdown />
+              {pathname !== Pathname.accountLogin && <CartDropdown />}
             </div>
           </nav>
           <MobileMenu />

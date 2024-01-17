@@ -52,11 +52,11 @@ const Register = () => {
         )}
         <div>
           <div className="text-3xl uppercase my-2 font-bold text-center">
-            <h1>SIGN UP</h1>
+            <h1 className="hover:text-[#AA1020]">SIGN UP</h1>
           </div>
           <div className="mb-3">
             <button
-              className="font-bold text-slate-400 hover:text-green-600"
+              className="font-bold text-slate-400 hover:text-[#AA1020]"
               onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
             >
               LOG IN

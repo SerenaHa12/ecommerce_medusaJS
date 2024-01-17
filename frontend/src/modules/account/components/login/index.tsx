@@ -47,13 +47,13 @@ const Login = () => {
         )}
         <div>
           <div className="text-3xl uppercase my-2 font-bold text-center">
-            <h1>MY ACCOUNT</h1>
+            <h1 className="hover:text-[#AA1020]">MY ACCOUNT</h1>
           </div>
           <div className="mb-3">
             <span className="font-bold underline">LOG IN</span>
             <span className="p-2 text-light text-slate-300">|</span>
             <button
-              className="font-bold text-slate-400 hover:text-green-600"
+              className="font-bold text-slate-400 hover:text-[#AA1020]"
               onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
             >
               REGISTER
