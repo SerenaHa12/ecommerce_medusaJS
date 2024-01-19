@@ -17,6 +17,9 @@ export const metadata: Metadata = {
 export default async function Home() {
   const { collections, count } = await getCollectionsList(0, 1)
   console.log("🚀 ~ Home ~ collections:", collections)
+  const { collections: bestseller, count: countBestseller } =
+    await getCollectionsList(1, 1)
+  console.log("🚀 ~ Home ~ bestseller:", bestseller)
   return (
     <div className="flex flex-col gap-y-12">
       <main>
@@ -31,6 +34,8 @@ export default async function Home() {
             Find a bright ideal to suit your taste with our great selection of
             suspension floar and tables lights.
           </p>
+        </div>
+        <div className="newarrive mx-6">
           <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
             <div className="mx-auto">
               <FeaturedProducts collections={collections} />
@@ -67,11 +72,15 @@ export default async function Home() {
             Find a bright ideal to suit your taste with our great selection of
             suspension floar and tables lights.
           </p>
-          <div className="mx-auto">
-            <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
-              <FeaturedProducts collections={collections} />
-            </Suspense>
-          </div>
+        </div>
+        <div className="bestsell mx-6">
+          <Suspense
+            fallback={<SkeletonHomepageProducts count={countBestseller} />}
+          >
+            <div className="mx-auto">
+              <FeaturedProducts collections={bestseller} />
+            </div>
+          </Suspense>
         </div>
         <div className="relative bg-[url(/banner/banner6.png)] bg-cover w-full h-64 object-cover"></div>
         {/* END BEST SELLER */}

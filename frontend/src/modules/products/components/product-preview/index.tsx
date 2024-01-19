@@ -35,7 +35,7 @@ const ProductPreview = ({
 
     return thumbnail
   }
-  console.log("thumbnail", thumbnail)
+  // console.log("thumbnail", thumbnail)
   const newThumbnail = updateThumbnail(thumbnail)
 
   return (
