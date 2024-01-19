@@ -12,7 +12,7 @@ import Link from "next/link"
 import Image from "next/image"
 const FooterNav = () => {
   return (
-    <div className="w-full bg-[#212121]  text-slate-100 px-8 py-16">
+    <div className="w-full bg-[#212121]  text-slate-100 px-8 py-2">
       <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="flex flex-col gap-y-4 pl-16">
           <Link href="/">
@@ -123,11 +123,6 @@ const FooterNav = () => {
           />
         </div> */}
       </Container>
-      <div className="border-[1px] border-gray-500 max-w-screen-xl mx-auto"></div>
-      {/* <div className="max-w-screen-xl mx-auto flex justify-between py-4 text-gray-500 text-sm">
-        <p>Copyright © 2024 ECM</p>
-        <p>Created by ECM</p>
-      </div> */}
     </div>
   )
 }

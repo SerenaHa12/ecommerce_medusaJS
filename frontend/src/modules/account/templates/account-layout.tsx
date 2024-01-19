@@ -5,6 +5,7 @@ import UnderlineLink from "@modules/common/components/interactive-link"
 import Spinner from "@modules/common/icons/spinner"
 import React, { useEffect } from "react"
 import AccountNav from "../components/account-nav"
+import Link from "next/link"
 
 const AccountLayout: React.FC = ({ children }) => {
   const { customer, retrievingCustomer, checkSession } = useAccount()
@@ -22,15 +23,16 @@ const AccountLayout: React.FC = ({ children }) => {
   }
 
   return (
-    <div className="flex-1 small:py-12">
-      <div className="flex-1 h-full max-w-5xl mx-auto bg-white flex flex-col">
-        <div className="grid grid-cols-1 small:grid-cols-[240px_1fr] px-8 py-12">
+    <div className="flex-1">
+      <div className="relative bg-[url(/account/account.png)] bg-cover w-full h-64 bg-center"></div>
+      <div className="flex-1 h-full max-w-screen-xl mx-auto bg-white flex flex-col py-16">
+        <div className="grid grid-cols-1 small:grid-cols-[240px_1fr] py-8">
           <div>
             <AccountNav />
           </div>
           <div className="flex-1">{children}</div>
         </div>
-        <div className="flex flex-col small:flex-row items-end justify-between small:border-t border-gray-200 px-8 py-12 gap-x-8">
+        <div className="flex flex-col small:flex-row items-end justify-between small:border-t border-gray-200 py-12 gap-x-8">
           <div>
             <h3 className="text-xl-semi mb-4">Got questions?</h3>
             <span className="text-small-regular">
@@ -38,11 +40,11 @@ const AccountLayout: React.FC = ({ children }) => {
               customer service page.
             </span>
           </div>
-          <div>
+          {/* <div>
             <UnderlineLink href="/customer-service">
               Customer Service
             </UnderlineLink>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

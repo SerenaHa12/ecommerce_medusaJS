@@ -7,6 +7,7 @@ import SkeletonHomepageProducts from "@modules/skeletons/components/skeleton-hom
 import Link from "next/link"
 import Testimonial from "@modules/home/components/testimonial/Testimonial"
 import YearProduct from "@modules/home/components/yearproduct/YearProduct"
+
 export const metadata: Metadata = {
   title: "Shopping",
   description:
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const { collections, count } = await getCollectionsList(0, 1)
+  console.log("🚀 ~ Home ~ collections:", collections)
   return (
     <div className="flex flex-col gap-y-12">
       <main>
@@ -29,15 +31,13 @@ export default async function Home() {
             Find a bright ideal to suit your taste with our great selection of
             suspension floar and tables lights.
           </p>
-
-          <div className="mx-auto">
-            <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
-              <div className="mx-auto">
-                <FeaturedProducts collections={collections} />
-              </div>
-            </Suspense>
-          </div>
+          <Suspense fallback={<SkeletonHomepageProducts count={count} />}>
+            <div className="mx-auto">
+              <FeaturedProducts collections={collections} />
+            </div>
+          </Suspense>
         </div>
+
         <div className="relative bg-[url(/banner/banner5.png)] bg-cover w-full h-96 object-cover">
           <div className="w-full md:w-2/3 xl:w-1/2 h-80 absolute px-4 md:px-0 top-0 right-0 flex flex-col items-start gap-6 justify-center">
             <h1 className="text-3xl font-semibold text-primeColor">
