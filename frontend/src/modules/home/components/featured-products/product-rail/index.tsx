@@ -8,7 +8,7 @@ const ProductRail = ({ collection }: { collection: ProductCollection }) => {
   return (
     <div>
       <div className="container mx-auto">
-        <ul className="grid grid-cols-2 max-md:grid-cols-1 small:grid-cols-4 gap-x-8 gap-y-8">
+        <ul className="grid grid-cols-2 max-md:grid-cols-2 small:grid-cols-4 gap-x-8 gap-y-8">
           {data &&
             data.map((product) => (
               <li key={product.id}>
