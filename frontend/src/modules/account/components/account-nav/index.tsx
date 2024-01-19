@@ -9,7 +9,7 @@ const AccountNav = () => {
   const { handleLogout } = useAccount()
 
   return (
-    <div>
+    <div className="border-r border-gray-50">
       <div className="small:hidden">
         {route !== "/account" && (
           <Link
@@ -25,10 +25,8 @@ const AccountNav = () => {
       </div>
       <div className="hidden small:block">
         <div>
-          <div className="py-4">
-            <h3 className="text-base-semi">Account</h3>
-          </div>
-          <div className="text-base-regular">
+          <div className="text-base-regular py-2">
+            <h3 className="text-xl-semi mb-4">Profile</h3>
             <ul className="flex mb-0 justify-start items-start flex-col gap-y-4">
               <li>
                 <AccountNavLink href="/account" route={route!}>
@@ -37,7 +35,7 @@ const AccountNav = () => {
               </li>
               <li>
                 <AccountNavLink href="/account/profile" route={route!}>
-                  Profile
+                  Setting
                 </AccountNavLink>
               </li>
               <li>
@@ -49,11 +47,6 @@ const AccountNav = () => {
                 <AccountNavLink href="/account/orders" route={route!}>
                   Orders
                 </AccountNavLink>
-              </li>
-              <li className="text-grey-700">
-                <button type="button" onClick={handleLogout}>
-                  Log out
-                </button>
               </li>
             </ul>
           </div>

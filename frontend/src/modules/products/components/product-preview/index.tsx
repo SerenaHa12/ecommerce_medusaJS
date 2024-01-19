@@ -24,10 +24,24 @@ const ProductPreview = ({
   if (!isMatch) {
     return null
   }
+
+  function updateThumbnail(thumbnail: any) {
+    if (thumbnail.includes("http://localhost:9000")) {
+      return thumbnail.replace(
+        "http://localhost:9000",
+        "https://api-ecm.5labs.io"
+      )
+    }
+
+    return thumbnail
+  }
+  console.log("thumbnail", thumbnail)
+  const newThumbnail = updateThumbnail(thumbnail)
+
   return (
     <Link href={`/products/${handle}`} className="group  ">
       {" "}
-      <div className="relative overflow-hidden border border-slate-300 rounded-lg">
+      <div className="relative overflow-hidden">
         <div className=" absolute z-10 top-3  right-3 w-24 py-1.5   text-center   bg-white font-medium  text-xs  rounded-full group-hover:bg-[#AA2010] group-hover:text-white duration-200">
           New Arrival
         </div>
@@ -35,7 +49,7 @@ const ProductPreview = ({
           <div className="overflow-hidden">
             {" "}
             <Thumbnail
-              thumbnail={thumbnail}
+              thumbnail={newThumbnail}
               size="small"
               isFeatured={isFeatured}
               className=" hover:scale-110 duration-200"
@@ -44,18 +58,22 @@ const ProductPreview = ({
 
           <div className=" mx-2 my-4 flex flex-col gap-y-2">
             {" "}
-            <div className="txt-compact-medium  ">
-              <Text className="text-base-semi">{title}</Text>
+            <div className="txt-compact-medium flex justify-between">
+              <Text className="text-base text-bold text-[#AA2010]">
+                {title}
+              </Text>
+              <div>
+                <div className="border bg-[#AA2010] py-1 px-2 rounded-full text-xs text-white">
+                  <p>20% off</p>
+                </div>
+              </div>
             </div>
             <div className="flex justify-between">
-              <div className="border border-[#AA2010] py-1 px-4 rounded-full text-xs">
-                <p>20% off</p>
-              </div>
               <div className="flex gap-2">
-                <div className="text-slate-500 line-through text-sm my-auto">
+                <div className="text-gray-500 line-through text-sm my-auto">
                   $100.00
                 </div>
-                <div className="text-base text-darkText font-semibold">
+                <div className="text-lg text-darkText font-semibold">
                   {price ? (
                     <>
                       {price.price_type === "sale" && (
@@ -76,21 +94,10 @@ const ProductPreview = ({
                   )}
                 </div>
               </div>
-            </div>
-            <div className="flex justify-between mt-5 w-full">
-              {" "}
               <div className="flex gap-2 group-hover:text-[#AA2010]">
                 <div className="my-auto">
-                  <AiOutlineShoppingCart />
+                  <AiOutlineShoppingCart size={30} />
                 </div>
-                <button>Add to cart</button>
-              </div>
-              <div className="flex gap-2 text-yellow-400 my-auto">
-                <IoStar />
-                <IoStar />
-                <IoStar />
-                <IoStar />
-                <IoStar />
               </div>
             </div>
           </div>

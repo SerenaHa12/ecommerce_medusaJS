@@ -68,7 +68,7 @@ const InfiniteProducts = ({ params, sortBy }: InfiniteProductsType) => {
     <>
       <div className="flex-1 max-w-[1440px] px-10">
         <div className="mb-10 md:ml-32  max-w-[320px] w-full max-md:relative -top-[500px] max-md:mx-auto">
-          <Input
+          {/* <Input
             type="text"
             name="search"
             placeholder="Search product..."
@@ -76,7 +76,7 @@ const InfiniteProducts = ({ params, sortBy }: InfiniteProductsType) => {
             onChange={(e) => setSearchValue(e.target.value)}
             className="placeholder:text-sm flex-1 outline-none"
             // onClick={handleSearch}
-          />
+          /> */}
         </div>
         <ul className="grid grid-cols-2 max-md:grid-cols-1 max-md:w-full small:grid-cols-3 medium:grid-cols-3 gap-x-6 gap-y-8 flex-1">
           {filteredPreviews.length > 0 ? (
@@ -87,7 +87,7 @@ const InfiniteProducts = ({ params, sortBy }: InfiniteProductsType) => {
             ))
           ) : (
             <div>
-              <p>Không có sản phẩm nào được tìm thấy.</p>
+              <p>No product found.</p>
             </div>
           )}
           {isLoading &&

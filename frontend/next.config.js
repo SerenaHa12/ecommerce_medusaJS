@@ -28,8 +28,23 @@ module.exports = withStoreConfig({
         protocol: "https",
         hostname: "medusa-server-testing.s3.us-east-1.amazonaws.com",
       },
+      // //config ảnh HASH CODE
+      {
+        protocol: "https",
+        hostname: "api-ecm.5labs.io",
+        port: "",
+        pathname: "/uploads/**", // Đặt đúng đường dẫn cần thiết
+      },
     ],
   },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/uploads/:path*", // Đường dẫn đến ảnh
+  //       destination: "https://api-ecm.5labs.io/uploads/:path*", // Đường dẫn mới
+  //     },
+  //   ]
+  // },
 })
 
 console.log("next.config.js", JSON.stringify(module.exports, null, 2))
