@@ -16,7 +16,7 @@ type SearchResultsTemplateProps = {
 const SearchResultsTemplate = ({ query, hits }: SearchResultsTemplateProps) => {
   const [params, setParams] = useState<StoreGetProductsParams>({})
   const [sortBy, setSortBy] = useState<SortOptions>("created_at")
-
+  const [searchValue, setSearchValue] = useState("")
   useEffect(() => {
     setParams({
       id: hits.map((h) => (h.hasOwnProperty("objectID") ? h.objectID : h.id)),
@@ -47,9 +47,15 @@ const SearchResultsTemplate = ({ query, hits }: SearchResultsTemplateProps) => {
               setRefinementList={setParams}
               sortBy={sortBy}
               setSortBy={setSortBy}
-              search
+              search={false}
+              setSearchValue={setSearchValue}
+              searchValue={searchValue}
             />
-            <InfiniteProducts params={params} sortBy={sortBy} />
+            <InfiniteProducts
+              params={params}
+              sortBy={sortBy}
+              searchValue={searchValue}
+            />
           </>
         ) : (
           <Text className="ml-8 small:ml-14 mt-3">No results.</Text>
