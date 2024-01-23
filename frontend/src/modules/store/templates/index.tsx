@@ -21,7 +21,7 @@ const StoreTemplate = () => {
         search={false}
         setSearchValue={setSearchValue}
         searchValue={searchValue}
-      />
+      />{" "}
       <InfiniteProducts
         params={params}
         sortBy={sortBy}
