@@ -15,11 +15,14 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
+  // get collection 1
   const { collections, count } = await getCollectionsList(0, 1)
-  console.log("🚀 ~ Home ~ collections:", collections)
+  // console.log("🚀 ~ Home ~ collections:", collections)
+
+  // get collection 2
   const { collections: bestseller, count: countBestseller } =
     await getCollectionsList(1, 1)
-  console.log("🚀 ~ Home ~ bestseller:", bestseller)
+  // console.log("🚀 ~ Home ~ bestseller:", bestseller)
   return (
     <div className="flex flex-col gap-y-12">
       <main>
