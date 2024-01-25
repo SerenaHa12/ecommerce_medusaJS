@@ -1,12 +1,13 @@
 import { medusaClient } from "@lib/config"
 import { LOGIN_VIEW, useAccount } from "@lib/context/account-context"
-import { Button } from "@medusajs/ui"
+import { Button, Tooltip } from "@medusajs/ui"
 import Input from "@modules/common/components/input"
-import { Spinner } from "@medusajs/icons"
+import { Spinner, InformationCircleSolid } from "@medusajs/icons"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { FieldValues, useForm } from "react-hook-form"
+import { emailRegex, nameRegex, pwRegex } from "@lib/util/regex"
 
 interface RegisterCredentials extends FieldValues {
   first_name: string
@@ -70,24 +71,47 @@ const Register = () => {
                 label="First name"
                 {...register("first_name", {
                   required: "First name is required",
+                  pattern: {
+                    value: nameRegex,
+                    message: "Please enter a valid name",
+                  },
                 })}
                 autoComplete="given-name"
                 errors={errors}
               />
+              <span className="text-red-500 flex justify-center text-small-regular">
+                {errors.first_name?.message}
+              </span>
               <Input
                 label="Last name"
                 {...register("last_name", {
                   required: "Last name is required",
+                  pattern: {
+                    value: nameRegex,
+                    message: "Please enter a valid name",
+                  },
                 })}
                 autoComplete="family-name"
                 errors={errors}
               />
+              <span className="text-red-500 flex justify-center text-small-regular">
+                {errors.last_name?.message}
+              </span>
               <Input
                 label="Email"
-                {...register("email", { required: "Email is required" })}
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: emailRegex,
+                    message: "Please enter a valid email",
+                  },
+                })}
                 autoComplete="email"
                 errors={errors}
               />
+              <span className="text-red-500 flex justify-center text-small-regular">
+                {errors.email?.message}
+              </span>
               <Input
                 label="Phone"
                 {...register("phone")}
@@ -98,16 +122,23 @@ const Register = () => {
                 label="Password"
                 {...register("password", {
                   required: "Password is required",
+                  pattern: {
+                    value: pwRegex,
+                    message: "Please enter a valid password",
+                  },
                 })}
                 type="password"
                 autoComplete="new-password"
                 errors={errors}
               />
+              <span className="text-red-500 flex justify-center text-small-regular">
+                {errors.password?.message}
+              </span>
             </div>
             {authError && (
               <div>
                 <span className="text-rose-500 w-full text-small-regular">
-                  Email bạn sử dụng đã tồn tại
+                  This email address is already used.
                 </span>
               </div>
             )}
