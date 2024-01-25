@@ -12,8 +12,10 @@ import React, { useEffect } from "react"
 import { useInView } from "react-intersection-observer"
 import { ProductCollection } from "@medusajs/medusa"
 
-const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
+const CollectionTemplate = ({
   collection,
+}: {
+  collection: ProductCollection
 }) => {
   const { cart } = useCart()
   const { ref, inView } = useInView()
@@ -64,7 +66,7 @@ const CollectionTemplate: React.FC<{ collection: ProductCollection }> = ({
       <ul className="grid small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8">
         {previews.map((p) => (
           <li key={p.id}>
-            <ProductPreview {...p} searchValue={""} />
+            <ProductPreview {...p} searchValue={""} collection={collection} />
           </li>
         ))}
         {isFetchingNextPage &&

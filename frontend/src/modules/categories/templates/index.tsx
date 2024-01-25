@@ -16,12 +16,16 @@ import { useInView } from "react-intersection-observer"
 import Link from "next/link"
 import UnderlineLink from "@modules/common/components/interactive-link"
 import { notFound } from "next/navigation"
+import { ProductCollection } from "@medusajs/medusa"
 
 type CategoryTemplateProps = {
   categories: ProductCategoryWithChildren[]
 }
 
-const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ categories }) => {
+const CategoryTemplate: React.FC<CategoryTemplateProps> = (
+  { categories },
+  { collection }: { collection: ProductCollection }
+) => {
   const { cart } = useCart()
   const { ref, inView } = useInView()
 
@@ -104,7 +108,7 @@ const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ categories }) => {
       <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8">
         {previews.map((p) => (
           <li key={p.id}>
-            <ProductPreview {...p} searchValue={""} />
+            <ProductPreview {...p} searchValue={""} collection={collection} />
           </li>
         ))}
         {isFetchingNextPage &&

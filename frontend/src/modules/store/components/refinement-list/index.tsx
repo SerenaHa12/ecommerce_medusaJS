@@ -84,7 +84,7 @@ const RefinementList = ({
         <div className="flex gap-5 w-full justify-between">
           <div
             className={`cursor-pointer px-4 py-2 ${
-              clearFiltersActive ? "bg-[#5A6D57]" : ""
+              clearFiltersActive ? "bg-[#AA2010] text-white" : ""
             }`}
             onClick={handleClearFiltersClick}
           >
@@ -92,7 +92,7 @@ const RefinementList = ({
           </div>
           <div
             className={`cursor-pointer px-4 py-2 ${
-              appliedFiltersActive ? "bg-[#5A6D57]" : ""
+              appliedFiltersActive ? "bg-[#AA2010] text-white" : ""
             }`}
             // onClick={handleAppliedFiltersClick}
           >
