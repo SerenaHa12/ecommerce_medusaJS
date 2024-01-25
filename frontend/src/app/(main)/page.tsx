@@ -9,9 +9,9 @@ import Testimonial from "@modules/home/components/testimonial/Testimonial"
 import YearProduct from "@modules/home/components/yearproduct/YearProduct"
 
 export const metadata: Metadata = {
-  title: "Shopping",
+  title: "ECM",
   description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+    "A performant frontend ecommerce starter template with Next.js 14 and ECM.",
 }
 
 export default async function Home() {
@@ -48,17 +48,17 @@ export default async function Home() {
 
         <div className="relative bg-[url(/banner/banner5.png)] bg-cover w-full h-96 object-cover">
           <div className="w-full md:w-2/3 xl:w-1/2 h-80 absolute px-4 md:px-0 top-0 right-0 flex flex-col items-start gap-6 justify-center">
-            <h1 className="text-3xl font-semibold text-primeColor">
+            <h1 className="text-3xl font-semibold text-primeColor hidden xl:block">
               Check out our new arrivals
             </h1>
-            <p className="text-base font-normal text-[#AA2010] max-w-[600px] mr-4">
+            <p className="text-base font-normal text-[#AA2010] max-w-[600px] mr-4 hidden xl:block">
               Online shoppers love the latest trends, products, and new
               launches. As an ecommerce store owner, you can benefit from this
               love for ‘all things new’ by sending a new arrivals email every
               time you launch a new product or collection.
             </p>
             <Link href="/store">
-              <button className="py-3 px-6 rounded-full bg-white border-2 border-[#AA2010] hover:bg-transparent duration-200 text-sm uppercase font-semibold">
+              <button className="py-3 px-6 rounded-full bg-white border-2 border-[#AA2010] hover:bg-transparent duration-200 text-sm uppercase font-semibold hidden xl:block">
                 FIND OUT NOW
               </button>
             </Link>
