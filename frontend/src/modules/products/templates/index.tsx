@@ -11,12 +11,16 @@ import MobileActions from "@modules/products/components/mobile-actions"
 import ProductOnboardingCta from "@modules/products/components/product-onboarding-cta"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import ProductActions from "../components/product-actions"
+import { ProductCollection } from "@medusajs/medusa"
 
 type ProductTemplateProps = {
   product: PricedProduct
 }
 
-const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
+const ProductTemplate: React.FC<ProductTemplateProps> = (
+  { product },
+  { collection }: { collection: ProductCollection }
+) => {
   const [isOnboarding, setIsOnboarding] = useState<boolean>(false)
 
   const infoRef = useRef<HTMLDivElement>(null)
@@ -47,15 +51,6 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
           {" "}
           <div className="flex">
             <div className=" max-h-[512px] overflow-y-auto  flex flex-col gap-5">
-              <ImageGallery images={product?.images || []} />
-              <ImageGallery images={product?.images || []} />
-
-              <ImageGallery images={product?.images || []} />
-
-              <ImageGallery images={product?.images || []} />
-
-              <ImageGallery images={product?.images || []} />
-
               <ImageGallery images={product?.images || []} />
             </div>
             <div className=" w-full ">
@@ -143,7 +138,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
         </div>
       </div>
       <div className="content-container my-16 px-6 small:px-8 small:my-32">
-        <RelatedProducts product={product} />
+        <RelatedProducts product={product} collection={collection} />
       </div>
       <MobileActions product={product} show={!inView} />
     </ProductProvider>

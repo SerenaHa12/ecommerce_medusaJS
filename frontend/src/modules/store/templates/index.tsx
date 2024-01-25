@@ -1,12 +1,12 @@
 "use client"
 
-import { StoreGetProductsParams } from "@medusajs/medusa"
+import { ProductCollection, StoreGetProductsParams } from "@medusajs/medusa"
 import InfiniteProducts from "@modules/products/components/infinite-products"
 import RefinementList from "@modules/store/components/refinement-list"
 import { useState } from "react"
 import { SortOptions } from "../components/refinement-list/sort-products"
 
-const StoreTemplate = () => {
+const StoreTemplate = ({ collection }: { collection: ProductCollection }) => {
   const [params, setParams] = useState<StoreGetProductsParams>({})
   const [sortBy, setSortBy] = useState<SortOptions>("created_at")
   const [searchValue, setSearchValue] = useState("")
@@ -26,6 +26,7 @@ const StoreTemplate = () => {
         params={params}
         sortBy={sortBy}
         searchValue={searchValue}
+        collection={collection}
       />
     </div>
   )

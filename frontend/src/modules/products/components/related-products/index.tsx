@@ -1,7 +1,7 @@
 import usePreviews from "@lib/hooks/use-previews"
 import getNumberOfSkeletons from "@lib/util/get-number-of-skeletons"
 import repeat from "@lib/util/repeat"
-import { StoreGetProductsParams } from "@medusajs/medusa"
+import { ProductCollection, StoreGetProductsParams } from "@medusajs/medusa"
 import { Button } from "@medusajs/ui"
 import SkeletonProductPreview from "@modules/skeletons/components/skeleton-product-preview"
 import { useCart } from "medusa-react"
@@ -15,7 +15,12 @@ type RelatedProductsProps = {
   product: PricedProduct
 }
 
-const RelatedProducts = ({ product }: RelatedProductsProps) => {
+const RelatedProducts = ({
+  product,
+  collection,
+}: RelatedProductsProps & {
+  collection: ProductCollection
+}) => {
   const { cart } = useCart()
 
   const queryParams: StoreGetProductsParams = useMemo(() => {
@@ -69,7 +74,7 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
       <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-3 gap-x-6 gap-y-8">
         {previews.slice(0, 3).map((p) => (
           <li key={p.id}>
-            <ProductPreview searchValue={""} {...p} />
+            <ProductPreview searchValue={""} collection={collection} {...p} />
           </li>
         ))}
 

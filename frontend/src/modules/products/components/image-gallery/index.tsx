@@ -6,7 +6,20 @@ type ImageGalleryProps = {
   images: MedusaImage[]
 }
 
+function updateThumbnail(thumbnail: any) {
+  if (thumbnail.includes("http://localhost:9000")) {
+    return thumbnail.replace(
+      "http://localhost:9000",
+      "https://api-ecm.5labs.io"
+    )
+  }
+
+  return thumbnail
+}
+
 const ImageGallery = ({ images }: ImageGalleryProps) => {
+  console.log(images, "d")
+  // const newImage = updateThumbnail)
   return (
     <div className="flex items-start relative">
       <div className="flex flex-col flex-1 small:mx-16 gap-y-4">
@@ -18,7 +31,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
               id={image.id}
             >
               <Image
-                src={image.url}
+                src={updateThumbnail(image.url)}
                 priority={index <= 2 ? true : false}
                 className="absolute inset-0 rounded-rounded"
                 alt={`Product image ${index + 1}`}

@@ -46,9 +46,9 @@ const FilterRadioGroup: React.FC<FilterRadioGroupProps> = ({
                   )
                   setIsDropdownOpen(false)
                 }}
-                className="p-2 cursor-pointer flex gap-2"
+                className="p-2 hover:text-[#AA2010] cursor-pointer flex gap-2"
               >
-                <div className="my-auto">
+                <div className="my-auto ">
                   {" "}
                   {value === item.value ? (
                     <FaSquareFull className="text-[#748C70] w-4 h-4" />
