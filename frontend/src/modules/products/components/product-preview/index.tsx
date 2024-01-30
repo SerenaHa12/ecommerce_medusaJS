@@ -5,17 +5,21 @@ import Link from "next/link"
 import { ProductPreviewType } from "types/global"
 import Thumbnail from "../thumbnail"
 import { Text } from "@medusajs/ui"
-import { FaRegHeart } from "react-icons/fa"
-import { IoStar, IoStarSharp } from "react-icons/io5"
 import { AiOutlineShoppingCart } from "react-icons/ai"
+import { ProductCollection } from "@medusajs/medusa"
+
 const ProductPreview = ({
   title,
   handle,
   thumbnail,
   price,
   isFeatured,
-  searchValue, // Nhận giá trị tìm kiếm từ InfiniteProducts
-}: ProductPreviewType & { searchValue: string }) => {
+  searchValue,
+  collection,
+}: ProductPreviewType & {
+  searchValue: string
+  collection: ProductCollection
+}) => {
   const isMatch = searchValue
     ? title.toLowerCase().includes(searchValue.toLowerCase())
     : true
@@ -32,7 +36,6 @@ const ProductPreview = ({
         "https://api-ecm.5labs.io"
       )
     }
-
     return thumbnail
   }
   // console.log("thumbnail", thumbnail)
@@ -43,7 +46,7 @@ const ProductPreview = ({
       {" "}
       <div className="relative overflow-hidden">
         <div className=" absolute z-10 top-3  right-3 w-24 py-1.5   text-center   bg-white font-medium  text-xs  rounded-full group-hover:bg-[#AA2010] group-hover:text-white duration-200">
-          New Arrival
+          {collection?.title}
         </div>
         <div className="">
           <div className="overflow-hidden">

@@ -4,6 +4,8 @@ import {
   useNavigationCollections,
 } from "@lib/hooks/use-layout-data"
 import repeat from "@lib/util/repeat"
+import { ProductCollection } from "@medusajs/medusa"
+
 import ProductPreview from "@modules/products/components/product-preview"
 import SkeletonProductPreview from "@modules/skeletons/components/skeleton-product-preview"
 import clsx from "clsx"
@@ -12,7 +14,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import React, { useState } from "react"
 
-const DropdownMenu = () => {
+const DropdownMenu = ({ collection }: { collection: ProductCollection }) => {
   const [open, setOpen] = useState(false)
   const { push } = useRouter()
   const { data: collections, isLoading: loadingCollections } =
@@ -101,6 +103,7 @@ const DropdownMenu = () => {
                           <ProductPreview
                             {...product}
                             searchValue={""}
+                            collection={collection}
                             key={product.id}
                           />
                         ))}

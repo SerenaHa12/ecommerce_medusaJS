@@ -2,7 +2,7 @@ import { getProductsList } from "@lib/data"
 import usePreviews from "@lib/hooks/use-previews"
 import getNumberOfSkeletons from "@lib/util/get-number-of-skeletons"
 import repeat from "@lib/util/repeat"
-import { StoreGetProductsParams } from "@medusajs/medusa"
+import { ProductCollection, StoreGetProductsParams } from "@medusajs/medusa"
 import ProductPreview from "@modules/products/components/product-preview"
 import SkeletonProductPreview from "@modules/skeletons/components/skeleton-product-preview"
 import { useCart } from "medusa-react"
@@ -10,7 +10,7 @@ import { useEffect, useMemo } from "react"
 import { useInView } from "react-intersection-observer"
 import { useInfiniteQuery } from "@tanstack/react-query"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
-
+import { Text } from "@medusajs/ui"
 export type InfiniteProductsType = {
   params: StoreGetProductsParams
   sortBy?: SortOptions
@@ -21,7 +21,10 @@ const InfiniteProducts = ({
   params,
   sortBy,
   searchValue,
-}: InfiniteProductsType) => {
+  collection,
+}: InfiniteProductsType & {
+  collection: ProductCollection
+}) => {
   const { cart } = useCart()
   const { ref, inView } = useInView()
 
@@ -71,43 +74,50 @@ const InfiniteProducts = ({
   )
 
   return (
-    <div className="flex-1 max-w-[1440px] px-10">
-      <ul className="grid grid-cols-2 max-md:grid-cols-1 max-md:w-full small:grid-cols-3 medium:grid-cols-3 gap-x-6 gap-y-8 flex-1">
-        {filteredPreviews.length > 0 ? (
-          filteredPreviews.map((p) => (
-            <li key={p.id}>
-              <ProductPreview {...p} searchValue={searchValue} />
-            </li>
-          ))
-        ) : (
-          <div>
-            <p>No product found.</p>
-          </div>
-        )}
-        {isLoading &&
-          !previews.length &&
-          repeat(8).map((index) => (
-            <li key={index}>
-              <SkeletonProductPreview />
-            </li>
-          ))}
-        {isFetchingNextPage &&
-          repeat(getNumberOfSkeletons(data?.pages)).map((index) => (
-            <li key={index}>
-              <SkeletonProductPreview />
-            </li>
-          ))}
-      </ul>
-      <div
-        className="py-16 flex justify-center items-center text-small-regular text-gray-700"
-        ref={ref}
-      >
-        <span ref={ref}></span>
+    <>
+      <div className="flex-1 max-w-[1440px] px-10">
+        <ul className="grid grid-cols-2 max-md:grid-cols-1 max-md:w-full small:grid-cols-3 medium:grid-cols-3 gap-x-6 gap-y-8 flex-1">
+          {filteredPreviews.length > 0 ? (
+            filteredPreviews.map((p) => (
+              <li key={p.id}>
+                <ProductPreview
+                  searchValue={searchValue}
+                  isFeatured
+                  collection={collection}
+                  {...p}
+                />
+              </li>
+            ))
+          ) : (
+            <div>
+              <p>No product found.</p>
+            </div>
+          )}
+          {isLoading &&
+            !previews.length &&
+            repeat(8).map((index) => (
+              <li key={index}>
+                <SkeletonProductPreview />
+              </li>
+            ))}
+          {isFetchingNextPage &&
+            repeat(getNumberOfSkeletons(data?.pages)).map((index) => (
+              <li key={index}>
+                <SkeletonProductPreview />
+              </li>
+            ))}
+        </ul>
+        <div
+          className="py-16 flex justify-center items-center text-small-regular text-gray-700"
+          ref={ref}
+        >
+          <span ref={ref}></span>
+        </div>
+        <div className="w-40 mx-auto text-center py-2 border-2 border-[#5A6D57] hidden">
+          <button className=""> Load more</button>
+        </div>
       </div>
-      <div className="w-40 mx-auto text-center py-2 border-2 border-[#5A6D57] hidden">
-        <button className=""> Load more</button>
-      </div>
-    </div>
+    </>
   )
 }
 

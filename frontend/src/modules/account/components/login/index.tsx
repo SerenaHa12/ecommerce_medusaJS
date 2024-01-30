@@ -78,12 +78,12 @@ const Login = () => {
             {authError && (
               <div>
                 <span className="text-rose-500 w-full text-small-regular">
-                  Bạn đã nhập sai Email hoặc Mật khẩu
+                  Wrong email or password.
                 </span>
               </div>
             )}
             <Button className="mt-6 w-full" size="large">
-              Enter
+              Log In
             </Button>
           </form>
         </div>
