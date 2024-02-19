@@ -7,6 +7,7 @@ import Thumbnail from "../thumbnail"
 import { Text } from "@medusajs/ui"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import { ProductCollection } from "@medusajs/medusa"
+import { useFeaturedProductsQuery } from "@lib/hooks/use-layout-data"
 
 const ProductPreview = ({
   title,
@@ -38,16 +39,19 @@ const ProductPreview = ({
     }
     return thumbnail
   }
-  // console.log("thumbnail", thumbnail)
+  console.log("thumbnail", thumbnail)
   const newThumbnail = updateThumbnail(thumbnail)
 
+  console.log(collection)
+
   return (
-    <Link href={`/products/${handle}`} className="group  ">
+    <Link href={`/products/${handle}`} className="group">
       {" "}
       <div className="relative overflow-hidden">
         <div className=" absolute z-10 top-3  right-3 w-24 py-1.5   text-center   bg-white font-medium  text-xs  rounded-full group-hover:bg-[#AA2010] group-hover:text-white duration-200">
           {collection?.title}
         </div>
+
         <div className="">
           <div className="overflow-hidden">
             {" "}
@@ -60,7 +64,6 @@ const ProductPreview = ({
           </div>
 
           <div className=" mx-2 my-4 flex flex-col gap-y-2">
-            {" "}
             <div className="txt-compact-medium flex justify-between">
               <Text className="text-base text-bold text-[#AA2010]">
                 {title}

@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   // get collection 1
-  const { collections, count } = await getCollectionsList(0, 1)
+  const { collections, count } = await getCollectionsList(1, 1)
   // console.log("🚀 ~ Home ~ collections:", collections)
 
   // get collection 2
   const { collections: bestseller, count: countBestseller } =
-    await getCollectionsList(1, 1)
+    await getCollectionsList(0, 1)
   // console.log("🚀 ~ Home ~ bestseller:", bestseller)
   return (
     <div className="flex flex-col gap-y-12">
@@ -45,7 +45,6 @@ export default async function Home() {
             </div>
           </Suspense>
         </div>
-
         <div className="relative bg-[url(/banner/banner5.png)] bg-cover w-full h-96 object-cover">
           <div className="w-full md:w-2/3 xl:w-1/2 h-80 absolute px-4 md:px-0 top-0 right-0 flex flex-col items-start gap-6 justify-center">
             <h1 className="text-3xl font-semibold text-primeColor hidden xl:block">
@@ -65,7 +64,6 @@ export default async function Home() {
           </div>
         </div>
         {/* END NEW ARRIVAL */}
-
         {/* BEST SELLER */}
         <div className="container mx-auto mb-8 pt-16 max-w-screen-xl">
           <h2 className="mx-auto text-2xl text-white bg-[#AA2010] text-center py-2 px-6 rounded-full duration-200  uppercase font-semibold w-fit mb-3">
@@ -87,11 +85,9 @@ export default async function Home() {
         </div>
         <div className="relative bg-[url(/banner/banner6.png)] bg-cover w-full h-64 object-cover"></div>
         {/* END BEST SELLER */}
-
         {/* YEAR PRODUCT */}
         <YearProduct />
         {/* END YAER PRODUCT */}
-
         <div className="container mx-auto mb-8 max-w-screen-xl">
           <Testimonial />
         </div>

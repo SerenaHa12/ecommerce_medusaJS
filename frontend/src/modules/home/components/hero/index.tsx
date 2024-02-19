@@ -53,7 +53,7 @@ const Hero = () => {
             className="w-full relative"
             priority
           />
-          {/* <BannerText title="Lunar NewYear" /> */}
+          <BannerText title="Lunar NewYear" />
         </div>
         <div className="w-full relative">
           <Image
@@ -63,7 +63,7 @@ const Hero = () => {
             width={1600}
             height={1600}
           />
-          {/* <BannerText title="Seasonal Offers" /> */}
+          <BannerText title="Seasonal Offers" />
         </div>
         <div className="w-full relative">
           <Image
@@ -73,7 +73,7 @@ const Hero = () => {
             width={1600}
             height={1600}
           />
-          {/* <BannerText title="Best for woman" /> */}
+          <BannerText title="Best for woman" />
         </div>
         <div className="w-full relative">
           <Image
@@ -83,7 +83,7 @@ const Hero = () => {
             width={1600}
             height={1600}
           />
-          {/* <BannerText title="Spring Collections" /> */}
+          <BannerText title="Spring Collections" />
         </div>
       </Slider>
     </div>
