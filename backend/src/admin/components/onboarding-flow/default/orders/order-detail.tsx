@@ -2,7 +2,7 @@ import React from "react";
 import {
   ComputerDesktopSolid,
   CurrencyDollarSolid,
-  NextJs
+  NextJs,
 } from "@medusajs/icons";
 import { IconBadge, Heading, Text } from "@medusajs/ui";
 
@@ -18,11 +18,11 @@ const OrderDetailDefault = () => {
         level="h2"
         className="text-ui-fg-base pt-6 border-t border-ui-border-base border-solid mb-2"
       >
-        Start developing with Medusa
+        Start developing with ECM
       </Heading>
       <Text size="small">
-        Medusa is a completely customizable commerce solution. We've curated
-        some essential guides to kickstart your development with Medusa.
+        ECM is a completely customizable commerce solution. We've curated some
+        essential guides to kickstart your development with ECM.
       </Text>
       <div className="grid grid-cols-3 gap-4 mt-6 pb-6 mb-6 border-b border-ui-border-base border-solid auto-rows-fr">
         <a
@@ -47,8 +47,8 @@ const OrderDetailDefault = () => {
                 Add Commerce Features
               </Text>
               <Text size="small">
-                Learn about all available commerce features and how to
-                add them in your storefront
+                Learn about all available commerce features and how to add them
+                in your storefront
               </Text>
             </div>
           </div>
@@ -75,8 +75,8 @@ const OrderDetailDefault = () => {
                 Build Custom Use Cases
               </Text>
               <Text size="small">
-                Build a marketplace, subscription-based purchases,
-                or your custom use-cases.
+                Build a marketplace, subscription-based purchases, or your
+                custom use-cases.
               </Text>
             </div>
           </div>
@@ -103,8 +103,7 @@ const OrderDetailDefault = () => {
                 Install Next.js Quickstart
               </Text>
               <Text size="small">
-                Install and use the Next.js storefront with
-                your commerce store.
+                Install and use the Next.js storefront with your commerce store.
               </Text>
             </div>
           </div>
@@ -119,7 +118,7 @@ const OrderDetailDefault = () => {
         >
           our documentation
         </a>
-        . If you like Medusa, please{" "}
+        . If you like ECM, please{" "}
         <a
           href="https://github.com/medusajs/medusa"
           target="_blank"

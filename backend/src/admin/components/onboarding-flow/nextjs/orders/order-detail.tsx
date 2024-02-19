@@ -1,5 +1,9 @@
 import React from "react";
-import { CurrencyDollarSolid, NextJs, ComputerDesktopSolid } from "@medusajs/icons";
+import {
+  CurrencyDollarSolid,
+  NextJs,
+  ComputerDesktopSolid,
+} from "@medusajs/icons";
 import { IconBadge, Heading, Text } from "@medusajs/ui";
 
 const OrderDetailNextjs = () => {
@@ -12,7 +16,7 @@ const OrderDetailNextjs = () => {
         You finished the setup guide 🎉. You now have a complete ecommerce store
         with a backend, admin, and a Next.js storefront. Feel free to play
         around with each of these components to experience all commerce features
-        that Medusa provides.
+        that ECM provides.
       </Text>
       <Heading
         level="h2"
@@ -77,8 +81,8 @@ const OrderDetailNextjs = () => {
                 Add Commerce Features
               </Text>
               <Text size="small">
-                Learn about all available commerce features and how to
-                add them in your storefront
+                Learn about all available commerce features and how to add them
+                in your storefront
               </Text>
             </div>
           </div>
@@ -105,8 +109,8 @@ const OrderDetailNextjs = () => {
                 Build Custom Use Cases
               </Text>
               <Text size="small">
-                Build a marketplace, subscription-based purchases,
-                or your custom use-cases.
+                Build a marketplace, subscription-based purchases, or your
+                custom use-cases.
               </Text>
             </div>
           </div>
@@ -121,7 +125,7 @@ const OrderDetailNextjs = () => {
         >
           our documentation
         </a>
-        . If you like Medusa, please{" "}
+        . If you like ECM, please{" "}
         <a
           href="https://github.com/medusajs/medusa"
           target="_blank"

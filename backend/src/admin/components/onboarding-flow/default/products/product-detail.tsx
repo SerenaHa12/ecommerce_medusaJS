@@ -52,8 +52,8 @@ const ProductDetailDefault = ({
           On this page, you can view your product's details and edit them.
         </Text>
         <Text>
-          You can preview your product using Medusa's Store APIs. You can copy
-          any of the following code snippets to try it out.
+          You can preview your product using ECM's Store APIs. You can copy any
+          of the following code snippets to try it out.
         </Text>
       </div>
       <div>

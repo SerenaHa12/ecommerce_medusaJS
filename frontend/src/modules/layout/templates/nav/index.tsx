@@ -82,7 +82,7 @@ const Nav = () => {
               </div>
             </div> */}
 
-            <div className="md:flex items-center gap-x-6 h-full justify-end hidden sm:block">
+            <div className="sm:flex items-center gap-x-6 h-full justify-end hidden ">
               <DropdownAccount />
 
               {pathname !== Pathname.accountLogin && <CartDropdown />}
