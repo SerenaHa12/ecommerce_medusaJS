@@ -32,7 +32,7 @@ const AccountLayout: React.FC = ({ children }) => {
           </div>
           <div className="flex-1">{children}</div>
         </div>
-        <div className="flex flex-col small:flex-row items-end justify-between small:border-t border-gray-200 py-12 gap-x-8">
+        {/* <div className="flex flex-col small:flex-row items-end justify-between small:border-t border-gray-200 py-12 gap-x-8">
           <div>
             <h3 className="text-xl-semi mb-4">Got questions?</h3>
             <span className="text-small-regular">
@@ -40,12 +40,12 @@ const AccountLayout: React.FC = ({ children }) => {
               customer service page.
             </span>
           </div>
-          {/* <div>
+          <div>
             <UnderlineLink href="/customer-service">
               Customer Service
             </UnderlineLink>
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </div>
     </div>
   )

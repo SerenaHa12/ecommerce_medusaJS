@@ -86,7 +86,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
         onClick={addToCart}
         disabled={!inStock || !variant}
         variant="primary"
-        className="w-full h-10 bg-[#748C70]"
+        className=" h-10 bg-[#AA1020] text-white rounded-full px-6 font-semibold"
       >
         {!inStock
           ? "Out of stock"
@@ -108,7 +108,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
           <div>Add To Wish List</div>
         </div> */}
       </div>
-      <div className="border-2 border-[#ADADAD] px-4 py-8 bg-[#F0F2EF] flex flex-col gap-8">
+      {/* <div className="border-2 border-[#ADADAD] px-4 py-8 bg-[#F0F2EF] flex flex-col gap-8">
         <div className="pb-4 text-xl font-normal leading-9 border-b border-[#ADADAD]">
           Silk
         </div>
@@ -128,7 +128,7 @@ const ProductActionsInner: React.FC<ProductActionsProps> = ({ product }) => {
             Machine Washable
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

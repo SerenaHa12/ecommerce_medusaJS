@@ -57,7 +57,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = (
               <ImageGallery images={product?.images || []} />
             </div>
           </div>
-          <div className=" max-md:mx-auto border-2 border-[#ADADAD] md:mr-10 mt-10">
+          {/* <div className=" max-md:mx-auto border-2 border-[#ADADAD] md:mr-10 mt-10">
             <div
               onClick={toggleDropdown}
               className={`flex w-full justify-between   py-6 px-5 text-[#0C0C0C] text-xl font-bold cursor-pointer ${
@@ -91,8 +91,8 @@ const ProductTemplate: React.FC<ProductTemplateProps> = (
                 Softener
               </div>
             </div>
-          </div>
-          <div className="max-md:mx-auto border-2 border-[#ADADAD] md:mr-10 mt-1">
+          </div> */}
+          {/* <div className="max-md:mx-auto border-2 border-[#ADADAD] md:mr-10 mt-1">
             <div
               onClick={toggleDropdown1}
               className={`flex w-full justify-between   py-6 px-5 text-[#0C0C0C] text-xl font-bold cursor-pointer ${
@@ -126,7 +126,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = (
                 For Returns Or Exchanges.
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div
