@@ -31,13 +31,7 @@ const CheckoutTemplate = () => {
               href="/"
               className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
             >
-              <Image
-                src="/Logo.svg"
-                width={138}
-                height={40}
-                alt="logo"
-                className="md:w-[184px] md:h-[46px] w-[138px] h-[40px]"
-              />
+              <h3 className="text-xl-semi hover:text-[#AA2010]">ECM</h3>
             </Link>
             <div className="flex-1 basis-0" />
           </nav>
