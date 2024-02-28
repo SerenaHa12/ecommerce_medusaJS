@@ -20,8 +20,19 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   isFeatured,
   className,
 }) => {
+  function updateThumbnail(thumbnail: any) {
+    if (thumbnail.includes("http://localhost:9000")) {
+      return thumbnail.replace(
+        "http://localhost:9000",
+        "https://api-ecm.5labs.io"
+      )
+    }
+    return thumbnail
+  }
+  const newThumbnail = updateThumbnail(thumbnail)
+
   const initialImage = thumbnail || images?.[0]?.url
-  // console.log("check", initialImage)
+  console.log("check", initialImage)
 
   return (
     <Container
@@ -39,7 +50,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
         }
       )}
     >
-      <ImageOrPlaceholder image={initialImage} size={size} />
+      <ImageOrPlaceholder image={newThumbnail} size={size} />
     </Container>
   )
 }

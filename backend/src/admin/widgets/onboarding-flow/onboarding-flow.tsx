@@ -1,5 +1,14 @@
-import { OrderDetailsWidgetProps, ProductDetailsWidgetProps, WidgetConfig, WidgetProps } from "@medusajs/admin";
-import { useAdminCustomPost, useAdminCustomQuery, useMedusa } from "medusa-react";
+import {
+  OrderDetailsWidgetProps,
+  ProductDetailsWidgetProps,
+  WidgetConfig,
+  WidgetProps,
+} from "@medusajs/admin";
+import {
+  useAdminCustomPost,
+  useAdminCustomQuery,
+  useMedusa,
+} from "medusa-react";
 import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { useNavigate, useSearchParams, useLocation } from "react-router-dom";
 import { OnboardingState } from "../../../models/onboarding";
@@ -29,9 +38,12 @@ type STEP_ID =
   | "create_product_nextjs"
   | "preview_product_nextjs"
   | "create_order_nextjs"
-  | "setup_finished_nextjs"
+  | "setup_finished_nextjs";
 
-type OnboardingWidgetProps = WidgetProps | ProductDetailsWidgetProps | OrderDetailsWidgetProps
+type OnboardingWidgetProps =
+  | WidgetProps
+  | ProductDetailsWidgetProps
+  | OrderDetailsWidgetProps;
 
 export type StepContentProps = OnboardingWidgetProps & {
   onNext?: Function;
@@ -67,8 +79,7 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
 
   // get current step from custom endpoint
   const currentStep: STEP_ID | undefined = useMemo(() => {
-    return data?.status
-    ?.current_step as STEP_ID
+    return data?.status?.current_step as STEP_ID;
   }, [data]);
 
   // initialize some state
@@ -86,22 +97,25 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
     onComplete?: () => void;
   }) => {
     const next = steps[findStepIndex(step_id) + 1];
-    mutate({ current_step: next.id, ...extraData }, {
-      onSuccess: onComplete
-    });
+    mutate(
+      { current_step: next.id, ...extraData },
+      {
+        onSuccess: onComplete,
+      }
+    );
   };
 
   // this is useful if you want to change the current step
   // using a path parameter. It can only be changed if the passed
   // step in the path parameter is the next step.
-  const [ searchParams ] = useSearchParams()
+  const [searchParams] = useSearchParams();
 
-  // the steps are set based on the 
+  // the steps are set based on the
   // onboarding type
   const steps: Step[] = useMemo(() => {
     {
-      switch(process.env.MEDUSA_ADMIN_ONBOARDING_TYPE) {
-        case 'nextjs':
+      switch (process.env.MEDUSA_ADMIN_ONBOARDING_TYPE) {
+        case "nextjs":
           return [
             {
               id: "create_product_nextjs",
@@ -112,8 +126,10 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
                   step_id: "create_product_nextjs",
                   extraData: { product_id: product.id },
                   onComplete: () => {
-                    if (!location.pathname.startsWith(`/a/products/${product.id}`)) {
-                      navigate(`/a/products/${product.id}`)
+                    if (
+                      !location.pathname.startsWith(`/a/products/${product.id}`)
+                    ) {
+                      navigate(`/a/products/${product.id}`);
                     }
                   },
                 });
@@ -138,8 +154,10 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
                 setStepComplete({
                   step_id: "create_order_nextjs",
                   onComplete: () => {
-                    if (!location.pathname.startsWith(`/a/orders/${order.id}`)) {
-                      navigate(`/a/orders/${order.id}`)
+                    if (
+                      !location.pathname.startsWith(`/a/orders/${order.id}`)
+                    ) {
+                      navigate(`/a/orders/${order.id}`);
                     }
                   },
                 });
@@ -150,7 +168,7 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
               title: "Setup Finished: Continue Building your Ecommerce Store",
               component: OrderDetailNextjs,
             },
-          ]
+          ];
         default:
           return [
             {
@@ -162,8 +180,10 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
                   step_id: "create_product",
                   extraData: { product_id: product.id },
                   onComplete: () => {
-                    if (!location.pathname.startsWith(`/a/products/${product.id}`)) {
-                      navigate(`/a/products/${product.id}`)
+                    if (
+                      !location.pathname.startsWith(`/a/products/${product.id}`)
+                    ) {
+                      navigate(`/a/products/${product.id}`);
                     }
                   },
                 });
@@ -188,8 +208,10 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
                 setStepComplete({
                   step_id: "create_order",
                   onComplete: () => {
-                    if (!location.pathname.startsWith(`/a/orders/${order.id}`)) {
-                      navigate(`/a/orders/${order.id}`)
+                    if (
+                      !location.pathname.startsWith(`/a/orders/${order.id}`)
+                    ) {
+                      navigate(`/a/orders/${order.id}`);
                     }
                   },
                 });
@@ -197,119 +219,150 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
             },
             {
               id: "setup_finished",
-              title: "Setup Finished: Start developing with Medusa",
+              title: "Setup Finished: Start developing with ECM",
               component: OrderDetailDefault,
             },
-          ]
+          ];
       }
     }
-  }, [location.pathname])
+  }, [location.pathname]);
 
   // used to retrieve the index of a step by its ID
-  const findStepIndex = useCallback((step_id: STEP_ID) => {
-    return steps.findIndex((step) => step.id === step_id)
-  }, [steps])
+  const findStepIndex = useCallback(
+    (step_id: STEP_ID) => {
+      return steps.findIndex((step) => step.id === step_id);
+    },
+    [steps]
+  );
 
   // used to check if a step is completed
-  const isStepComplete = useCallback((step_id: STEP_ID) => {
-    return findStepIndex(currentStep) > findStepIndex(step_id)
-  }, [findStepIndex, currentStep]);
-  
+  const isStepComplete = useCallback(
+    (step_id: STEP_ID) => {
+      return findStepIndex(currentStep) > findStepIndex(step_id);
+    },
+    [findStepIndex, currentStep]
+  );
+
   // this is used to retrieve the data necessary
   // to move to the next onboarding step
-  const getOnboardingParamStepData = useCallback(async (onboardingStep: string, data?: {
-    orderId?: string,
-    productId?: string,
-  }) => {
-    switch (onboardingStep) {
-      case "setup_finished_nextjs":
-      case "setup_finished":
-        if (!data?.orderId && "order" in props) {
-          return props.order
-        }
-        const orderId = data?.orderId || searchParams.get("order_id")
-        if (orderId) {
-          return (await client.admin.orders.retrieve(orderId)).order
-        }
+  const getOnboardingParamStepData = useCallback(
+    async (
+      onboardingStep: string,
+      data?: {
+        orderId?: string;
+        productId?: string;
+      }
+    ) => {
+      switch (onboardingStep) {
+        case "setup_finished_nextjs":
+        case "setup_finished":
+          if (!data?.orderId && "order" in props) {
+            return props.order;
+          }
+          const orderId = data?.orderId || searchParams.get("order_id");
+          if (orderId) {
+            return (await client.admin.orders.retrieve(orderId)).order;
+          }
 
-        throw new Error ("Required `order_id` parameter was not passed as a parameter")
-      case "preview_product_nextjs":
-      case "preview_product":
-        if (!data?.productId && "product" in props) {
-          return props.product
-        }
-        const productId = data?.productId || searchParams.get("product_id")
-        if (productId) {
-          return (await client.admin.products.retrieve(productId)).product
-        }
+          throw new Error(
+            "Required `order_id` parameter was not passed as a parameter"
+          );
+        case "preview_product_nextjs":
+        case "preview_product":
+          if (!data?.productId && "product" in props) {
+            return props.product;
+          }
+          const productId = data?.productId || searchParams.get("product_id");
+          if (productId) {
+            return (await client.admin.products.retrieve(productId)).product;
+          }
 
-        throw new Error ("Required `product_id` parameter was not passed as a parameter")
-      default:
-        return undefined
-    }
-  }, [searchParams, props])
+          throw new Error(
+            "Required `product_id` parameter was not passed as a parameter"
+          );
+        default:
+          return undefined;
+      }
+    },
+    [searchParams, props]
+  );
 
   const isProductCreateStep = useMemo(() => {
-    return currentStep === "create_product" || 
+    return (
+      currentStep === "create_product" ||
       currentStep === "create_product_nextjs"
-  }, [currentStep])
+    );
+  }, [currentStep]);
 
   const isOrderCreateStep = useMemo(() => {
-    return currentStep === "create_order" || 
-      currentStep === "create_order_nextjs"
-  }, [currentStep])
+    return (
+      currentStep === "create_order" || currentStep === "create_order_nextjs"
+    );
+  }, [currentStep]);
 
   // used to change the open step when the current
   // step is retrieved from custom endpoints
   useEffect(() => {
     setOpenStep(currentStep);
-    
+
     if (findStepIndex(currentStep) === steps.length - 1) setCompleted(true);
   }, [currentStep, findStepIndex]);
 
   // used to check if the user created a product and has entered its details page
   // the step is changed to the next one
   useEffect(() => {
-    if (location.pathname.startsWith("/a/products/prod_") && isProductCreateStep && "product" in props) {
+    if (
+      location.pathname.startsWith("/a/products/prod_") &&
+      isProductCreateStep &&
+      "product" in props
+    ) {
       // change to the preview product step
-      const currentStepIndex = findStepIndex(currentStep)
-      steps[currentStepIndex].onNext?.(props.product)
+      const currentStepIndex = findStepIndex(currentStep);
+      steps[currentStepIndex].onNext?.(props.product);
     }
-  }, [location.pathname, isProductCreateStep])
+  }, [location.pathname, isProductCreateStep]);
 
   // used to check if the user created an order and has entered its details page
   // the step is changed to the next one.
   useEffect(() => {
-    if (location.pathname.startsWith("/a/orders/order_") && isOrderCreateStep && "order" in props) {
+    if (
+      location.pathname.startsWith("/a/orders/order_") &&
+      isOrderCreateStep &&
+      "order" in props
+    ) {
       // change to the preview product step
-      const currentStepIndex = findStepIndex(currentStep)
-      steps[currentStepIndex].onNext?.(props.order)
+      const currentStepIndex = findStepIndex(currentStep);
+      steps[currentStepIndex].onNext?.(props.order);
     }
-  }, [location.pathname, isOrderCreateStep])
+  }, [location.pathname, isOrderCreateStep]);
 
   // used to check if the `onboarding_step` path
   // parameter is passed and, if so, moves to that step
   // only if it's the next step and its necessary data is passed
   useEffect(() => {
-    const onboardingStep = searchParams.get("onboarding_step") as STEP_ID
-    const onboardingStepIndex = findStepIndex(onboardingStep)
-    if (onboardingStep && onboardingStepIndex !== -1 && onboardingStep !== openStep) {
+    const onboardingStep = searchParams.get("onboarding_step") as STEP_ID;
+    const onboardingStepIndex = findStepIndex(onboardingStep);
+    if (
+      onboardingStep &&
+      onboardingStepIndex !== -1 &&
+      onboardingStep !== openStep
+    ) {
       // change current step to the onboarding step
-      const openStepIndex = findStepIndex(openStep)
+      const openStepIndex = findStepIndex(openStep);
 
       if (onboardingStepIndex !== openStepIndex + 1) {
         // can only go forward one step
-        return
+        return;
       }
 
       // retrieve necessary data and trigger the next function
       getOnboardingParamStepData(onboardingStep)
-      .then((data) => {
-        steps[openStepIndex].onNext?.(data)
-      })
-      .catch((e) => console.error(e))
+        .then((data) => {
+          steps[openStepIndex].onNext?.(data);
+        })
+        .catch((e) => console.error(e));
     }
-  }, [searchParams, openStep, getOnboardingParamStepData])
+  }, [searchParams, openStep, getOnboardingParamStepData]);
 
   if (
     !isLoading &&
@@ -339,44 +392,42 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
 
   // used to get text for get started header
   const getStartedText = () => {
-    switch(process.env.MEDUSA_ADMIN_ONBOARDING_TYPE) {
+    switch (process.env.MEDUSA_ADMIN_ONBOARDING_TYPE) {
       case "nextjs":
-        return "Learn the basics of Medusa by creating your first order using the Next.js storefront."
+        return "Learn the basics of ECM by creating your first order using the Next.js storefront.";
       default:
-        return "Learn the basics of Medusa by creating your first order."
+        return "Learn the basics of ECM by creating your first order.";
     }
-  }
+  };
 
   return (
     <>
-      <Container className={clx(
-        "text-ui-fg-subtle px-0 pt-0 pb-4",
-        {
-          "mb-4": completed
-        }
-      )}>
+      <Container
+        className={clx("text-ui-fg-subtle px-0 pt-0 pb-4", {
+          "mb-4": completed,
+        })}
+      >
         <Accordion
           type="single"
           value={openStep}
           onValueChange={(value) => setOpenStep(value as STEP_ID)}
         >
-          <div className={clx(
-            "flex py-6 px-8",
-            {
+          <div
+            className={clx("flex py-6 px-8", {
               "items-start": completed,
-              "items-center": !completed
-            }
-          )}>
+              "items-center": !completed,
+            })}
+          >
             <div className="w-12 h-12 p-1 flex justify-center items-center rounded-full bg-ui-bg-base shadow-elevation-card-rest mr-4">
               <GetStarted />
             </div>
             {!completed ? (
               <>
                 <div>
-                  <Heading level="h1" className="text-ui-fg-base">Get started</Heading>
-                  <Text>
-                    {getStartedText()}
-                  </Text>
+                  <Heading level="h1" className="text-ui-fg-base">
+                    Get started
+                  </Heading>
+                  <Text>{getStartedText()}</Text>
                 </div>
                 <div className="ml-auto flex items-start gap-2">
                   {!!currentStep ? (
