@@ -74,57 +74,16 @@ const InfiniteProducts = ({
   )
 
   return (
-<<<<<<< Updated upstream
-    <>
-      <div className="flex-1 max-w-[1440px] px-10">
-        <ul className="grid grid-cols-2 max-md:grid-cols-1 max-md:w-full small:grid-cols-3 medium:grid-cols-3 gap-x-6 gap-y-8 flex-1">
-          {filteredPreviews.length > 0 ? (
-            filteredPreviews.map((p) => (
-              <li key={p.id}>
-                <ProductPreview
-                  searchValue={searchValue}
-                  isFeatured
-                  collection={collection}
-                  {...p}
-                />
-              </li>
-            ))
-          ) : (
-            <div>
-              <p>No product found.</p>
-            </div>
-          )}
-          {isLoading &&
-            !previews.length &&
-            repeat(8).map((index) => (
-              <li key={index}>
-                <SkeletonProductPreview />
-              </li>
-            ))}
-          {isFetchingNextPage &&
-            repeat(getNumberOfSkeletons(data?.pages)).map((index) => (
-              <li key={index}>
-                <SkeletonProductPreview />
-              </li>
-            ))}
-        </ul>
-        <div
-          className="py-16 flex justify-center items-center text-small-regular text-gray-700"
-          ref={ref}
-        >
-          <span ref={ref}></span>
-        </div>
-        <div className="w-40 mx-auto text-center py-2 border-2 border-[#5A6D57] hidden">
-          <button className=""> Load more</button>
-        </div>
-      </div>
-    </>
-=======
     <div className=" content-container">
       <ul className="grid grid-cols-2 small:grid-cols-2 medium:grid-cols-2 large:grid-cols-3 gap-x-3 gap-y-8 flex-1">
         {previews.map((p) => (
           <li key={p.id}>
-            <ProductPreview {...p} />
+            <ProductPreview
+              {...p}
+              searchValue={searchValue}
+              isFeatured
+              collection={collection}
+            />
           </li>
         ))}
         {isLoading &&
@@ -151,7 +110,6 @@ const InfiniteProducts = ({
         <button className=""> Load more</button>
       </div>
     </div>
->>>>>>> Stashed changes
   )
 }
 
